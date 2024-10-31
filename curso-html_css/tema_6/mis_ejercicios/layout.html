@@ -1,0 +1,80 @@
+
+<!--
+* Descripción del ejercicio 10:
+
+La propiedad CSS filter nos ha permitido manipular las imágenes con efectos gráficos;
+Ahora, haremos, que al pasar el cursor sobre cada imagen se aplique o desaparezca el
+filtro.
+
+1.Recupera el documento creado en el ejercicio 9.
+
+2.Haz que se apliquen los cambios con la siguiente transformación al pasar el cursor
+por encima:
+
+a. 0 segundos de delay.
+b. Duracion con un máximo de 5 segundos.
+c. Debes usar, al menos, tres valores diferentes para la propiedad transition-timing-function.
+-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes con Filtros CSS</title>
+
+    <style>
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu content sidebar"
+    "footer footer footer";
+  grid-gap: 10px;
+}
+
+    
+    .item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: content;
+}
+.item4 {
+  grid-area: sidebar;
+}
+.item5 {
+  grid-area: footer;
+}
+.item {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+
+  
+    </style>
+
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="item item1">Header</div>
+        <div class="item item2">Menu</div>
+        <div class="item item3">Content</div>
+        <div class="item item4">Sidebar</div>
+        <div class="item item5">Footer</div>
+    </div>
+
+</body>
+
+</html>
+
