@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+/* Elementos <a> con un atributo title */
+a[title] {
+  color: purple;
+}
+
+/* Els. <a> con href coincidente con "https://ex.org" */
+a[href="https://example.org"] {
+  color: green;
+}
+
+/* Els. <a> con un href que contenga "example" */
+a[href*="example"] {
+  font-size: 2em;
+}
+
+
+/* Els. <a> con un href que comience con "#" */
+a[href^="#"] {
+  color: #001978;
+}
+
+/* Els. <a> con un href que termine en ".org" */
+a[href$=".org"] {
+  font-style: italic;
+}
+
+/* Els. <a> cuyo atributo class contenga la palabra "logo" */
+a[class~="logo"] {
+  padding: 2px;
+}
+
+</style>
+
+</head>
+
+<body>
+   
+   
+
+</body>
+
+</html>

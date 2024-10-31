@@ -1,0 +1,72 @@
+
+* Curso albañiles digitales.
+* Módulo core js.
+* Autor: Koldo Sanmartín.
+* Fecha: Jueves 24/10/2024.
+
+
+* Descripción del ejercicio (10.9 del tema 10):
+
+8. Crea un cronómetro en una página web (muy simple, sólo minutos y
+segundos)
+9. Sobre el ejercicio anterior, haz que con el click del ratón se pueda parar
+o continuar el tiempo. (No hace falta controlar el momento en el que se
+para el tiempo a la hora de volver a empezar)
+
+
+* Jerarquía de directorios utilizada:
+
+.
+└── koldo_sanmartin_tema_10
+    ├── click.html
+    ├── click.js
+    ├── click.test.js
+    ├── coverage
+    │   ├── clover.xml
+    │   ├── coverage-final.json
+    │   ├── lcov.info
+    │   └── lcov-report
+    │       ├── base.css
+    │       ├── block-navigation.js
+    │       ├── click.js.html
+    │       ├── favicon.png
+    │       ├── index.html
+    │       ├── prettify.css
+    │       ├── prettify.js
+    │       ├── sort-arrow-sprite.png
+    │       └── sorter.js
+    ├── leeme.txt
+    └── package.json
+
+
+* Archivos y directorios asociados al proyecto:
+
+- click.html
+- click.js
+- click.test.js
+- leeme.txt
+- package.json
+- Directorio coverage con información acerca del mismo. 
+(Todos ellos encriptados en koldo_sanmartin_tema_10.zip)
+
+
+* Para ejecutar archivo click.html:
+
+Haz doble click encima del archivo con el ratón.
+
+
+* Para ejecutar archivo click.test.js en terminal, escribe:
+
+npm test click.test.js
+npx jest click.test.js
+
+
+* Para ejecutar archivo click.test.js con coverage en terminal, escribe:
+
+npx jest click.test.js --coverage
+
+
+* click.js no está configurado para ejecutar en node.
+
+* Recordar que necesitas la carpeta node_modules para que se ejecuten
+(me has dicho que no te la envíe, que no te hace falta, que ya la tienes).

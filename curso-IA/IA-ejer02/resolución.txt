@@ -1,0 +1,68 @@
+Aquí tienes un script en Bash que busca un patrón específico en todos los archivos y subdirectorios de un directorio dado como argumento. El script utilizará grep para hacer la búsqueda.
+Código del script:
+
+bash
+
+#!/bin/bash
+
+# Verificar si se pasaron suficientes argumentos
+if [ $# -lt 2 ]; then
+    echo "Uso: $0 <directorio> <patrón>"
+    exit 1
+fi
+
+# Asignar los argumentos a variables
+directorio=$1
+patron=$2
+
+# Verificar si el directorio existe
+if [ ! -d "$directorio" ]; then
+    echo "Error: El directorio '$directorio' no existe."
+    exit 1
+fi
+
+# Buscar el patrón en todos los archivos y subdirectorios del directorio dado
+echo "Buscando el patrón '$patron' en el directorio '$directorio'..."
+grep -r "$patron" "$directorio"
+
+Explicación:
+
+    Verificación de argumentos:
+        El script verifica si se han proporcionado dos argumentos: el directorio y el patrón a buscar. Si no se proporcionan, muestra un mensaje de uso y termina.
+
+    Asignar directorio y patrón:
+        El primer argumento ($1) es el directorio donde se va a buscar.
+        El segundo argumento ($2) es el patrón que se desea buscar.
+
+    Verificación de la existencia del directorio:
+        Se comprueba si el directorio proporcionado existe usando [ ! -d "$directorio" ]. Si no existe, se muestra un mensaje de error.
+
+    Búsqueda recursiva:
+        El comando grep -r "$patron" "$directorio" busca el patrón de forma recursiva en todos los archivos y subdirectorios del directorio dado.
+        -r significa que se realiza una búsqueda recursiva.
+
+Para ejecutar el script:
+
+    Guarda el código en un archivo, por ejemplo, buscar_patron.sh.
+
+    Dale permisos de ejecución:
+
+    bash
+
+chmod +x buscar_patron.sh
+
+Ejecuta el script proporcionando el directorio y el patrón como argumentos:
+
+bash
+
+    ./buscar_patron.sh /ruta/al/directorio "pepe"
+
+    Esto buscará el patrón "pepe" en todos los archivos y subdirectorios del directorio especificado.
+
+Ejemplo:
+
+bash
+
+./buscar_patron.sh /home/usuario/documentos "pepe"
+
+Este comando buscará el patrón "pepe" en todos los archivos dentro del directorio /home/usuario/documentos y sus subdirectorios.

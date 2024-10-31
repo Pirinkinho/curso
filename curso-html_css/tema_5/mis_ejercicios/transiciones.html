@@ -1,0 +1,60 @@
+
+<!--
+* Descripción del ejercicio 10:
+
+La propiedad CSS filter nos ha permitido manipular las imágenes con efectos gráficos;
+Ahora, haremos, que al pasar el cursor sobre cada imagen se aplique o desaparezca el
+filtro.
+
+1.Recupera el documento creado en el ejercicio 9.
+
+2.Haz que se apliquen los cambios con la siguiente transformación al pasar el cursor
+por encima:
+
+a. 0 segundos de delay.
+b. Duracion con un máximo de 5 segundos.
+c. Debes usar, al menos, tres valores diferentes para la propiedad transition-timing-function.
+-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes con Filtros CSS</title>
+
+    <style>
+    
+
+    .my_caja {
+        border-style: solid;
+        border-width: 1px;
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: #5500ff;
+        transition : width 1s, height 2s, background 1s;
+        transition-duration: 2s, 2s, 2s;
+        transition-timing-function: width 2s ease-in;
+       }
+       .my_caja:hover {
+        background-color: black;
+        width: 400px;
+        height: 400px;
+        rotate: 200deg;
+       }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="my_caja"> </div>
+
+</body>
+
+</html>
+

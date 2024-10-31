@@ -1,0 +1,41 @@
+/* Este es un selector de clase que se aplica a todos los elementos HTML que tienen la clase enlace */
+.enlace {
+
+    /* El valor bold indica que el texto debe ser negrita */
+    font-weight: bold;
+
+    /* tamaño de la fuente en em */
+    font-size: 1.2em; 
+}
+
+/* Este es un selector combinado que se aplica a los elementos que tienen la clase 
+.enlace cuando el cursor del mouse está sobre ellos (hover) */
+.enlace:hover {
+
+    /* Cambia el color del enlace al pasar el mouse */
+    color: orange; 
+}
+
+/* Selector de atributo avanzado que se aplica a todos los elementos <a> (enlaces).
+El atributo target="_blank" se utiliza para indicar que el enlace debe abrirse en una 
+nueva pestaña o ventana del navegador */
+a[target="_blank"] {
+
+    /* Blue indica que el color del texto será azul para todos los enlaces que cumplen con la condición del selector */
+    color: blue;
+}
+
+/* Estilos para elementos donde el atributo "a" comienza con "valor" */
+a[href="imagenes/tortilla4.png"] {
+
+ /* Indica que el color del texto será ese color para todos los enlaces que cumplen con la condición del selector */
+ color: rgb(121, 11, 29);   
+}
+
+
+/* Combinador de hermanos adyacentes */
+.titulo + .contenido-principal {
+
+    /* establece un margen superior de 20 píxeles */
+    margin-top: 20px;
+}

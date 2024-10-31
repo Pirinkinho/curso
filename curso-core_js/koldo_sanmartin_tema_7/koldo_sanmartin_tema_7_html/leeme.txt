@@ -1,0 +1,3 @@
+    Para este ejercicio he creado 2 archivos (obtener_multiplos.js y ej-07.html) para poder hacerlo por la web.
+    Luego para probar los tests he creado funcion_para_prueba.js en el que sólo está la función para probar, pues 
+el prompt del archivo obtener_multiplos.js da problemas al realizar los tests.

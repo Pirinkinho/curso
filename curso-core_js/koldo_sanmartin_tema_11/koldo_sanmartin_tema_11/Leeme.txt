@@ -1,0 +1,70 @@
+
+* Curso albañiles digitales.
+* Módulo core js.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción de los ejercicios (6, 7 y 8 del tema 11):
+
+6. Pide información con fetch a la url:
+https://jsonplaceholder.typicode.com/posts/1. Loguea el status de
+la petición e imprime por pantalla el contenido del artículo que has
+recibido.
+
+7. Modifica el ejercicio anterior o crea uno nuevo que permita cambiar el
+número del artículo que se recibe.
+
+8. Modifica el ejercicio anterior y recibe la lista de todos los artículos.
+¿Cuántos hay? ¿Podrías listar los títulos? ¿Y hacer una tabla con los
+títulos y los contenidos?
+
+* Jerarquía de directorios utilizada:
+
+(demasiado extenso, no te aburro, ocupa unas 2.000 líneas sin exagerar)
+
+300 directories, 1659 files
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_tema_11.zip)
+
+
+* Para ejecutar archivos en terminal, escribe:
+
+node koldo_sanmartin_ej_06.js
+node koldo_sanmartin_ej_07.js
+node koldo_sanmartin_ej_08.js
+
+(en pantalla completa del terminal se ve la tabla del ejercicio 8 correctamente,
+sino se ve truncada).
+
+
+* Para ejecutar los archivos (...).test.js en terminal, escribe:
+
+npm test koldo_sanmartin_ej_06.test.js
+npx jest koldo_sanmartin_ej_06.test.js
+
+npm test koldo_sanmartin_ej_07.test.js
+npx jest koldo_sanmartin_ej_07.test.js
+
+npm test koldo_sanmartin_ej_08.test.js
+npx jest koldo_sanmartin_ej_08.test.js
+
+
+* Para coverage:
+
+npx jest koldo_sanmartin_ej_06.test.js --coverage
+npx jest koldo_sanmartin_ej_07.test.js --coverage
+npx jest koldo_sanmartin_ej_08.test.js --coverage
+
+
+* Nota final:
+
+    Como has indicado en tu mensaje, te envío pantallazos del coverage y una carpeta
+con los node-modules para que los puedas probar tú mismo. Es extensa, pero como 
+hace más de un mes que me la descargué, no recuerdo el nombre de la librería específica.
+Sé que necesito esta carpeta, pues allí se han descargado las librerías y sin ella no puedo
+hacer test.

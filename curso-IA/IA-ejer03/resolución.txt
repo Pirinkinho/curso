@@ -1,0 +1,99 @@
+Tareas a realizar:
+1. Renombrar los tres ficheros:
+a. first.txt -> primero.txt
+b. second.txt -> segundo.txt
+c. tercero.txt -> tercero.txt
+2. Borrar el directorio folder2
+3. Crear una carpeta llamada imagenes (vacía)
+4. En la carpeta folder1 crear un archivo de texto con contenido (cualquier nombre).
+5. En la carpeta folder1 crear un archivo de texto sin contenido (cualquier nombre).
+6. En la carpeta raíz, ejecutando find * debería verse lo siguiente.
+ChatGPT Plus
+ChatGPT
+
+Aquí tienes los comandos para realizar las tareas solicitadas en Bash:
+1. Renombrar los ficheros:
+
+bash
+
+mv first.txt primero.txt
+mv second.txt segundo.txt
+mv tercero.txt tercero.txt
+
+2. Borrar el directorio folder2:
+
+bash
+
+rm -r folder2
+
+    El comando rm -r elimina el directorio de forma recursiva, incluyendo todos sus archivos y subdirectorios.
+
+3. Crear una carpeta llamada imagenes (vacía):
+
+bash
+
+mkdir imagenes
+
+    mkdir crea una nueva carpeta.
+
+4. Crear un archivo de texto con contenido en la carpeta folder1:
+
+bash
+
+echo "Contenido del archivo" > folder1/archivo_con_contenido.txt
+
+    Este comando crea un archivo llamado archivo_con_contenido.txt en la carpeta folder1 con el texto "Contenido del archivo".
+
+5. Crear un archivo de texto sin contenido en la carpeta folder1:
+
+bash
+
+touch folder1/archivo_vacio.txt
+
+    touch crea un archivo vacío llamado archivo_vacio.txt en la carpeta folder1.
+
+6. Ver el contenido de la carpeta raíz con find:
+
+Después de realizar las acciones anteriores, puedes usar find * en la carpeta raíz para listar todo el contenido:
+
+bash
+
+find *
+
+Este comando mostrará una salida similar a:
+
+bash
+
+imagenes
+primero.txt
+segundo.txt
+tercero.txt
+folder1
+folder1/archivo_con_contenido.txt
+folder1/archivo_vacio.txt
+
+Resumen de comandos:
+
+bash
+
+# 1. Renombrar ficheros
+mv first.txt primero.txt
+mv second.txt segundo.txt
+mv tercero.txt tercero.txt
+
+# 2. Borrar folder2
+rm -r folder2
+
+# 3. Crear carpeta imagenes
+mkdir imagenes
+
+# 4. Crear archivo de texto con contenido en folder1
+echo "Contenido del archivo" > folder1/archivo_con_contenido.txt
+
+# 5. Crear archivo vacío en folder1
+touch folder1/archivo_vacio.txt
+
+# 6. Ver estructura con find
+find *
+
+Con estos comandos, habrás completado todas las tareas y podrás visualizar la estructura solicitada con find *.

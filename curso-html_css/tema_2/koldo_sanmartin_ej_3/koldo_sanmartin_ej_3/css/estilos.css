@@ -1,0 +1,155 @@
+body {
+
+    /* Elimina el margen por defecto del body */
+    margin: 0;
+
+    /* Aplicamos tipo de letra */
+    font-family: 'Times New Roman', serif;
+
+    /* La imagen cubre todo el área del contenedor */
+    background-size: cover;
+
+    /* Centra la imagen */
+    background-position: center;
+
+    /* Evita que la imagen se repita */
+    background-repeat: no-repeat;
+    
+    /* Hace que el body tenga la altura completa de la ventana */
+    height: 100vh;
+
+    /* Elimina el margen por defecto del body */
+    margin: 0; 
+
+}
+
+#header {
+
+    /* Centra el texto dentro del contenedor del encabezado. */
+    text-align: center;
+
+    /* Establece el color de fondo del encabezado como negro con una opacidad del 50%. */
+    background-color: rgba(0, 0, 0, 0.5); 
+
+    /* Cambia el color del texto a blanco. */
+    color: white;
+    
+    /* Añade un relleno (padding) de 20 píxeles en la parte superior e inferior (vertical), y 0 píxeles en los lados (horizontal). */
+    padding: 20px 0; 
+
+}
+
+.titulo {
+
+    /* 3 veces el tamaño de la fuente del elemento padre */
+    font-size: 3em;
+
+}
+
+.contenido-principal {
+
+    /* Ocupa el 80% del ancho de la ventana del navegador */
+    width: 80vw;
+
+    /* Centra el contenido */
+    margin: 0 auto; 
+
+}
+
+.seccion-comida {
+
+    /* Estableciendo color de fondo */
+    background-color: rgba(255, 255, 255, 0.3);
+
+    /* usando la propiedad border, o sea, el ancho y color del borde */
+    border: 2px solid rgb(114, 71, 255);
+    
+    /* 20px: Especifica el margen superior e inferior; 0: Especifica el margen izquierdo y derecho */
+    margin: 20px 0;
+
+    /* padding en px (espacio interior de un elemento) */
+    padding: 15px; 
+
+}
+
+.subtitulo {
+
+    /* color en rgb */
+    color: rgb(206, 38, 15); 
+
+}
+
+.enlace {
+
+    /* color en hsl */
+    color: hsl(256, 100%, 50%); 
+
+    /* Agrega subrayado */
+    text-decoration: underline;
+
+    /* Cambia el cursor a una mano cuando se pasa el ratón */
+    cursor: pointer; 
+
+}
+
+.enlace:hover {
+
+    /* Al pasar el mouse el enlace se subraya, indicando que es un elemento clicable */
+    text-decoration: underline;
+
+}
+
+/* Pseudo-elemento antes del título */
+.titulo::before {
+
+    /* añade un icono antes del título */
+    content: "🍕 "; 
+}
+
+
+/* Pseudo-elemento después del título */
+.titulo::after {
+
+    /* añade un icono después del título */
+    content: " 🍔"; 
+}
+
+footer {
+
+    /* Fija el footer en la parte inferior */
+    position: fixed;
+
+    /* Alinea a la izquierda */
+    left: 0;
+
+    /* Coloca en la parte inferior */
+    bottom: 0; 
+
+    /* Asegura que el footer ocupe todo el ancho */
+    width: 100%;
+
+    /* Fondo semi-transparente (opcional) */
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* Color del texto */
+    color: white;
+
+    /* Alinea el texto a la izquierda */
+    text-align: left;
+
+    /* Espacio alrededor del texto */
+    padding: 10px;
+
+    /* Incluye el padding en el ancho total (espacio interior de un elemento) */
+    box-sizing: border-box;
+
+}
+
+/*combinador de hermanos generales*/
+h2 ~ p {
+
+    /* Cambia el estilo del texto a negrita */
+    font-weight: bold; 
+}
+
+

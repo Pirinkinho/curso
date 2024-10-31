@@ -1,0 +1,55 @@
+
+* Curso albañiles digitales.
+* Módulo HTML-CSS.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción del ejercicio 8:
+
+-Este ejercicio está dividido en dos partes:
+
+* Formulario 1:
+
+
+El alumno debe crear una página de login que pregunte al usuario por un 
+identificador de usuario (email) y una contraseña:
+
+1.El formulario debe enviarse a la pagina /check.html con el método POST.
+
+2.El formulario HTML debe controlar el formato:
+a. El email debe ser un email.
+b. La contraseña debe tener al menos 5 caracteres.
+c. La contraseña debe estar oculta al usuario.
+
+3.Un botón ejecutará la acción del formulario.
+
+
+* Formulario 2:
+
+El alumno debe crear un formulario, usando correctamente al menos cinco tipos de inputs
+( ref:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input )
+El formulario puede estar tematizado por cualquier temática elegida por el alumno, o bien
+usando alguno de los siguientes ejemplos: una encuesta, una experiencia de usuario, una
+petición de información, formulario para una beca, personalización de productos, ...
+
+
+* Jerarquía de directorios utilizada:
+
+.
+├── Ejercicio 8  Forms.pdf
+├── formulario_1
+│   ├── check.html
+│   └── ej_8_1.html
+├── formulario_2
+│   └── ej_8_2.html
+└── Leeme.txt
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_ej_8.zip)
+
+
+* Para ejecutar los archivos ej_8_1.html y ej_8_2.html hacer doble click encima de él.

@@ -1,0 +1,20 @@
+ 
+
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Descripción del proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.0.0",
+    "eslint": "^7.0.0"
+  }
+}
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1730236273509" clover="3.2.0">
+  <project timestamp="1730236273509" name="All files">
+    <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1" elements="18" coveredelements="18" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
+    <file name="koldo_sanmartin_ej_07.js" path="/home/curso/curso-core_js/koldo_sanmartin_tema_11/koldo_sanmartin_tema_11/koldo_sanmartin_ejercicio_07/koldo_sanmartin_ej_07.js">
+      <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="7" count="8" type="stmt"/>
+      <line num="8" count="8" type="stmt"/>
+      <line num="9" count="8" type="stmt"/>
+      <line num="10" count="7" type="stmt"/>
+      <line num="12" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="15" count="6" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="18" count="6" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

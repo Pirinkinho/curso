@@ -1,0 +1,82 @@
+
+<!--
+* Descripción del ejercicio 7:
+
+ Los elementos iframe no están recomendados por el W3C, sin embargo, son muy
+utilizados.
+En este ejercicio practicaremos con estos elementos creando una página web que
+contenga tres iframes con contenido elegido por el alumno:
+
+1. El primer iframe, deberá contener un video. Este puede ser de youtube, vimeo o
+cualquier proveedor y contenido a elección del alumno.
+
+2. El segundo iframe, de manera similar, debe contener un mapa con coordenadas a
+elección del alumno. openstreetmap, google maps, o cualquier otro proveedor es
+aceptado.
+
+3. El tercer iframe, en cambio, no debe ser de un proveedor de contenido sino una
+página creada por nosotros mismos. Puede ser una pagina web sin contenido,
+pero está debe existir dentro del directorio/subdirectorios entregados.
+
+4. El estilo es libre, pero debemos ordenar los elementos, usar los atributos y
+propiedades CSS necesarias para que se muestren de la siguiente manera:
+a. La pagina principal debe tener fondo azul
+b. Los tres iframes, se mostrarán uno debajo del otro.
+c. Los tres iframes, deben tener un margen en sus cuatro costados de al
+menos 10px.
+d. La anchura de los tres iframes, debe ser la misma.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Iframes</title>
+
+    <style>
+        body {
+            background-color: blue; /* Fondo azul */
+            margin: 0; /* Elimina el margen por defecto del body */
+            padding: 0; /* Elimina el padding por defecto del body */
+            display: flex;
+            flex-direction: column; /* Muestra los iframes uno debajo del otro */
+            align-items: center; /* Centra los iframes horizontalmente */
+        }
+        iframe {
+            width: 80%; /* Ancho de los iframes */
+            height: 400px; /* Altura fija para los iframes */
+            margin: 10px; /* Margen en los cuatro costados */
+            border: none; /* Sin borde */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Primer iframe: video de YouTube -->
+    <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="Video de YouTube" 
+        allowfullscreen>
+    </iframe>
+
+    <!-- Segundo iframe: mapa de Google Maps -->
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092275!2d144.95373531531667!3d-37.81720997975153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11a6db%3A0x5045675218ceed30!2sMelbourne%20CBD%2C%20Melbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1614553680181!5m2!1sen!2sus" 
+        title="Mapa de Google" 
+        allowfullscreen>
+    </iframe>
+
+    <!-- Tercer iframe: página creada por el alumno -->
+    <iframe 
+        src="hola_mundo.html" 
+        title="Página HTML" 
+        allowfullscreen>
+    </iframe>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jest-fetch-mock": "^3.0.3"
+    },
+    "jest": {
+        "setupFiles": [
+            "./jest.setup.js"
+        ]
+    },
+    "dependencies": {
+        "prompt-sync": "^4.2.0"
+    }
+}

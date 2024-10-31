@@ -1,0 +1,50 @@
+
+<head>
+    
+    <style>
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu content sidebar"
+    "footer footer footer";
+  grid-gap: 10px;
+}
+
+.item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: content;
+}
+.item4 {
+  grid-area: sidebar;
+}
+.item5 {
+  grid-area: footer;
+}
+.item {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+
+    </style>  <!-- ------------------------------------------------>
+</head>
+
+
+<body style="background:green">
+
+<div class="grid-container">
+    <div class="item item1">Header</div>
+    <div class="item item2">Menu</div>
+    <div class="item item3">Content</div>
+    <div class="item item4">Sidebar</div>
+    <div class="item item5">Footer</div>
+</div>
+
+
+</body>

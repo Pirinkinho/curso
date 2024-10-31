@@ -1,0 +1,43 @@
+
+* Curso albañiles digitales.
+* Módulo HTML-CSS.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción del ejercicio 9:
+
+La propiedad CSS filter nos permite manipular las imágenes que hemos incorporado con
+efectos gráficos como el desenfoque; Aqui lo llevaremos a la práctica.
+
+1. Crea una página web que contenga 12 imagenes diferentes:
+
+a. La estructura HTML queda a elección del alumno. Puede ser una tabla
+<table>, una lista <ol>, una estructura con bloques contenedores <div> , ...
+b. La disposición de imágenes puede ser vertical u horizontal a elección del
+alumno. i.e 6x2, 2x6 , 12x1.
+c. Recuerda que debes ser capaz de identificar las imágenes individualmente
+para poder aplicarles los estilos a cada una de ellas.
+
+2. Manteniendo una imagen original, sin usar la propiedad filter, aplica filtros
+diferentes a las siguientes 11 imágenes:
+
+a. Todas las imágenes deben ser diferentes tras aplicarles la etiqueta filter.
+b. Recuerda que puedes combinar filtros para multiplicar los efectos.
+
+
+* Jerarquía de directorios utilizada:
+
+.
+├── ej_9.html
+├── Ejercicio 9 filter CSS.pdf
+└── Leeme.txt
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_ej_9.zip)
+
+
+* Para ejecutar el archivo ej_9.html debes hacer doble click encima de él.

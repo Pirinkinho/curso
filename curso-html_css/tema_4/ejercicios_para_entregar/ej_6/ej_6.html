@@ -1,0 +1,48 @@
+
+<!-- 
+* Descripción:
+
+Del grupo de elementos multimedia HTML5, en este ejercicio utilizamos < video > para
+practicar con las etiquetas y atributos asociados. Aunque no lo hacemos, de manera
+similar, podríamos trabajar con < audio>.
+
+Dado un video y unos archivos de subtítulos VTT de muestra realizamos el siguiente
+ejercicio:
+
+1.Crear un archivo HTML, que contenga el video usando las etiquetas <video> y <source>.
+
+2.Añadimos los atributos necesarios a las etiquetas para que el video se reproduzca
+automáticamente, se reproduzca en bucle y tenga los controles de usuario
+activados.
+
+3.Añadir subtítulos entregados en formato VTT con la etiqueta < track > .(estos
+archivos contienen subtitulos en Inglés y Chino).
+
+4.Crear un nuevo archivo VTT de subtítulos en un idioma a elección del alumno
+(castellano/euskera/otros) modificando los archivos VTT entregados en
+Ingles/Chino y añadirlo al video de manera que pueda verlo el usuario.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video con Subtítulos</title>
+</head>
+<body>
+    <h1>Reproducción de Video con Subtítulos en Diferentes Idiomas</h1>
+
+    <video controls autoplay loop>
+        <!-- Fuente del video -->
+        <source src="chrome.mp4" type="video/mp4">
+        <!-- Subtítulos en Inglés -->
+        <track src="chrome-subtitles-en.vtt" label="English captions" kind="captions" srclang="en" default>
+        <!-- Subtítulos en Chino -->
+        <track src="chrome-subtitles-zh.vtt" label="Chinese captions" kind="captions" srclang="zh" label="中文 (Chinese)">
+        <!-- Subtítulos en Español -->
+        <track src="chrome-subtitles-es.vtt" label="Subtítulos en Español" kind="captions" srclang="es" label="es">
+    </video>
+
+</body>
+</html>

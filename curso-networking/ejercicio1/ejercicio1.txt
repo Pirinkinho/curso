@@ -1,0 +1,18 @@
+	En la carpeta de capturas de pantalla hay 5 métodos de llamadas: 4 get's y un 
+post. Los get's, como básicamente son lo mismo, los puedo explicar juntos: se llaman 
+1, 2, 3 y 4 get, y en ellos podemos ver la URL en la primera línea, el método de 
+llamada GET en la segunda línea del apartado general.
+
+	El tercer apartado sería los encabezados de solicitud, que indican las cabeceras
+del recurso que pedimos. No hay cuerpos en ningún caso.
+
+	Podemos ver en otras capturas de pantalla el archivo html de mensaje de respuesta, 
+así como las vistas previas de los mismos, que serian el recurso de respuesta.
+
+	En el post vemos, en el apartado general, la URL en la primera línea y en la 
+segunda el método, en este caso post, luego el código 200 junto al mensaje OK, que son 
+de respuesta (al igual que los gets) que nos indican que hemos hecho el requerimiento 
+correctamente, y en el apartado de encabezados de respuesta vemos la cabecera de 
+respuesta. La captura de pantalla post_html.png nos da el recurso de respuesta, en este
+caso un html, y en la captura de pantalla post_vista previa.png vemos la vista previa 
+de la misma.

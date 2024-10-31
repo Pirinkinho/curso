@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style type="text/css">
+
+        /* Aplica el fondo azul a todos los spans */
+        span {
+            background-color: blue;
+        }
+
+        /* Aplica el fondo rojo solo a los spans que son hijos directos de un div */
+        div > span {
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <span>span #1, en el div.
+        <span>span #1.1, dentro de span #1.</span>
+        </span>
+    </div>
+
+    <span>span #2, no está en el div.</span>
+
+</body>
+
+</html>

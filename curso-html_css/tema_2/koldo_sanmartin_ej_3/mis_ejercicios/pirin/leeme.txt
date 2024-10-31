@@ -1,0 +1,25 @@
+Jerarquía de directorios utilizada:
+
+
+.
+├── css
+│   ├── estilos.css
+│   └── links.css
+├── imagenes
+│   ├── pirin_con_palo.png
+│   ├── pirin_haciendo_amigos.png
+│   ├── pirin_jovencito.png
+│   ├── pirin.png
+│   └── pirin_sanferminero.png
+├── leeme.txt
+└── principal.html
+
+
+leeme.txt es el índice del proyecto.
+
+principal.html es la página html en sí.
+
+estilos.css y links.css son los archivos css empleados en este proyecto, guardados en
+su propio directorio.
+
+El directorio imagenes contiene los recursos que se usan en el proyecto.

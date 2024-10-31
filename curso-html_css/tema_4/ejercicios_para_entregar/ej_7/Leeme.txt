@@ -1,0 +1,49 @@
+
+* Curso albañiles digitales.
+* Módulo HTML-CSS.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción del ejercicio 7:
+
+Los elementos iframe no están recomendados por el W3C, sin embargo, son muy
+utilizados.
+En este ejercicio practicaremos con estos elementos creando una página web que
+contenga tres iframes con contenido elegido por el alumno:
+
+1. El primer iframe, deberá contener un video. Este puede ser de youtube, vimeo o
+cualquier proveedor y contenido a elección del alumno.
+
+2. El segundo iframe, de manera similar, debe contener un mapa con coordenadas a
+elección del alumno. openstreetmap, google maps, o cualquier otro proveedor es
+aceptado.
+
+3. El tercer iframe, en cambio, no debe ser de un proveedor de contenido sino una
+página creada por nosotros mismos. Puede ser una pagina web sin contenido,
+pero está debe existir dentro del directorio/subdirectorios entregados.
+
+4. El estilo es libre, pero debemos ordenar los elementos, usar los atributos 
+y propiedades CSS necesarios para que se muestren de la siguiente manera:
+a. La pagina principal debe tener fondo azul
+b. Los tres iframes, se mostrarán uno debajo del otro.
+c. Los tres iframes, deben tener un margen en sus cuatro costados de al menos 10px.
+d. La anchura de los tres iframes, debe ser la misma.
+
+
+* Jerarquía de directorios utilizada:
+
+.
+├── ej_7.html
+├── Ejercicio 7 iframes.pdf
+├── hola_mundo.html
+└── Leeme.txt
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_ej_7.zip)
+
+
+* Para ejecutar archivo ej_7.html hacer doble click encima de él.

@@ -1,0 +1,31 @@
+Jerarquía de directorios utilizada:
+
+.
+├── css
+│   ├── estilos.css
+│   └── links.css
+├── ejemplos_favicon
+│   ├── android-chrome-192x192.png
+│   ├── android-chrome-512x512.png
+│   ├── apple-touch-icon.png
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   └── favicon.ico
+├── imagenes
+│   ├── tortilla1.png
+│   ├── tortilla2.png
+│   ├── tortilla3.png
+│   └── tortilla4.png
+├── leeme.txt
+└── tortilla.html
+
+
+leeme.txt es el índice del proyecto.
+
+tortilla.html es la página html en sí.
+
+estilos.css y links.css son los archivos css empleados en este proyecto, guardados en
+su propio directorio.
+
+El directorio imagenes contiene los recursos que se usan en el proyecto.
+El directorio ejemplos_favicon contiene los iconos que se usan en el proyecto.

@@ -1,0 +1,46 @@
+Código del script:
+
+bash
+
+#!/bin/bash
+
+# Mostrar el número de procesos en ejecución
+num_procesos=$(ps -e --no-headers | wc -l)
+echo "Número total de procesos: $num_procesos"
+
+# Mostrar la memoria total ocupada (en KB)
+mem_total_ocupada=$(free -k | awk '/Mem:/ {print $3}')
+echo "Memoria total ocupada: $mem_total_ocupada KB"
+
+# Mostrar los 5 procesos que más memoria utilizan
+echo "Top 5 procesos que más memoria utilizan:"
+ps -eo pid,comm,%mem --sort=-%mem | head -n 6
+
+Explicación:
+
+    Número total de procesos:
+        ps -e --no-headers | wc -l: El comando ps -e lista todos los procesos, y wc -l cuenta el número de líneas, que representa el número total de procesos.
+
+    Memoria total ocupada:
+        free -k | awk '/Mem:/ {print $3}': El comando free -k muestra el uso de la memoria en KB, y awk extrae el tercer valor de la línea que corresponde a la memoria usada.
+
+    Los 5 procesos que más memoria utilizan:
+        ps -eo pid,comm,%mem --sort=-%mem | head -n 6: Este comando muestra los procesos ordenados por uso de memoria (%mem), y head -n 6 se utiliza para mostrar los primeros 5 procesos, excluyendo el encabezado.
+
+Para ejecutar el script:
+
+    Guarda el código en un archivo, por ejemplo, monitor_memoria.sh.
+
+    Dale permisos de ejecución:
+
+    bash
+
+chmod +x monitor_memoria.sh
+
+Ejecuta el script:
+
+bash
+
+    ./monitor_memoria.sh
+
+Esto te mostrará el número de procesos en ejecución, la memoria total ocupada y los 5 procesos que más memoria utilizan en tu sistema.

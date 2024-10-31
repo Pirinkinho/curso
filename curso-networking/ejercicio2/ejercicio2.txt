@@ -1,0 +1,84 @@
+	Las capturas de pantalla están en la carpeta capturas_pantalla. Están 
+organizadas del 01 al 15, seguido de método (get, post, etc.) y con qué las hice (http,
+curl o postman) y, en caso de que haya mas de una, un número.
+
+01.- Get: (ver 01get_http1.png) Este método lo hice mediante http y le pides una lista 
+de usuarios. Con las letras azul claro se distingue la cabecera, donde, lo primero, 
+vemos la versión, el código de respuesta y el mensaje de respuesta. A continuación 
+podemos ver el json que devuelve la página, donde se muestra la lista de usuarios pedida 
+(no cabía en pantalla el json entero, así que la otra parte la capturé en 01get_http2.png).
+A la izquierda vemos la página de reques.in, donde se verifica que el método ha sido 
+correcto, pues se ve el código de respuesta (200) que devuelve y el json que envía, que
+concuerda también.
+
+02.- Get: (ver 02get_curl.png) Método hecho con curl, donde solicitamos los datos de un 
+único usuario. podemos comprobar que mirando la página de reques.in y el terminal, nos
+da las mismas respuestas: 200 como código de respuesta y el mismo json, al final del 
+texto de la terminal. Vemos que todo el texto que comienza la línea coa el símbolo "<"
+es la cabecera.
+
+03.- Get: (ver 03get_postman.png) Éste lo realicé con postman, y solicitamos un usuario
+no encontrado. En el postman sale 404 not found correctamente y el mismo json vacío que
+nos muestra la página a la izquierda.
+
+04.- Get: (ver 04get_http1.png) Hecho con http, devuelve un listado de recursos. Vemos
+que está bien realizada la petición (200 OK) en la cabecera (azul claro) así como el 
+recurso a devolver (un json) al final de la cabecera (no cabe entero así que la segunda
+parte se ve en 04get_http2.png). concuerda con la página web.
+
+05.- Get: (ver 05get_curl.png) Aquí solicitamos un único recurso, y lo hice con curl.
+Vemos como nos responde con código 200, que era lo esperado, la cabecera de respuesta,
+después de los símbolos "<", y, al final, el json del recurso de respuesta, que 
+coincide con el de la página.
+
+06.- Get: (ver 06get_postman.png) Pedimos un recurso que no se encuentra. Utilicé 
+postman y ya vemos que nos devuelve el código 404 junto al mensaje not found que 
+coincide con el mensaje de la página. Observamos el mismo json en ambos, que está
+vacío, pues no ha encontrado nada y nada nos devuelve.
+
+07.- Post: (ver 07post_http.png) Aquí creamos un recurso que devuelve id y createdAt nuevo
+en el json de respuesta (son claves del json), realizado con http, se ve la cabecera
+en azul claro donde el código de respuesta es 201, como eraesperado, junto al mensaje
+"created". El json del final indica los nuevos valores creados de las claves que
+solicitamos.
+
+08.- Put: (ver 08put_curl.png) Aquí hacemos una actualización añadiendo la clave-valor
+"updatedAt" y la fecha al json. En curl vemos, en la cabecera, que empieza por "<", que
+nos devuelve el código 200 y vemos al final el dato actualizado del json.
+
+09.- Patch: (ver 09patch_postman.png) Hecho con postman, es similar al put anterior,
+donde actualizamos el json añadiendo el par clave-valor "updatedAt" y la fecha de
+actualización. Podemos ver el código esperado 200 junto al mensaje OK en postman, 
+debajo el json actualizado, que concuerda con la página reqres.in.
+
+10.- Delete: (ver 10delete_http.png) Con http, aquí nos devuelve una cabecera que nos
+indica código de error 204 con el mensaje "no content", pues solicitamos que borre algo
+que no tiene contenido. No da mas información relevante, al tiempo que concuerda con lo
+esperado de la página reqres.in.
+
+11 y 12.- Post: Aquí pasa algo curioso. Cuando lo hago con postman (11post_postman.png)
+sale un registro correcto, aunque distinto al de la página de reqres.in, pues debería
+salir el código de respuesta 200 y en su lugar sale el 201 con el mensaje "creatad".
+Si lo hago con curl (11post_curl.png) y http (11post_http.png), sale lo que debiera salir
+en el apartado 12, no en el 11 (el 11 es el que haces un registro correcto y el 12 es el
+que da un registro que no se ha podido hacer). Mirando el http, sale en la cabecera un 
+código de respuesta 400 junto al mensaje "bad request", indicando que es error del
+cliente que hace la petición mal. Corresponde con la página de reqres.in. También sale 
+el mismo json. en curl vemos lo mismo. Infiero que pasa esto por que el request de la
+página en los dos apartados es el mismo, aunque postman da algo distinto de las otras
+dos.
+
+13 y 14.- Post (ver 13post_http.png, 13post_curl.png, 13post_postman.png) Lo mismo que 
+en los dos apartados anteriores, postman da algo distinto que curl y http, además 
+distinto que reqres.in. el apartado 13 sería un post para hacer login correcto, y el 14
+para un login incorrecto. Curl y http funcionan bien en el apartado 14 dando las mismas 
+salidas que en la página, y postman sale con código 201-creado que no se corresponde
+con reqres.in. Al igual que los anteriores, se puede observar que el request de la URL
+es el mismo, infiriendo que ese es el motivo de salidas distintas en postman.
+
+15.- Get (ver 15get_postman.png) Esta es una respuesta retardada. Con postman tarda un 
+poco en bajarse, pero sale correcto indicando el código 200 "OK" y se ve el mismo json 
+que la página. Al hacerlo con http hay demora en salir todos los datos juntos, 
+cabecera y json, aunque todo correcto como en reqres.in, 200, "OK", y el json. Al 
+hacerlo con curl, todo sale correcto, pero la demora de tiempo va entre la cabecera,
+que aparece al instante, y el json, que se demora un tiempo.

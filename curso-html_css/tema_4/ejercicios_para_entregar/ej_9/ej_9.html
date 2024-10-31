@@ -1,0 +1,141 @@
+
+<!---
+* Descripción del ejercicio 9:
+
+La propiedad CSS filter nos permite manipular las imágenes que hemos incorporado con
+efectos gráficos como el desenfoque; Aqui lo llevaremos a la práctica.
+
+1. Crea una página web que contenga 12 imagenes diferentes:
+
+a. La estructura HTML queda a elección del alumno. Puede ser una tabla
+<table>, una lista <ol>, una estructura con bloques contenedores <div> , ...
+b. La disposición de imágenes puede ser vertical u horizontal a elección del
+alumno. i.e 6x2, 2x6 , 12x1.
+c. Recuerda que debes ser capaz de identificar las imágenes individualmente
+para poder aplicarles los estilos a cada una de ellas.
+
+2. Manteniendo una imagen original, sin usar la propiedad filter, aplica filtros
+diferentes a las siguientes 11 imágenes:
+
+a. Todas las imágenes deben ser diferentes tras aplicarles la etiqueta filter.
+b. Recuerda que puedes combinar filtros para multiplicar los efectos.
+-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes con Filtros CSS</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f8f5;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        /* Filtros aplicados a cada imagen */
+        .original {
+            filter: none;
+        }
+
+        .blur {
+            filter: blur(5px);
+        }
+
+        .saturate {
+            filter: saturate(200%); /* Aumenta la saturación para resaltar el color */
+        }
+
+        .sepia {
+            filter: sepia(100%);
+        }
+
+        .invert {
+            filter: invert(100%);
+        }
+
+        .brightness {
+            filter: brightness(150%);
+        }
+
+        .contrast {
+            filter: contrast(200%);
+        }
+
+        .hue-rotate {
+            filter: hue-rotate(90deg);
+        }
+
+        .opacity {
+            filter: opacity(50%);
+        }
+
+        .drop-shadow {
+            filter: drop-shadow(5px 5px 5px gray);
+        }
+
+        .blur-sepia {
+            filter: blur(5px) sepia(100%);
+        }
+
+        .brightness-contrast {
+            filter: brightness(150%) contrast(200%);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Mahatma Gandhi</h1>
+
+    <div class="image-container">
+
+        <!-- Imagen Original -->
+        <img class="original" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Original">
+
+        <!-- Imágenes con Filtros -->
+        <img class="blur" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Blur">
+        <img class="saturate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Saturate">
+        <img class="sepia" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Sepia">
+        <img class="invert" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Invert">
+        <img class="brightness" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Brightness">
+        <img class="contrast" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Contrast">
+        <img class="hue-rotate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Hue Rotate">
+        <img class="opacity" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Opacity">
+        <img class="drop-shadow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Drop Shadow">
+        <img class="blur-sepia" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Blur and Sepia">
+        <img class="brightness-contrast" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Brightness and Contrast">
+
+    </div>
+
+</body>
+</html>

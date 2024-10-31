@@ -1,0 +1,37 @@
+* Curso albañiles digitales.
+* Módulo core js.
+* Autor: Koldo Sanmartín.
+* Fecha: Martes 15/10/2024.
+
+
+* Descripción del ejercicio (8.7 del tema 8):
+
+1.7 Crea una clase para trabajar diferentes transformaciones de un string
+inicial con diferentes métodos:
+- Conversión de todo el string a array de caracteres uno por uno.
+- La ordenación de los caracteres de manera aleatoria.
+- La inversión del orden de caracteres.
+- Quitar las vocales.
+- Quitar las consonantes.
+- Array de palabras.
+- Inversión del orden de las palabras del string.
+
+
+* Archivos asociados al proyecto:
+
+- leeme.txt
+- transformador_de_cadena.js
+- transformador_de_cadena.test.js
+- package.json
+(Todos ellos encriptados en koldo_sanmartin_tema_8.zip)
+
+
+* Para ejecutar archivo transformador_de_cadena.js en terminal, escribe:
+
+node transformador_de_cadena.js
+
+
+* Para ejecutar archivo transformador_de_cadena.test.js en terminal, escribe:
+
+npm test transformador_de_cadena.test.js
+npx jest transformador_de_cadena.test.js

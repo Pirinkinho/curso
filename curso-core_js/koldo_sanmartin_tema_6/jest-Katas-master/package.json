@@ -1,0 +1,21 @@
+{
+  "name": "jestkatas",
+  "version": "1.0.0",
+  "description": "katas to reinforce Jest testing strategies",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Joey Imlay",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "jest": "^26.0.1",
+    "nock": "^12.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1"
+  }
+}

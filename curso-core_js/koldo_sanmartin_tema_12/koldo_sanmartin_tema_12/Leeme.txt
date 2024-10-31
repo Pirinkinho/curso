@@ -1,0 +1,55 @@
+
+* Curso albañiles digitales.
+* Módulo core js.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción del ejercicio 6 del tema 12:
+
+6. Crea una función para obtener todos los valores de un 
+set que estén entre dos rangos (numéricos).
+
+* Jerarquía de directorios utilizada (sin directorio node-modules):
+
+.
+└── koldo_sanmartin_tema_12
+    ├── jest.setup.js
+    ├── koldo_sanmartin_ej_06.js
+    ├── koldo_sanmartin_ej_06.test.js
+    ├── Leeme.txt
+    └── package.json
+
+292 directories, 1623 files (incluído node-modules, demasiado extensa)
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_tema_12.zip)
+
+
+* Para ejecutar archivo koldo_sanmartin_ej_06.js con node, escribe:
+
+node koldo_sanmartin_ej_06.js
+
+
+* Para testear archivo koldo_sanmartin_ej_06.test.js en terminal, escribe:
+
+npm test koldo_sanmartin_ej_06.test.js
+npx jest koldo_sanmartin_ej_06.test.js
+
+
+* Para coverage:
+
+npx jest koldo_sanmartin_ej_06.test.js --coverage
+
+
+* Nota final:
+
+    Como has indicado en tu mensaje, te envío pantallazos del coverage y una carpeta
+con los node-modules para que los puedas probar tú mismo. Es extensa, pero como 
+hace más de un mes que me la descargué, no recuerdo el nombre de la librería específica.
+Sé que necesito esta carpeta, pues allí se han descargado las librerías y sin ella no puedo
+hacer test.
+

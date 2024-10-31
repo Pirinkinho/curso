@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista con Iconos</title>
+  <style>
+  
+      
+      ul>li::before {
+          content: '☠️ '; /* Calavera para los elementos de la lista */
+          font-size: 1.1em;
+      }
+
+      ul>li:last-child::before {
+          content: ''; /* Elimina la calavera para el último elemento */
+      }
+
+      ol>li:nth-child(even) {
+          background-color: grey; /* Cambia el color de fondo en las posiciones pares */
+      }
+  </style>
+</head>
+<body>
+
+  <h3>Corredores a partir del vigésimo (20):</h3>
+
+  <!-- listas ordenadas-->
+  <ol class="mi_lista_ordenada">
+      <li value="20"> Juanita </li>
+      <li> Pepito </li>
+      <li> Jaimito </li>
+      <li> Nombre </li>
+      <li> Nombre </li>
+      <li> Nombre </li>
+      <li> Nombre </li>
+      <li> Nombre </li>
+      <li> Nombre </li>
+  </ol>
+
+  <h3>Versiones de HTML:</h3>
+  <!-- listas no ordenadas-->
+  <ul class="mi_lista_no_ordenada">
+      <li> HTML 1 </li>
+      <li> HTML 2 </li>
+      <li> HTML 3 </li>
+      <li> HTML 4 </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="green" style="margin-right: 8px;">
+            <path d="M9 19L2 12L3.41 10.59L9 16.17L20.59 4.58L22 6L9 19Z" />
+        </svg>
+        HTML 5
+      </li>
+  </ul>
+
+</body>
+</html>
+

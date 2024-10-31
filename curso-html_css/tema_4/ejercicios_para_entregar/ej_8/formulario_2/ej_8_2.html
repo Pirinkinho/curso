@@ -1,0 +1,193 @@
+
+<!--
+* Formulario 2:
+
+El alumno debe crear un formulario, usando correctamente al menos cinco tipos de inputs
+( ref:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input )
+El formulario puede estar tematizado por cualquier temática elegida por el alumno, o bien
+usando alguno de los siguientes ejemplos: una encuesta, una experiencia de usuario, una
+petición de información, formulario para una beca, personalización de productos, ...
+-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra de Plantas</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8f5;
+        }
+        
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+
+        input[type="number"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .plant-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .confirmation {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Formulario de Compra de Plantas</h2>
+
+        <!-- Formulario de Compra -->
+        <form id="plantForm">
+            
+            <!-- Tipo de Planta (Select) -->
+            <label for="plant">Elige una planta:</label>
+
+            <select id="plant" name="plant" required onchange="updateImage()">
+                <option value="">Selecciona...</option>
+                <option value="monstera">Monstera</option>
+                <option value="suculenta">Suculenta</option>
+                <option value="cactus">Cactus</option>
+                <option value="ficus">Ficus</option>
+                <option value="bambu">Bambú</option>
+                <option value="orquidea">Orquídea</option>
+            </select>
+
+            <!-- Cantidad (Number) -->
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+
+            <!-- Fecha de Entrega (Date) -->
+            <label for="deliveryDate">Fecha de Entrega:</label>
+            <input type="date" id="deliveryDate" name="deliveryDate" required>
+
+            <!-- Correo Electrónico (Email) -->
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Notas Adicionales (Text) -->
+            <label for="notes">Notas adicionales:</label>
+            <input type="text" id="notes" name="notes" placeholder="Ej. Instrucciones especiales...">
+
+            <!-- Botón de Envío -->
+            <button type="submit">Realizar Pedido</button>
+        
+        </form>
+
+        <!-- Imagen de la Planta Seleccionada -->
+        <img id="plantImage" class="plant-image" src="" alt="Imagen de la Planta" style="display: none;">
+
+        <!-- Mensaje de Confirmación -->
+        <div id="confirmationMessage" class="confirmation" style="display: none;">
+            ¡Pedido realizado con éxito!
+        </div>
+
+    </div>
+
+    <script>
+        // Función para actualizar la imagen de la planta seleccionada
+        function updateImage() {
+            const plant = document.getElementById("plant").value;
+            const plantImage = document.getElementById("plantImage");
+
+            // Seleccionamos la imagen según la planta elegida
+            switch (plant) {
+                case "monstera":
+                    plantImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Monstera_deliciosa2.jpg/250px-Monstera_deliciosa2.jpg";
+                    plantImage.alt = "Monstera";
+                    break;
+                case "suculenta":
+                    plantImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Plantas_suculentas_florecidas.jpg/220px-Plantas_suculentas_florecidas.jpg";
+                    plantImage.alt = "Suculenta";
+                    break;
+                case "cactus":
+                    plantImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/%E9%8A%80%E6%89%8B%E6%8C%87_20190409112933.jpg/220px-%E9%8A%80%E6%89%8B%E6%8C%87_20190409112933.jpg";
+                    plantImage.alt = "Cactus";
+                    break;
+                case "ficus":
+                    plantImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Sung_nh%C3%A2n.JPG/240px-Sung_nh%C3%A2n.JPG";
+                    plantImage.alt = "Ficus";
+                    break;
+                case "bambu":
+                    plantImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bosque_de_bambu_en_el_Caribe.jpg/220px-Bosque_de_bambu_en_el_Caribe.jpg";
+                    plantImage.alt = "Bambú";
+                    break;
+                case "orquidea":
+                    plantImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/PhalaenopsisOphrysPaphiopedilumMaxillaria.jpg/320px-PhalaenopsisOphrysPaphiopedilumMaxillaria.jpg";
+                    plantImage.alt = "Orquídea";
+                    break;
+                default:
+                    plantImage.src = "";
+                    break;
+            }
+
+            // Mostramos u ocultamos la imagen
+            plantImage.style.display = plant ? "block" : "none";
+        }
+
+        // Muestra el mensaje de confirmación al enviar el formulario
+        document.getElementById("plantForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            document.getElementById("confirmationMessage").style.display = "block"; // Muestra el mensaje de confirmación
+        });
+    </script>
+
+</body>
+</html>

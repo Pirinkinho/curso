@@ -1,0 +1,272 @@
+//  Las capturas de pantalla se encuentran en la carpeta pantallazos.
+//  Para puerto 80 entramos a la web con  http://0.0.0.0
+//  Cada vez que cambiamos default, hacemos reload (sudo systemctl reload nginx).
+
+
+Proyecto.
+
+
+Levantar en local un Nginx con estas características:
+
+Lo primero hay que hacer es lo siguiente para preparar nginx:
+sudo apt update
+sudo apt upgrade (si fuese necesario actualizar algo)
+sudo apt install nginx (si no lo tienes instalado)
+nginx -v (vemos la versión)
+sudo systemctl start nginx (arrancamos nginx)
+sudo systemctl status nginx (comprobamos que está andando)
+
+
+1-. Tiene que exponer el contenido de “/var/www/html/” en el puerto 80 (HTTP).
+
+Hay que escribir en /etc/nginx/sites-available/default:
+
+server {
+
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	index index.html;
+
+Ver captura01.png.
+
+
+2-. Debe devolver un 404 si se accede a un archivo que no existe.
+
+Ahora añadimos en /etc/nginx/sites-available/default:
+
+	server_name _;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+Ver captura02_1.png. Cuando vamos a google vemos: Ver captura02_2.png.
+
+
+3-. Además del index.html, tiene que exponer otro HTML en “http://0.0.0.0/prueba1.html” (os inventais su contenido).
+
+Añadimos el archivo prueba1 a /var/www/html/ (captura03_1.png).
+Lo que se ve en la web está en captura03_2.png.
+
+
+4-. Tiene que devolver una imagen en “http://0.0.0.0/imagen1.jpg”.
+
+Añadimos el archivo imagen1.jpg a /var/www/html/ y en web sale captura04.png.
+
+
+5-. Tiene que devolver un archivo JavaScript cualquiera (os inventais su contenido) en “http://0.0.0.0/javascript/archivo1.js”.
+
+Creamos un directorio nuevo en /var/www/html llamado javascript y le añadimos el archivo1.js que hemos creado.
+En /etc/nginx/sites-available/default indicamos desde dónde tiene que capturar el archivo, así:
+
+	location /javascript/ {
+        root /var/www/html;
+    }
+
+ver captura05_1png. En google vemos captura05_2.png.
+
+
+6-. Tiene que devolver un archivo HTML en “http://0.0.0.0/prueba2.html”, pero con la particularidad de que ese HTML tiene que 
+importar el archivo JavaScript del punto anterior (con el atributo <script src=”xxxxx”>).
+
+Creamos prueba2.html, lo añadimos a /var/www/html/, incluyendo <script src="http://0.0.0.0/javascript/archivo1.js"></script>
+(ver captura06_1.png) y al acceder a él en internet obtenemos: captura06_2.png.
+
+
+7.- Debe devolver un error 500 en “http://0.0.0.0/error”.
+
+Le damos la dirección en /etc/nginx/sites-available/default (captura07_1.png):
+
+location /error {
+		return 500;
+	}
+
+Comprobamos con HTTPie poniendo http http://0.0.0.0/error y comprobamos que devuelve el error correctamente (captura07_2.png).
+
+
+8.- Para los 4 métodos principales (GET, POST, PUT, DELETE), hay que añadir una ruta en
+“http://0.0.0.0/metodo” que devuelva un 201 con un JSON especificando el método que se ha subido.
+Por ejemplo, si hago un PUT a esa ruta, se me devolverá un JSON con un mensaje de este tipo:
+‘{“mensaje”: “Has hecho una petición PUT”}’. Con un POST, el resultado sería un JSON con ‘{“mensaje”:
+“Has hecho una petición POST”}’.
+
+Creamos la carpeta metodo en /var/www/html/ y añadimos código en /etc/nginx/sites-available/default (captura08_1.png):
+
+location /metodo {
+		if ($request_method = GET) {
+			return 201 '{"mensaje":"Has hecho una petición GET"}';
+		} 
+		if ($request_method = POST) {
+			return 201 '{"mensaje":"Has hecho una petición POST"}';
+		} 
+		if ($request_method = PUT) {
+			return 201 '{"mensaje":"Has hecho una petición PUT"}';
+		} 
+		if ($request_method = DELETE) {
+			return 201 '{"mensaje":"Has hecho una petición DELETE"}';
+		}
+		return 404;
+	}
+
+Ahora comprobamos que funciona:
+	-http GET http://0.0.0.0/metodo (captura08_2.png).
+	-http POST http://0.0.0.0/metodo (captura08_3.png).
+	-http PUT http://0.0.0.0/metodo (captura08_4.png).
+	-http DELETE http://0.0.0.0/metodo (captura08_5.png).
+
+
+9.- Debe tener una ruta en “http://0.0.0.0/cabecera” que me devuelva un 204 con una cabecera
+inventada (la que queráis).
+
+Creamos la carpeta cabecera en /var/www/html/ añadimos código en /etc/nginx/sites-available/default (captura09_1.png):
+
+location /cabecera {
+		add_header Si-me-ves soy-una-cabecera;
+		return 204;
+	}
+
+Ahora comprobamos que es correcto en HTTPie, poniendo "http http://0.0.0.0/cabecera" (captura09_2.png).
+
+
+10.- Debe tener una ruta en “http://0.0.0.0/redireccion1” que me redirija a “https://w3schools.com".
+
+Escribimos el código en /etc/nginx/sites-available/default (captura10_1.png):
+
+	rewrite /redireccion  https://w3schools.com redirect;
+
+Y comprobamos en HTTPie con "http http://0.0.0.0/redireccion", como de ve en captura10_2.png.
+
+
+11.- Debe tener una ruta en “http://0.0.0.0/redireccion2” que me redirija a “http://0.0.0.0/cabecera”.
+
+Aquí hay que cambiar el código de la redirección para que nginx no se líe. Como lo tenía en el punto anterior funcina para
+una única redirección, pero al poner varias, nginx coge la primera y siempre te devuelve allí. Así que reescribimos en
+/etc/nginx/sites-available/default de esta manera: captura11_1.png. Cuando la solicitamos en HTTPie, con 
+"http http://0.0.0.0/redireccion2", sale: captura11_2.png.
+
+
+12.- Además del puerto 80, tiene que exponer también “/var/www/html” en el puerto 8000 (el resto
+de rutas de los apartados anteriores no hay que exponerlos en el puerto 8000, solo el contenido de
+“/var/www/html”).
+
+Levantamos otro servidor que escuche por salida 8000 (captura12_1.png) variando /etc/nginx/sites-available/default:
+
+server {
+	listen 8000;
+	listen [::]:8000;
+
+	server_name example.com;
+
+
+	root /var/www/html;
+	index index.html;
+
+	server_name _;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+}
+
+Y accademoa a google con http://0.0.0.0:8000, mostrándose: captura12_2.png.
+
+
+13.- Tiene que exponer “/var/www/html” en el puerto 443 con HTTPS (el resto de rutas de los
+apartados anteriores no hay que exponerlos en el puerto 443, solo el contenido de
+“/var/www/html”). Para ello deberá tener un certificado y una clave privada. Añadir autenticación
+básica (auth_basic).
+
+Creamos la clave privada (clave1.pem) y el certificado público (certificado1.pem) con el
+comando: "openssl req -nodes -new -x509 -keyout clave1.pem -out certificado1.pem"
+(ver captura13_1png). Creamos un directorio en “/etc/nginx/certs” y metemos ahí la clave y 
+el certificado: primero - "sudo mkdir /etc/nginx/certs" luego - 
+"sudo cp clave1.pem certificado1.pem /etc/nginx/certs". Comprobamos que podemos entrar en
+la página con https://0.0.0.0 (captura13_2.png), previamente añadido el nuevo servidor 443 y 
+escrito en /etc/ngin1x/sites-available/default (captura13_3.png). Ésto en default:
+
+server {
+	listen 443;
+	listen [::]:443;
+
+	server_name example.com;
+
+	ssl on;
+	server_name 0.0.0.0;
+	ssl_certificate /etc/nginx/certs/certificado1.pem;
+	ssl_certificate_key /etc/nginx/certs/clave1.pem;
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+	ssl_ciphers HIGH:!aNULL:!MD5;
+
+	root /var/www/html;
+	index index.html;
+
+	server_name _;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+}
+ 
+Para la autentificación básica (usuario + contraseña), añadimos a /etc/ngin1x/sites-available/default
+el código:
+
+auth_basic "Contenido restringido";
+auth_basic_user_file /etc/nginx/.htpasswd;
+
+como se ve en captura13_4.png. Luego hay que ejecutar "sudo htpasswd -c /etc/nginx/.htpasswd usuario1" y introducimos 
+usuario1 y clave (captura13_5.png). Al entrar en la página, sale una ventana emergente que te pide usuario y
+contraseña. Sólo sale la primera vez, que desgraciadamente no he capturado en pantalla, pero si salió.
+
+
+14.- Tiene que tener una ruta en “http://0.0.0.0/respuesta” que acepte un parámetro en la URL y, si
+ese parámetro es “json”, devuelva un JSON y, si es “html”, devuelva un HTML. Es decir,
+http://0.0.0.0/respuesta?json=loquesea devuelve un JSON, y http://0.0.0.0/respuesta?html=loquesea
+devuelve un HTML. Si no se envía ninguno de los dos parámetros, se devuelve un 404.
+
+Hacemos cambios en /etc/ngin1x/sites-available/default añadiendo dos if para elegir si queremos json o html 
+(ver captura14_1.png) así:
+
+location /respuesta {
+	if ($arg_json) {
+            return 200 '{"soy":"un json"}';
+        }
+	if ($arg_html) {
+            return 200 '{"soy":"un html"}';
+		}
+		return 404;
+    }	  
+
+con HTTPie comprobamos:
+a) si devuelve json y 200 Ok con http "http://0.0.0.0/respuesta?json=funciona", se ve en captura14_2.png.
+b) si devuelve html y 200 Ok con http "http://0.0.0.0/respuesta?html=funciona", se ve en captura14_3.png.
+c) si solicitamos algo distinto y 404 Not Found  con http "http://0.0.0.0/respuesta?otro=funciona", se ve en 
+captura14_4.png.
+
+
+15.- Bonus: guardar el log de acceso de Nginx en el archivo “/var/www/html/logs.log” (para que
+pueda verse en http://0.0.0.0/logs.log).
+
+a) Hay que configurar el acceso a logs en el archivo de configuración de Nginx en /etc/ngin1x/sites-available/default
+debemos establecer la ruta de los logs en el bloque server (captura15_1.png) así:
+
+access_log /var/www/html/logs.log;
+
+b) Hay que crear el archivo de logs y darle permisos. Como el archivo de logs estará ubicado en el directorio 
+/var/www/html, es importante que los permisos sean correctos para que Nginx pueda escribir en el archivo. 
+Ejecutamos los siguientes comandos para asegurarte de que se pueda escribir en él: primero creamos el archivo con
+"sudo touch /var/www/html/logs.log" y después damos permisos con: "sudo chmod 666 /var/www/html/logs.log".
+
+c) Configuramos el acceso público al archivo de logs. Para poder acceder al archivo de logs desde 
+http://0.0.0.0/logs.log, necesitamos crear una ruta en /etc/ngin1x/sites-available/default  para servir archivos
+desde /var/www/html, añadiendo la siguiente configuración en el server para poder acceder desde la web (captura15_2.png):
+
+location /logs.log {
+    alias /var/www/html/logs.log;
+    autoindex off;
+    allow all;
+}
+
+Ya estaría; comprobamos escribiendo en el navegador "http://0.0.0.0/logs.log" (captura15_3.png).
+
+
+			Fin.

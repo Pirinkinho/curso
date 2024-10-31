@@ -1,0 +1,175 @@
+
+<!--
+* Descripción del ejercicio 10:
+
+La propiedad CSS filter nos ha permitido manipular las imágenes con efectos gráficos;
+Ahora, haremos, que al pasar el cursor sobre cada imagen se aplique o desaparezca el
+filtro.
+
+1.Recupera el documento creado en el ejercicio 9.
+
+2.Haz que se apliquen los cambios con la siguiente transformación al pasar el cursor
+por encima:
+
+a. 0 segundos de delay.
+b. Duracion con un máximo de 5 segundos.
+c. Debes usar, al menos, tres valores diferentes para la propiedad transition-timing-function.
+-->
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes con Filtros CSS</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #dfe305;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: rgb(117, 12, 214);
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            width: 100vw;
+            height: calc(100vh - 80px);
+            box-sizing: border-box;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 1s ease-in-out, filter 1s ease, opacity 1s ease;
+        }
+
+        /* Efecto al pasar el cursor */
+        img:hover {
+            transform: scale(1.5) rotate(5deg);
+            filter: brightness(90%);
+            opacity: 0.9;
+        }
+
+        /* Texto que aparece al hacer hover */
+        .image-wrapper span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: rgb(170, 8, 8);
+            font-size: 0.9rem;
+            background-color: rgba(6, 241, 33, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-wrapper:hover span {
+            opacity: 1;
+        }
+
+        /* Filtros aplicados a cada imagen */
+        .original { filter: none; }
+        .blur { filter: blur(5px); }
+        .colorized { filter: hue-rotate(180deg) saturate(150%); }
+        .saturate { filter: saturate(200%); }
+        .sepia { filter: sepia(100%); }
+        .invert { filter: invert(100%); }
+        .brightness { filter: brightness(150%); }
+        .contrast { filter: contrast(200%); }
+        .hue-rotate { filter: hue-rotate(90deg); }
+        .opacity { filter: opacity(50%); }
+        .drop-shadow { filter: drop-shadow(5px 5px 5px gray); }
+        .blur-sepia { filter: blur(5px) sepia(100%); }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Mahatma Gandhi: sus frases</h1>
+
+    <div class="image-container">
+        <!-- 12 Imágenes con Filtros, cada una dentro de un contenedor con texto en hover -->
+        <div class="image-wrapper">
+            <img class="original" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Original">
+            <span>Imagen Original<br><br> "Sé el cambio que deseas ver en el mundo." </span>
+        </div>
+        <div class="image-wrapper">
+            <img class="blur" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Blur">
+            <span>Desenfoque<br><br>"La fuerza no proviene de la capacidad física, sino de una voluntad indomable."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="colorized" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Colorized">
+            <span>Coloreado<br><br>"La paz no es simplemente la ausencia de la violencia, sino la presencia de la justicia."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="sepia" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Sepia">
+            <span>Sepia<br><br>"La verdad nunca daña a una causa que es justa."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="invert" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Invert">
+            <span>Invertir Colores<br><br>"La felicidad es cuando lo que piensas, lo que dices y lo que haces están en armonía."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="brightness" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Brightness">
+            <span>Brillo Aumentado<br><br>"El débil nunca puede perdonar. El perdón es una virtud del fuerte."<br</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="contrast" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Contrast">
+            <span>Contraste Aumentado<br><br>"Vivir como si fueras a morir mañana. Aprender como si fueras a vivir para siempre."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="hue-rotate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Hue Rotate">
+            <span>Rotación de Tono<br><br>"La violencia es el miedo a los ideales de los demás."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="opacity" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Opacity">
+            <span>Opacidad Reducida<br><br>"No hay camino hacia la paz, la paz es el camino."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="drop-shadow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Drop Shadow">
+            <span>Sombra<br><br>"El amor es la fuerza más poderosa del universo."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="blur-sepia" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Blur and Sepia">
+            <span>Desenfoque y Sepia<br><br>"Lo que se hace por amor siempre ocurre más allá del bien y del mal."</span>
+        </div>
+        <div class="image-wrapper">
+            <img class="brightness-contrast" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/220px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi Brightness and Contrast">
+            <span>Brillo y Contraste Aumentados<br><br>"La verdadera medida de cualquier sociedad se puede encontrar en cómo trata a sus más vulnerables."</span>
+        </div>
+    </div> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+* Curso albañiles digitales.
+* Módulo HTML-CSS.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción del ejercicio 10:
+
+La propiedad CSS filter nos ha permitido manipular las imágenes con efectos gráficos;
+Ahora, haremos, que al pasar el cursor sobre cada imagen se aplique o desaparezca el
+filtro.
+
+1.Recupera el documento creado en el ejercicio 9.
+
+2.Haz que se apliquen los cambios con la siguiente transformación al pasar el cursor
+por encima:
+
+a. 0 segundos de delay.
+b. Duracion con un máximo de 5 segundos.
+c. Debes usar, al menos, tres valores diferentes para la propiedad transition-timing-function.
+
+
+* Jerarquía de directorios utilizada:
+
+.
+├── ej_10.html
+├── Ejercicio 10 transiciones.pdf
+└── Leeme.txt
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_ej_10.zip)
+
+
+* Para ejecutar el archivo ej_10.html debes hacer doble click encima de él.

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Bordes</title>
+    <style>
+        /* Borde con 4 valores (superior, derecho, inferior, izquierdo) */
+        .borde-4 {
+            border: 1px solid black;
+            border-width: 1px 4px 6px 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Borde con 3 valores (superior, derecho, inferior) */
+        .borde-3 {
+            border: 1px solid black;
+            border-width: 1px 4px 6px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Borde con 2 valores (superior/inferior, derecho/izquierdo) */
+        .borde-2 {
+            border: 1px solid black;
+            border-width: 1px 4px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Bordes en CSS</h1>
+    <div class="borde-4">Este div tiene un borde de 1px (superior), 4px (derecho), 6px (inferior), y 10px (izquierdo)</div>
+    <div class="borde-3">Este div tiene un borde de 1px (superior), 4px (derecho), 6px (inferior)</div>
+    <div class="borde-2">Este div tiene un borde de 1px (superior/inferior) y 4px (derecho/izquierdo)</div>
+</body>
+</html>
+
+

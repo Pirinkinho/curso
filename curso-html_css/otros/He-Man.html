@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes con Filtros CSS</title>
+
+    <style>
+        
+        caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+body {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    min-height: 100vh;        /* Asegura que ocupe al menos el 100% de la altura de la ventana */
+    margin: 0;                /* Elimina el margen predeterminado del body */
+}
+
+
+        table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  width: 100%;         /* Hace que la tabla ocupe todo el ancho del contenedor */
+  margin: 0 auto;      /* Centra la tabla en la página */
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+
+th {
+  background-color: rgb(230 230 230);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250 250 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(240 240 240);
+}
+
+.heman {
+  font: 1.4rem molot;
+  text-shadow:
+    1px 1px 1px #fff,
+    2px 2px 1px #000;
+}
+
+.skeletor {
+  font: 1.7rem rapscallion;
+  letter-spacing: 3px;
+  text-shadow:
+    1px 1px 0 #fff,
+    0 0 9px #000;
+}
+
+ 
+
+    </style>
+
+</head>
+
+<body>
+
+    <table>
+        <caption>
+          He-Man and Skeletor facts
+        </caption>
+        <tr>
+          <td></td>
+          <th scope="col" class="heman">He-Man</th>
+          <th scope="col" class="skeletor">Skeletor</th>
+        </tr>
+        <tr>
+          <th scope="row">Role</th>
+          <td>Hero</td>
+          <td>Villain</td>
+        </tr>
+        <tr>
+          <th scope="row">Weapon</th>
+          <td>Power Sword</td>
+          <td>Havoc Staff</td>
+        </tr>
+        <tr>
+          <th scope="row">Dark secret</th>
+          <td>Expert florist</td>
+          <td>Cries at romcoms</td>
+        </tr>
+      </table>
+
+
+</body>
+
+</html>
+

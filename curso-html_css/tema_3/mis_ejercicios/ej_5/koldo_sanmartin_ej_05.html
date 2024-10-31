@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+
+    <style>
+        body {
+            margin: 0; /* Eliminar márgenes predeterminados */
+            padding: 20px; /* Espacio alrededor del contenido */
+            background-color: #f8f8f8; /* Color de fondo opcional */
+        }
+
+        caption {
+        text-align: left; /* Alinear el texto a la izquierda */
+        margin-bottom: 10px; /* Espacio opcional debajo del caption */
+        }
+
+        table {
+            width: 100%; /* Ocupa todo el ancho */
+            border-collapse: separate; /* Para eliminar el espacio entre bordes */
+            margin: 0 auto; /* Centrar la tabla */
+        }
+
+        table, td, th {
+            border: black 1px solid;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center; /* Alinear texto al centro */
+        }
+
+        th {
+            background-color: burlywood; 
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        th:first-child {
+            background-color: greenyellow;
+            font-weight: normal;
+        }
+
+        .linea-1 {
+            background-color: pink; /* Color rosa para las horas */
+            font-style: italic;
+        }
+
+        .linea-1 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .rowspan1 {
+            background-color: red; /* Color para la celda con rowspan */
+            font-style: italic; /* Texto en cursiva */  
+        }
+
+        .linea-2 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-2 td:last-child {
+            background-color: lightblue; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-3 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-3 td:nth-child(5) {
+            background-color: lightblue; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-4 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .colspan {
+            background-color: yellow; /* Color para la celda con rowspan */
+        }
+
+        .linea-5 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-5 td:nth-child(2) {
+            background-color: lightblue; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+     
+        .rowspan2 {
+            background-color: red; /* Color para la celda con rowspan */
+            font-style: italic; /* Texto en cursiva */ 
+        }
+
+        .linea-6 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-6 td:nth-child(4) {
+            background-color: lightblue; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-7 td:first-child {
+            background-color: greenyellow; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-7 td:nth-child(3) {
+            background-color: lightblue; /* Color verde para la primera celda de la fila con clase linea-2 */
+        }
+
+        .linea-7 td:nth-child(6) {
+            background-color: red; /* Color verde para la primera celda de la fila con clase linea-2 */
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table id="horario">
+        <caption align="left"> Mi horario Agile Inventado: </caption>
+        <thead>
+            <tr>
+                <th class="cabecera">horario</th>
+                <th class="cabecera">LUNES</th>
+                <th class="cabecera">MARTES</th>
+                <th class="cabecera">MIÉRCOLES</th>
+                <th class="cabecera">JUEVES</th>
+                <th class="cabecera">VIERNES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="linea-1">
+                <td class="linea-1">08:00 - 09:00</td>
+                <td class="rowspan1" rowspan="2">Sprint Planning</td>
+                <td class="linea-1">daily scrum</td>
+                <td class="linea-1">daily scrum</td>
+                <td class="linea-1">daily scrum</td>
+                <td class="linea-1">daily scrum</td>
+            </tr>
+            <tr class="linea-2">
+                <td class="linea-2">09:00 - 10:00</td>
+                <td class="linea-2"></td>
+                <td class="linea-2"></td>
+                <td class="linea-2"></td>
+                <td class="linea-2">Formación</td>
+            </tr>
+            <tr class="linea-3">
+                <td class="linea-3">10:00 - 11:00</td>
+                <td class="linea-3"></td>
+                <td class="linea-3"></td>
+                <td class="linea-3"></td>
+                <td class="linea-3">Formación</td>
+                <td class="linea-3"></td>
+            </tr>
+            <tr class="linea-4">
+                <td class="linea-4">11:00 - 11:30</td>
+                <td class="colspan" colspan="5">Almuerzo</td>
+            </tr>
+            <tr class="linea-5">
+                <td class="linea-5">11:30 - 12:30</td>
+                <td class="linea-5">Formación</td>
+                <td class="linea-5"></td>
+                <td class="linea-5"></td>
+                <td class="linea-5"></td>
+                <td class="rowspan2" rowspan="2">Sprint Review</td>
+            </tr>
+            <tr class="linea-6">
+                <td class="linea-6">12:30 - 13:30</td>
+                <td class="linea-6"></td>
+                <td class="linea-6"></td>
+                <td class="linea-6">Formación</td>
+                <td class="linea-6"></td>
+            </tr>
+            <tr class="linea-7">
+                <td class="linea-7">13:30 - 14:30</td>
+                <td class="linea-7"></td>
+                <td class="linea-7">Formación</td>
+                <td class="linea-7"></td>
+                <td class="linea-7"></td>
+                <td class="linea-7">Sprint Retrospective</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

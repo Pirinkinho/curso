@@ -1,0 +1,51 @@
+
+* Curso albañiles digitales.
+* Módulo HTML-CSS.
+* Autor: Koldo Sanmartín.
+* Fecha: Sábado 26/10/2024.
+
+
+* Descripción del ejercicio 6:
+
+Del grupo de elementos multimedia HTML5, en este ejercicio utilizamos < video > para
+practicar con las etiquetas y atributos asociados. Aunque no lo hacemos, de manera
+similar, podríamos trabajar con < audio>.
+
+Dado un video y unos archivos de subtítulos VTT de muestra realizamos el siguiente
+ejercicio:
+
+1.Crear un archivo HTML, que contenga el video usando las etiquetas <video> y <source>.
+
+2.Añadimos los atributos necesarios a las etiquetas para que el video se reproduzca
+automáticamente, se reproduzca en bucle y tenga los controles de usuario
+activados.
+
+3.Añadir subtítulos entregados en formato VTT con la etiqueta < track > .(estos
+archivos contienen subtitulos en Inglés y Chino).
+
+4.Crear un nuevo archivo VTT de subtítulos en un idioma a elección del alumno
+(castellano/euskera/otros) modificando los archivos VTT entregados en
+Ingles/Chino y añadirlo al video de manera que pueda verlo el usuario.
+
+
+* Jerarquía de directorios utilizada:
+
+.
+├── chrome.mp4
+├── chrome-subtitles-en.vtt
+├── chrome-subtitles-es.vtt
+├── chrome-subtitles-zh.vtt
+├── ej_6.html
+├── Ejercicio 6 video, source, tracks.pdf
+└── Leeme.txt
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_ej_6.zip)
+
+
+* Para ejecutar archivo ej_6.html doble click encima de él.
+
+
