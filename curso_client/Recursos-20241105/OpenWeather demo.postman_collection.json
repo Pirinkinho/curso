@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "2a04103a-6233-46ee-846c-ffe7b023d3fa",
+		"name": "OpenWeather demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9992197"
+	},
+	"item": [
+		{
+			"name": "Demo openwheather",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Demo openwheather Copy",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

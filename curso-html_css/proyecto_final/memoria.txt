@@ -1,0 +1,11 @@
+
+* referencia de página de flat icons
+
+(lobo) <a href="https://www.flaticon.com/free-icons/wolf" title="wolf icons">Wolf icons created by PLANBSTUDIO - Flaticon</a> 
+(pájaro) <a href="https://www.flaticon.com/free-icons/fish" title="bullfinch icons">Bullfinch icons created by Freepik - Flaticon</a>
+(león)  <a href="https://www.flaticon.com/free-icons/animals" title="lion icons">Lion icons created by Freepik - Flaticon</a>
+(perezoso) <a href="https://www.flaticon.com/free-icons/animals" title="sloth icons">Sloth icons created by Freepik - Flaticon</a>
+(pingüino) <a href="https://www.flaticon.com/free-icons/penguin" title="penguin icons">Penguin icons created by Flat Icons - Flaticon</a>
+(elefante) <a href="https://www.flaticon.com/free-icons/elephant" title="elephant icons">Elephant icons created by Freepik - Flaticon</a>
+(murciélago)  <a href="https://www.flaticon.com/free-icons/halloween-party" title="halloween party icons">Halloween party icons created by srip - Flaticon</a>
+(jirafa) <a href="https://www.flaticon.com/free-icons/giraffe" title="giraffe icons">Giraffe icons created by Smashicons - Flaticon</a>

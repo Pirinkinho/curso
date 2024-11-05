@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="img/bullfinch.png">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Recuperar Contraseña</h1>
+
+        <form onsubmit="return validarFormulario2()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="mi@email.com">
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}" placeholder="9 cifras">
+
+        <button type="submit">Enviar</button>
+        </form>
+        <img src="img/avestruz.png" alt="avestruz" class="responsive-image2">
+    </div>
+
+    <script>
+        // Simulación de inicio de sesión
+        function validarFormulario2() {
+            alert("Te enviamos el usuario y contraseña a tu móvil por Whatsapp"); 
+            window.location.href = "login.html"; // Redirigir a la página de login
+            return false; // Evita el envío del formulario
+        }
+    </script>
+
+</body>
+
+</html>
+

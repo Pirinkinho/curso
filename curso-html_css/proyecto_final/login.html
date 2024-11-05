@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="img/lion.png">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Iniciar Sesión</h1>
+
+    <form onsubmit="return validarFormulario()">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required minlength="5" placeholder="Mínimo 5 caracteres">
+
+        <button type="submit">Iniciar Sesión</button>
+        <p><a href="recuperar_contrasena.html">Recuperar contraseña</a></p>
+    </form>
+
+    <img src="img/leopardo.png" alt="Leopardo" class="responsive-image">
+
+  </div>
+
+</body>
+
+  <script>
+
+    // Simulación de inicio de sesión
+    function validarFormulario() {
+    window.location.href = "pagina_principal.html"; // Redirigir a la página principal
+    return false; // Evita el envío del formulario
+    }
+
+  </script>
+
+</body>
+
+</html>
