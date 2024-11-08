@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <button onclick="alert('js executed inline')"> Clickame </b>
+        <button id="xx"> click me </button>
+        <h1 id="resultado"> .... </h1>
+        <div class=""></div>
+
+    <script>  
+    document.getElementById("xx").onclick = myFunc;
+
+function myFunc() {
+    document.getElementById("resultado").innerHTML = ' Ha funcionado';
+}
+
+    </script>
+
+</body>
+
+</html>
