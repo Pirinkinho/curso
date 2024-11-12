@@ -1,0 +1,111 @@
+
+/* Estilos generales */
+
+body {
+    /* Utiliza flexbox para organizar los elementos dentro del body */
+    display: flex; 
+
+    /* Alinea los elementos en el eje horizontal al centro */
+    justify-content: center; 
+
+    /* Alinea los elementos en el eje vertical al centro */
+    align-items: center; 
+
+    /* Establece la altura del body al 100% de la altura de la ventana del navegador */
+    height: 100vh; 
+
+    /* Elimina los márgenes por defecto del body, asegurando que el contenido ocupe toda la ventana */
+    margin: 0; 
+    
+    /* Establece la fuente de texto predeterminada para todo el contenido del body */
+    font-family: Arial, sans-serif; 
+    
+    /* Establece el color de fondo azul para toda la página */
+    background-color: #1c9bc9; 
+}
+
+
+/* Estilos generales para el contenedor de resultados */
+
+.resultados {
+    /* Centra el texto dentro del contenedor de resultados */
+    text-align: center; 
+
+    /* Añade 20px de espacio alrededor del contenido del contenedor */
+    padding: 20px; 
+
+    /* Permite que el texto largo se divida en varias líneas si es necesario para evitar desbordamientos */
+    overflow-wrap: break-word; 
+
+    /* Asegura que las palabras largas se dividan si es necesario para no desbordar el contenedor */
+    word-wrap: break-word; 
+}
+
+
+/* Ajustar el tamaño del texto para que no se salga del contenedor */
+
+.resultados h1,
+
+.resultados p {
+
+    /* Añade un margen de 10px arriba y abajo del título y los párrafos */
+    margin: 10px 0; 
+
+    /* Ajusta el tamaño del texto a 1.2 veces el tamaño del texto por defecto */
+    font-size: 1.2em; 
+
+    /* Permite que las palabras largas se dividan en varias líneas para que no desborden el contenedor */
+    word-break: break-word; 
+
+    /* Establece la altura de las líneas en 1.4 veces el tamaño del texto para mejorar la legibilidad */
+    line-height: 1.4; 
+}
+
+
+/* Asegura que las imágenes no se desborden */
+.resultados img {
+
+    /* Alinea la imagen verticalmente al centro de la línea de texto */
+    vertical-align: middle; 
+
+    /* Añade un margen de 5px a la izquierda de la imagen para separar ligeramente de otros elementos */
+    margin-left: 5px; 
+
+    width: 40px; /* Establece un tamaño fijo para la imagen de 40px de ancho */
+
+    height: 40px; /* Establece un tamaño fijo para la imagen de 40px de alto */
+}
+
+
+/* Adaptar el tamaño del contenedor según el texto */
+.container {
+    width: 100%; /* Hace que el contenedor ocupe el 100% del ancho disponible */
+
+    /* Limita el ancho máximo del contenedor a 800px para evitar que se estire demasiado en pantallas grandes */
+    max-width: 800px;  
+
+    /* Permite que la altura del contenedor se ajuste automáticamente según
+    el contenido, sin necesidad de un valor fijo */
+    height: auto;  
+     
+    /* Añade 20px de espacio alrededor del contenido del contenedor */
+    padding: 20px; 
+
+    /* Añade un borde de 1px de grosor y color gris claro alrededor del contenedor */
+    border: 1px solid #ddd; 
+
+    /* Establece un color de fondo verde claro para el contenedor */
+    background-color: #a7ad32; 
+
+    /* Añade una sombra sutil alrededor del contenedor para darle profundidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+    /* Aplica bordes redondeados con un radio de 8px para suavizar las esquinas */
+    border-radius: 8px; 
+
+    /* Asegura que el padding y el borde se incluyan en el tamaño total del contenedor */
+    box-sizing: border-box; 
+
+    /* Alinea el texto a la izquierda dentro del contenedor */
+    text-align: left; 
+}

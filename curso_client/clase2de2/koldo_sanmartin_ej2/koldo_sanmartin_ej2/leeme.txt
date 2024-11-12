@@ -1,0 +1,194 @@
+
+* Curso albañiles digitales.
+* Módulo client.
+* Autor: Koldo Sanmartín.
+* Fecha: Lunes 11/11/2024.
+
+
+* Descripción de los ejercicios (2 de la clase 2):
+
+Nota: Este es un ejercicio sobre el que se basará el proyecto final.
+Realizaremos un pequeño proyecto de actualización sin cambiar de página (AJAX),
+consultando a una API pública comercial con información meteorológica (OpenWeather).
+En primer lugar, y de manera similar a la que aprendimos en el módulo de Core Javascript,
+haremos una llamada a una API externa. Como la llamada tiene un retardo, podemos
+usar una estrategia basada en promises y escuchar la respuesta.
+Después, con la información recibida y con los conocimientos de JS y las APIs HTML5
+gestionaremos la respuesta para manipular el DOM creado con nuestro documento HTML.
+
+Pasos previos (No evaluables):
+1. Crear una cuenta en OpenWeather
+○ Este paso no se evalúa y es posible compartir una misma cuenta entre
+alumnos.
+○ Las llamadas a la api necesitan un identificador de cuenta llamado AppId
+Un ejemplo de AppId sería : 2123b15abf5dbccb4b78d19ccea8dd7d.
+○ En el momento de escribir esto hay un límite de 1000 llamadas diarias por
+cada cuenta.
+○ Es recomendable testear la llamada con cURL, postman u otra herramienta
+a gusto del alumno.
+
+Pasos HTML:
+2. Crea una página web que contenga un “formulario” con dos elementos tal y como
+ha aprendido el alumno.
+a. El primer elemento será un campo de texto(textfield) donde el usuario
+introduzca una localidad.
+b. El segundo elemento será un botón que el usuario podrá clickar.c.
+Esta vez, no usaremos formulario <form> que nos envíe los datos recogidos
+a una URL, sino que utilizaremos eventos Javascript. Es decir, esperaremos a
+que el usuario pulse un botón para ejecutar un código determinado.
+
+3. Junto al formulario, debemos mostrar los siguientes datos para que quede una
+frase tipo a En Tajonar, Es la previsión meteorológica es de “nubes dispersas”. La
+temperatura es de 29ºC , con una humedad relativa del 65%
+
+4. Indudablemente deberemos usar un documento javascript al que haremos
+referencia con <script src=”...”></script>
+Para esto será necesario que dejemos espacios en blanco identificados que
+después podamos rellenar según extraigamos datos de la la API
+<p> En <span id=”localidad”> … </span> la previsión meteorológica es
+de “<span id=”previsionTexto”> … </span> “
+Pasos Javascript
+
+5. Debemos recibir el feedback del usuario cuando pulse el botón. Para ello debemos
+a. Identificar al botón
+b. Asignarle un event_listener para el evento “click”
+
+6. Una vez que se dispara el evento debemos gestionarlo para que realice las
+acciones pedidas:
+
+a. Realizar la llamada (fetch)
+
+b. Recibir asíncronamente la respuesta a la llamada
+
+c. Identificar dentro de la respuesta los campos que necesitamos:
+
+i.Localidad para la que estamos haciendo la petición
+ii.La previsión meteorológica en texto. “Chubascos leves”,
+“Parcialmente nublado”, “Soleado”, …
+iii.Temperatura en ºC
+iv.Humedad relativa en %
+
+d. Llevar estos elementos a los correspondientes elementos que hemos
+creado en el documento HTML
+
+Notas:
+
+● Los resultados de cada alumno serán diferentes dependiendo de cómo se
+apliquen los estilos. Los entregables podrán ser publicados y visibles por el resto dealumnos. 
+Podrán ser usados en clase para compartir experiencias y mejorar el conocimiento colectivo.
+
+● Sí se valoran los comentarios sobre el código.
+
+● No está permitida cualquier práctica peligrosa con javascript. Esto incluye , entre
+otras, la lectura de cookies/localstorage/sessionstorage o similares, comunicación
+externa o cualquier otra práctica que impersone al usuario o ponga en riesgo su
+privacidad.
+
+●Ejemplo de código devuelto por la API:
+
+{
+"coord": {
+"lon": 0,
+"lat": 0
+},
+"weather": [
+{
+"id": 804,
+"main": "Clouds",
+"description": "nubes",
+"icon": "04n"
+}
+],
+"base": "stations",
+"main": {
+"temp": 299.59,
+"feels_like": 299.59,
+"temp_min": 299.59,
+"temp_max": 299.59,
+"pressure": 1012,
+"humidity": 78,
+"sea_level": 1012,
+"grnd_level": 1012
+},
+"visibility": 10000,
+"wind": {
+"speed": 5.85,
+"deg": 177,
+"gust": 5.31
+},"clouds": {
+"all": 100
+},
+"dt": 1673460850,
+"sys": {
+"sunrise": 1673417038,
+"sunset": 1673460667
+},
+"timezone": 0,
+"id": 6295630,
+"name": "Globe",
+"cod": 200
+}
+
+Entrega: Subir los diferentes archivos en la plataforma Moodle.
+
+* Jerarquía de directorios utilizada:
+
+.
+├── capturas_pantalla
+│   ├── Captura desde 2024-11-11 20-18-36.png
+│   └── Captura desde 2024-11-11 20-21-54.png
+├── Ejercicio JS 2.pdf
+├── img
+│   ├── 01d@2x.png
+│   ├── 01n@2x.png
+│   ├── 01n.png
+│   ├── 02d@2x.png
+│   ├── 02n@2x.png
+│   ├── 03d@2x.png
+│   ├── 03n@2x.png
+│   ├── 04d@2x.png
+│   ├── 04n@2x.png
+│   ├── 09d@2x.png
+│   ├── 09n@2x.png
+│   ├── 10d@2x.png
+│   ├── 10n@2x.png
+│   ├── 11d@2x.png
+│   ├── 11n@2x.png
+│   ├── 13d@2x.png
+│   ├── 13n@2x.png
+│   ├── 50d@2x.png
+│   └── 50n@2x.png
+├── index.html
+├── leeme.txt
+├── mi_script.js
+├── repuesta_json.js
+└── styles.css
+
+
+* Archivos asociados al proyecto:
+
+- Los que se ven en la jerarquía de directorios.
+(Todos ellos encriptados en koldo_sanmartin_ej2.zip)
+
+
+* Para ejecutar archivo index.html, doblr click en él.
+
+
+* Nota final:
+
+1. Crear una cuenta en OpenWeather
+○ Este paso no se evalúa y es posible compartir una misma cuenta entre
+alumnos.
+○ Las llamadas a la api necesitan un identificador de cuenta llamado AppId
+Un ejemplo de AppId sería : 2123b15abf5dbccb4b78d19ccea8dd7d.
+○ En el momento de escribir esto hay un límite de 1000 llamadas diarias por
+cada cuenta.
+○ Es recomendable testear la llamada con cURL, postman u otra herramienta
+a gusto del alumno.
+
+    Me he creado una cuenta en openweather, pero tengo problemas con autentificación
+de clave API. Lo he hecho con curl y postman con varias claves API y siempre me da 
+error 401, no autorizado, como se ve en los pantallazos.
+    Pero el html funciona, he puesto varias localidades y va bien.
+
+  

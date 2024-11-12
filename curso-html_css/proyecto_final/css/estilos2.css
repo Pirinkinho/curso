@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(144, 176, 172);
@@ -69,6 +70,7 @@ nav a:hover {
 .rotate {
   display: inline-block; /* Necesario para que la transformación funcione correctamente */
   animation: rotateInifinite 10s linear infinite; /* Llama a la animación en hover */
+  color:darkviolet
 }
 
 @keyframes rotateInifinite {
@@ -80,8 +82,9 @@ nav a:hover {
   }
 }
 
-.animation {
-  animation: fadeIn 2s infinite;;
+.animation1 {
+  animation: fadeIn 2s infinite;
+  color:rgb(47, 2, 2)
 }
 
 @keyframes fadeIn {
@@ -91,6 +94,38 @@ nav a:hover {
   75% { opacity: 0.5; }
   100% { opacity: 0; }
 }
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  57% {
+    color: blue;
+  }
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.animation2 {
+  animation: rainbow 3s infinite; /* Duración de la animación de 4 segundos */
+}
+
 
 .grid-container {
   display: grid;
@@ -141,4 +176,22 @@ nav a:hover {
  
   top: 0; /* Posiciona la imagen al principio */
   left: 0; /* Posiciona la imagen al principio */
+}
+/* Estilo para el botón dentro de los items */
+.grid-button {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 8px;
+  font-size: 1em;
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color de texto */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.grid-button:hover {
+  background-color: #45a049; /* Color al hacer hover */
 }

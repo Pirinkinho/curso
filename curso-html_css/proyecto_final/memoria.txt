@@ -1,5 +1,284 @@
 
-* referencia de página de flat icons
+* Curso albañiles digitales.
+* Módulo HTML-CSS.
+* Autor: Koldo Sanmartín.
+* Fecha: martes 12/11/2024.
+* Titulo: “Proyecto Final Modulo HTML y CSS”.
+* Nombre Temática: “Sitio Web de cuidado del planeta”
+
+
+* Descripción:
+
+Proyecto Final HTML y CSS.
+
+    Se trata de realizar un pequeño sitio web compuesto por los diversos tipos 
+de documentosque hemos visto en clase.
+Este sitio web, tendrá una única temática a elección del alumno. Ejemplos de 
+esto puede ser un portal de recetas de cocina, videojuegos, viajes, etc.
+
+Este sitio debe tener las siguientes características:
+
+1. Una página de login, consistente en un formulario que pregunte, al menos, por
+usuario y contraseña.
+
+    a. El formulario debe ocultar la contraseña escrita por el usuario en pantalla.
+
+    b. Deberá tener un botón de acción. Puesto que no estamos enviando el input
+    del usuario al servidor (esto es materia de otros módulos) asumimos que
+    las credenciales serán correctas.
+
+    c. Deberá tener una opción de “recuperar contraseña” que lleve a la siguiente
+    página.
+
+2. Página de “recuperar contraseña”:
+
+    a. Esta página contendrá un nuevo formulario con campos input adicionales
+    de seguridad a elección del usuario (i.e: email, teléfono y fecha de
+    nacimiento).
+
+    b. Igualmente, el botón de acción no hará nada. Simplemente volverá a la
+    página anterior.
+
+3. Una página principal de entrada con diversos elementos:
+
+    a. Está pagina debe tener un mensaje de bienvenida.
+
+    b. Esta página debe tener un elemento de navegación <nav> que nos permita
+    navegar al resto de páginas. La navegación puede hacerse con links de
+    texto, o clicando en imágenes (Se recomienda usar transiciones).
+
+4. Páginas de contenido:
+
+    a. Al menos tres páginas html con contenido.
+    Pueden ser copias casi idénticas. Por ejemplo, si estamos haciendo un
+    portal de recetas, tres recetas diferenciadas en tres documentos HTML:
+    receta1.html, receta2.html, receta3.html.
+
+    b. Las páginas tendrán un link con la opción de volver a la página principal.
+
+    c.Estas tres páginas usarán el mismo archivo CSS ubicado en la carpeta /css.
+
+5. Pagina de contacto:
+
+    a. Debe contener un mapa dentro de un iframe a una supuesta localización
+    de la empresa/servicio/…. El servicio puede ser Google Maps,
+    OpenStreetMaps u otros.
+
+    b. Debe tener un formulario de contacto (no necesita que se envíe el resultado).
+
+
+--- Especificaciones sobre el estilo:
+
+1. La página debe tener un favicon que sea visible en la barra del navegador (Como
+visto en el ejercicio 2 de HTML).
+
+2. El formulario de login debe tener un mínimo de validación del input del usuario (a
+elección del alumno) como validar que un email o teléfono tenga un formato
+correcto.
+
+3. La página de bienvenida, debe tener una animación que se ejecute
+automáticamente al iniciar la página.
+
+    a. La animación puede ser tan sencilla como quiera el alumno, pero debe ser
+    fácilmente identificable para el profesor.
+
+    b. Se permite copiar animaciones de internet, a condición de que el origen
+    sea incluido en la memoria.
+
+4. Los enlaces en esta página de bienvenida deberán tener transiciones usando
+:hover.
+
+
+--- Nombre y estructura de ficheros:
+
+Aunque los archivos a utilizar dependerá de cada proyecto y el nombrado de estos
+es libre, el alumno debe respetar las siguientes normas sobre el nombre y la
+estructura de ficheros:
+
+-Index.html //página de entrada, que abrirá el profesor para la evaluación.
+-/css //directorio donde almacenar todos los archivos css.
+-/img //directorio donde almacenar todas las imágenes.
+
+Notas adicionales:
+
+● Los resultados de cada alumno serán diferentes dependiendo de cómo se
+apliquen los estilos. Los entregables podrán ser publicados y visibles por el resto de
+alumnos. Podrán ser usados en clase para compartir experiencias y mejorar el
+conocimiento colectivo.
+
+● Al igual que hemos visto en clase, las buenas prácticas como poner comentarios
+sobre el código siempre dejan buena impresión.
+
+● Lo contrario sucede con malas prácticas, como usar !important en CSS, dejar
+elementos HTML sin cerrar correctamente etc…
+
+
+--- Normas Entrega:
+
+La entrega se hará en la plataforma Moodle.
+
+El formato deberá ser una carpeta comprimida (.zip, .rar) de manera que contenga los
+diferentes entregables y la jerarquía de directorios utilizada por el alumno.
+
+Se debe entregar una memoria (máximo aproximado de dos hojas) que incluya los
+siguientes apartados:
+
+1. Un encabezado del proyecto que contenga:
+
+    a. Titulo: “Proyecto Final Modulo HTML y CSS”.
+
+    b. Nombre del alumno.
+
+    c. Nombre Temática: (i.e: “Sitio Web de recetas de cocina”).
+
+2. Temática:
+    Breve descripción de la temática.
+
+3. Mapa del sitio:
+    Breve descripción de la navegación del sitio.
+
+4. Listado técnicas/herramientas/recursos:
+
+Con el fin de evitar que el profesor pase por alto detalles, se pide enumerar en un
+listado, las técnicas y recursos clave aprendidos en clase que se han usado, y
+donde se han aplicado.
+
+Esto es explicar donde se han incorporado estilos clave como animaciones y
+transiciones o elementos multimedia.
+
+ _________________________________________________________________________________________
+| Tipo de técnica / herramienta  |   página/s          |   Elemento/s sobre el que se usa |
+| / recurso utilizado            |                     |                                  |
+|________________________________|_____________________|__________________________________|
+| Transicion                     |   index.html        |     Boton de envío               |
+|________________________________|_____________________|__________________________________|
+| @media queries                 |   Todas las páginas |     Icono de la página           |
+|________________________________|_____________________|__________________________________|
+
+5. Recursos externos:
+
+    Se permite usar recursos de internet, pero tenemos que indicar una referencia a
+donde lo hemos cogido. Esto es, listamos los recursos utilizados en nuestro diseño.
+Esto incluye elementos multimedia, código, o cualquier otro item.
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+* Breve daecripción:
+
+    Se trata de una página ecológica para proteger nuestro planeta y animar a
+cuidarlo, junto a los seres que nos acompañan. Intentar mentalizar que es como
+que todos juntos estamos en un arca (como Noé) y viajamos juntos hacia algún
+lugar, cuidándonos mutuamente como buenos compañeros de viaje.
+
+* Jerarquía de directorios utilizada:
+
+.
+├── contacto.html
+├── css
+│   ├── estilos1.css
+│   ├── estilos2.css
+│   ├── estilos3.css
+│   ├── estilos.css
+│   ├── estilos_impares.css
+│   └── estilos_pares.css
+├── img
+│   ├── animales.png
+│   ├── avestruz.png
+│   ├── bat.png
+│   ├── bonobo.png
+│   ├── bullfinch.png
+│   ├── canguro.png
+│   ├── cnidaria.png
+│   ├── colibri.png
+│   ├── elefante.png
+│   ├── elephant.png
+│   ├── giraffe.png
+│   ├── leopardo.png
+│   ├── lion.png
+│   ├── osos.png
+│   ├── penguin.png
+│   ├── pinguinos.png
+│   ├── pulpo.png
+│   ├── ranas.png
+│   ├── sloth.png
+│   └── wolf.png
+├── index.html
+├── index.pdf
+├── links
+│   ├── pagina_animales.html
+│   ├── pagina_bonobo.html
+│   ├── pagina_canguro.html
+│   ├── pagina_cnidaria.html
+│   ├── pagina_colibri.html
+│   ├── pagina_elefante.html
+│   ├── pagina_osos.html
+│   ├── pagina_pinguinos.html
+│   └── pagina_ranas.html
+├── login.html
+├── memoria.txt
+├── pagina_principal.html
+├── recuperar_contrasena.html
+└── texto.txt
+
+
+* Archivos utilizados:
+
+-index.html                 --> página de entrada, que abrirá el profesor para la evaluación.
+-/css                       --> directorio donde almacenar todos los archivos css.
+-/img                       --> directorio donde almacenar todas las imágenes e iconos.
+-/links                     --> directorio de links varias incluídas en el proyecto.
+-contacto.html              --> página de contacto.
+-index.pdf                  --> archivo descripción del proyecto.
+-login.html                 --> página de login. 
+-memoria.txt                --> este escrito.
+-pagina_principal.html      --> menú principal.
+-recuperar_contrasena.html  --> para recuperar la contraseña.
+-texto.js                   --> texto usado en el proyecto.
+
+- Todos ellos encriptados en:
+-koldo_sanmartin_pf_html.zip
+
+
+* Mapa del sitio:
+
+- Comienzas pinchando index.html y te lleva a -> a. y b.:
+    -a. contacto, la página de contacto.
+        -te devuelve a la página anterior.
+    -b. iniciar sesión, página de login, que te dirige a -> c. y d.:
+        -c. recuperar contraseña, la recuperas y te envía un alert.
+            -te devuelve a la página anterior.
+        -d. página principal, que apunta a -> e., f. y g.:
+            -e. va a la página de login.
+            -f. página de contacto.
+            -g. pinchando cada una de las fotos te lleva a una página
+                distinta con texto y foto, que a su vez te devuelven
+                a la página principal.
+
+
+* Listado técnicas/herramientas/recursos:
+
+ ____________________________________________________________________________________________
+| Tipo de técnica / herramienta  | Página/s               |  Elemento/s sobre el que se usa  |
+| / recurso utilizado            |                        |                                  |
+|________________________________|________________________|__________________________________|
+| Transformaciones 3D            | index.html             |  Texto girando                   |
+|                                | pagina_principal.html  |  Texto girando                   |
+|________________________________|________________________|__________________________________|
+| Animación de parpadeo          | index.html             |  Texto parpadeando               |
+|                                | pagina_principal.html  |  Texto parpadeando               |
+|________________________________|________________________|__________________________________|
+| Animación de efecto arcoíris   | pagina_principal.html  |  Texto con cambio de color       |
+|________________________________|________________________|__________________________________|
+| @media queries                 | Todas las páginas      |  Icono de la página              |
+|________________________________|________________________|__________________________________|
+
+ 
+* Elementos utilizados:
+
+- Referencia de página de flat icons (de ahí copié los iconos):
 
 (lobo) <a href="https://www.flaticon.com/free-icons/wolf" title="wolf icons">Wolf icons created by PLANBSTUDIO - Flaticon</a> 
 (pájaro) <a href="https://www.flaticon.com/free-icons/fish" title="bullfinch icons">Bullfinch icons created by Freepik - Flaticon</a>
@@ -9,3 +288,5 @@
 (elefante) <a href="https://www.flaticon.com/free-icons/elephant" title="elephant icons">Elephant icons created by Freepik - Flaticon</a>
 (murciélago)  <a href="https://www.flaticon.com/free-icons/halloween-party" title="halloween party icons">Halloween party icons created by srip - Flaticon</a>
 (jirafa) <a href="https://www.flaticon.com/free-icons/giraffe" title="giraffe icons">Giraffe icons created by Smashicons - Flaticon</a>
+
+- El resto de imágenes cogidas de wikipedia.

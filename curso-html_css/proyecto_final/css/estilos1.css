@@ -1,0 +1,71 @@
+   /* Estilos generales */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Fondo de la página con imagen del pulpo */
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../img/pulpo.png'); /* Cambia a la ruta de tu imagen */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* No repite la imagen */
+    color: #333; /* Color del texto para mejor legibilidad */
+  }
+
+  /* Contenedor del título y menú */
+  .container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor del contenedor */
+  }
+
+  /* Barra de navegación */
+  nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #0056b3;
+  }
+
+  .rotate {
+    display: inline-block; /* Necesario para que la transformación funcione correctamente */
+    animation: rotateInifinite 10s linear infinite; /* Llama a la animación en hover */
+    color: darkmagenta;
+  }
+  
+  @keyframes rotateInifinite {
+    from {
+      transform: rotateY(0deg); /* Comienza sin rotación */
+    }
+    to {
+      transform: rotateY(360deg); /* Rota completamente */
+    }
+  }
+  
+  .animation {
+    animation: fadeIn 2s infinite;
+    color: rgb(222, 7, 50);
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    25% { opacity: 0.5; }
+    50% { opacity: 1; }
+    75% { opacity: 0.5; }
+    100% { opacity: 0; }
+  }
+  

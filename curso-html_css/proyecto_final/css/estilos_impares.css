@@ -1,0 +1,83 @@
+
+/* Estilos3.css */
+/* páginas impares. */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #d9147d;
+  overflow: hidden; /* Esto ayuda a prevenir cualquier desplazamiento inesperado */
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Asegura que el contenedor ocupe todo el alto de la ventana */
+  flex-direction: row; /* Asegura que los hijos se alineen en fila (horizontalmente) */
+}
+
+.text-section {
+  width: 50%; /* Ocupa la mitad de la pantalla */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el texto verticalmente */
+}
+
+.text-section h1 {
+  font-size: 24px;
+  color: #fff; /* Blanco para que contraste con el fondo */
+  margin-bottom: 10px;
+}
+
+.text-section h2 {
+  font-size: 20px;
+  color: #fff; /* Blanco para que contraste con el fondo */
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff; /* Blanco para que contraste con el fondo */
+}
+
+.image-section {
+  width: 50%; /* Ocupa la mitad de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Fondo blanco para la sección de la imagen */
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantiene la relación de aspecto, recortando si es necesario */
+}
+
+
+.center-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el botón en el medio de la pantalla */
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}

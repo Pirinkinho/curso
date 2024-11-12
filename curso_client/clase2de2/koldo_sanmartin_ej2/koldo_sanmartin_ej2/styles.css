@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #7ec91c; /* Fondo de la página */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #bb1616;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilos para el formulario */
+.formulario {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #4a90e2; /* Fondo del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.formulario input[type="search"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formulario input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.formulario input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los resultados */
+.resultados h1,
+.resultados p {
+    margin: 10px 0;
+}
+
+.resultados img {
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+}
