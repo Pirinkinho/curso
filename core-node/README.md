@@ -15,6 +15,8 @@ Node.js is a powerful runtime environment that allows you to build fast and scal
 
 This project includes a basic "calculator" that can add and subtract numbers. It also has tests to make sure it works correctly.
 
+Also 2 folders with code and clases has been added, in order to continue learning Node.js
+
 Let's Get Started!
 
 1. **What you'll need:**
