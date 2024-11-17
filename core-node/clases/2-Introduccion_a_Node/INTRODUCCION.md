@@ -14,7 +14,7 @@ Investigando descubre que podría aplicar Node.js a una idea personal, de una we
 
 ##### https://u.top.ia
 
-- TAREA OPCIONAL (para subir nota, investigar como usar dominios locales)
+- TAREA OPCIONAL (para subir nota, investigar como usar dominios locales) // (la he hecho)
 
 `u.top.ia`: Un software para hogares inteligentes que enseña a programar y a automatizar tareas, a medida que genera un perfil optimizado de ti en un modelo de IA que se va entrenando con los datos diarios para mejorar tu rutina con mejores recomendaciones.
 
@@ -212,6 +212,33 @@ Que pasa si queremos librarnos del then y usar directamente await como en el pri
 // top-level async/await asynchronous example
 
 const fs = require('fs').promises; // points extra if you fix this ;)
+
+// Hay algo raro en el código. El problema está relacionado con la importación de módulos en Node.js 
+// cuando se usa type: "module" en el archivo package.json.
+
+// ¿Qué está pasando?
+// Cuando usas "type": "module", Node.js habilita la funcionalidad de módulos ECMAScript (import / export) en lugar de CommonJS
+// (require). Debido a esto, debes usar import en lugar de require, lo que significa que el código de importación que estás usando
+// (require('fs').promises) es incorrecto.
+
+// Solución:
+// En lugar de require, debes usar import. Además, las importaciones de módulos en un entorno con "type": "module" deben manejarse 
+// de la siguiente manera:
+
+// import { promises as fs } from 'fs'; // Correct import statement for modules
+
+// Si prefieres usar const fs = require('fs').promises; en lugar de la sintaxis de import, no debes poner "type": "module" en 
+// tu archivo package.json.
+
+// ¿Por qué?
+// La clave "type": "module" habilita los módulos ECMAScript, lo que significa que debes usar import y export, y no require.
+// Si deseas seguir utilizando require (como en el ejemplo con fs), entonces tu proyecto debe seguir usando la sintaxis CommonJS.
+
+// Solución:
+// Elimina la línea "type": "module" del archivo package.json
+
+// En Node.js, sin "type": "module" en el package.json, Node.js utiliza CommonJS por defecto, que es el sistema de módulos 
+// tradicional de Node. En este sistema, la función require se utiliza para importar módulos, y module.exports se usa para exportar.
 
 const filePath = './file.txt';
 
