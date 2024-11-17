@@ -1,0 +1,12 @@
+{
+  "name": "@core-node-web/api",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "serve": "node ./src/lib/api.js",
+    "watch": "nodemon ./src/lib/api.js",
+    "build": "nx build api",
+    "test": "nx test api",
+    "lint": "nx lint api"
+  }
+}

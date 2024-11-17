@@ -1,0 +1,8 @@
+Este módulo está diseñado para estudiantes que ya tienen una base sólida en HTML y CSS y están listos para ampliar sus habilidades hacia el desarrollo interactivo mediante JavaScript del lado del cliente. Comenzaremos con los fundamentos de JavaScript, enfocándonos en su sintaxis básica, estructuras de control y manipulación de datos, con el fin de proporcionar una comprensión clara de cómo JavaScript puede transformar páginas estáticas en aplicaciones dinámicas.
+
+A medida que los estudiantes progresen, se adentrarán en la manipulación del Document Object Model (DOM), aprendiendo a seleccionar, modificar y crear elementos HTML de forma dinámica. Este conocimiento permitirá la creación de interfaces de usuario interactivas y la integración de comportamiento personalizado en las páginas web. Se prestará especial atención a la gestión de eventos, lo que permitirá a los estudiantes implementar interacciones complejas, como validación de formularios, menús desplegables, y efectos dinámicos en respuesta a las acciones del usuario.
+
+Los estudiantes también explorarán cómo utilizar JavaScript para realizar peticiones AJAX, permitiendo la comunicación asíncrona con servidores y la actualización de contenido sin necesidad de recargar la página.
+
+Al concluir este módulo, los estudiantes habrán adquirido una comprensión de JavaScript del lado del cliente, lo que les permitirá desarrollar aplicaciones web interactivas y dinámicas de manera efectiva. Estos conocimientos serán fundamentales para la integración con frameworks más avanzados como React, que se abordan en módulos posteriores. Además, la sólida base en JavaScript proporcionará las habilidades necesarias para afrontar con confianza desafíos más complejos en el desarrollo front-end.
+
