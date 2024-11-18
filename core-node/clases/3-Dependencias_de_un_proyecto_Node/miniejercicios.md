@@ -1,8 +1,8 @@
 
-- 1. Id a la terminal y teclead `npm` para comprobar que teneis la herramienta instalada:
+# -1. Id a la terminal y teclead `npm` para comprobar que teneis la herramienta instalada:
 
 ```bash
-curso@video11:~/workspace/curso$ npm
+curso@koldo:~/workspace/curso$ npm
 npm <command>
 
 Usage:
@@ -36,9 +36,10 @@ More configuration info: npm help config
 Configuration fields: npm help 7 config
 
 npm@9.2.0 /usr/share/nodejs/npm
-curso@video11:~/workspace/curso$ 
+curso@koldo:~/workspace/curso$ 
+
 ```
-- 2. Crear un `package.json` es tan sencillo como ejecutar el comando `npm init`.
+# -2. Crear un `package.json` es tan sencillo como ejecutar el comando `npm init`.
 
 Hay dos maneras principales de hacerlo:
 

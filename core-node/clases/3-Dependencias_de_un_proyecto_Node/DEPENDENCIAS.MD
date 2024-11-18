@@ -203,18 +203,17 @@ cd workspace/core-node/code/node-dependencies/3-exercise-package-json
 
 Ver el contenido de la carpeta:
 
-```bash`
+```bash
 ls -R
+```
 
-````
-
-En esta carpeta, debería ver una subcarpeta src con un archivo index.js ejecute el siguiente comando para crear el archivo package.json con valores predeterminados:
+En esta carpeta, debería ver una subcarpeta src con un archivo `index.js` ejecute el siguiente comando para crear el archivo package.json con valores predeterminados:
 
 ```bash
 npm init -y
-````
+```
 
-El archivo package.json que tiene un aspecto similar a este ejemplo:
+El archivo `package.json` que tiene un aspecto similar a este ejemplo:
 
 ```json
 {
@@ -231,7 +230,7 @@ El archivo package.json que tiene un aspecto similar a este ejemplo:
 }
 ```
 
-Modifique package.json con estos valores de propiedad:
+Modifique `package.json` con estos valores de propiedad:
 
 ```json
 name: "anfora-api"
@@ -241,7 +240,7 @@ keywords: ["API", "database"]
 author: "Elivan"
 ```
 
-El archivo package.json ahora debería ser similar a este código:
+El archivo `package.json` ahora debería ser similar a este código:
 
 ```json
 {
@@ -260,15 +259,15 @@ El archivo package.json ahora debería ser similar a este código:
 }
 ```
 
-En la sección scripts, agregue un nuevo script denominado start encima del script test:
+En la sección `scripts`, agregue un nuevo script denominado start encima del script test:
 
 ```json
 "start": "node ./src/index.js",
 ```
 
-Guarde los cambios y cierre el archivo package.json.
+Guarde los cambios y cierre el archivo `package.json`.
 
-Para iniciar el proyecto con la acción start, escriba este comando o use el interfaz interactivo del package.json y tenga en cuenta la serie de instrucciones de la consola:
+Para iniciar el proyecto con la acción `start`, escriba este comando o use el interfaz interactivo del `package.json` y tenga en cuenta la serie de instrucciones de la consola:
 
 ```bash
 npm start
@@ -284,11 +283,11 @@ Ahora tiene un buen archivo package.json en el que puede compilar a medida que c
 
 ---
 
-## Incorporación de paquetes al proyecto de Node.js
+## Incorporación de paquetes al proyecto de `Node.js`
 
-Node.js tiene paquetes integrados para tareas como la administración de archivos y el control HTTP. Pero también hay una amplia gama de paquetes de terceros que se ofrecen en el [registro NPM](https://www.npmjs.com).
+`Node.js` tiene paquetes integrados para tareas como la administración de archivos y el control `HTTP`. Pero también hay una amplia gama de paquetes de terceros que se ofrecen en el [registro NPM](https://www.npmjs.com).
 
-### Cuándo y cómo seleccionar un paquete npm
+### Cuándo y cómo seleccionar un paquete `npm`
 
 Como nuevo desarrollador de ANFORA, debe agregar funcionalidad a un proyecto. Podría escribir el código usted mismo, pero decide usar un paquete existente. Esta decisión de desarrollo es un escenario común. Antes de usar código de terceros es importante aplicar el siguiente análisis:
 
@@ -359,7 +358,7 @@ npm install user/repo#master  # Instala desde la rama master
 npm install user/repo#8e26357 # Instala desde un commit específico
 ```
 
-**Archivos (tarball o carpeta local):**
+**Archivos (`tarball` o carpeta local):**
 
 Puedes instalar paquetes desde un archivo [tarball](https://www.google.com/search?q=tarball&rlz=1C5CHFA_enES999ES999&oq=tarball&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIGCAcQABgeMgYICBAAGB4yBggJEAAYHtIBCDI3MzZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8) (.tar, .tgz, etc.) o una carpeta local.
 
@@ -423,37 +422,37 @@ Estos ejemplos muestran cómo instalar paquetes npm desde diferentes fuentes. Se
 
 Una vez que seleccione un paquete, compruebe sus dependencias para tener en cuenta los siguientes factores:
 
-- **Tamaño:** Más dependencias significan una superficie mayor. El tamaño de la superficie es importante si tiene limitaciones de ancho de banda o hardware. Recuerde que la instalación de un paquete también instala sus dependencias. Esto puede dar lugar a una carpeta node_modules grande.
+- **Tamaño:** Más dependencias significan una superficie mayor. El tamaño de la superficie es importante si tiene limitaciones de ancho de banda o hardware. Recuerde que la instalación de un paquete también instala sus dependencias. Esto puede dar lugar a una carpeta `node_modules` grande.
 - **Popularidad:** La popularidad de un paquete puede indicar su calidad.
 - **Licencias:** Si planea vender el software, asegúrese de que todas las licencias del paquete de dependencias permiten reutilizarlas y revenderlas.
 - **Mantenimiento activo:** Evite las dependencias que están en desuso o que rara vez se actualizan.
 
-Para obtener más información sobre un paquete, visite su página de paquetes en NPM y su repositorio de GitHub. También puede usar el - comando npm: `npm view <package name>`.
+Para obtener más información sobre un paquete, visite su página de paquetes en NPM y su repositorio de GitHub. También puede usar el comando `npm`: `npm view <package name>`.
 
 ### Procedimiento para instalar un paquete
 
-Para instalar un paquete, use la CLI de npm instalada con Node.js. Puede agregar un paquete al proyecto Node.js con el comando npm install en el terminal.
+Para instalar un paquete, use la `CLI` de `npm` instalada con `Node.js`. Puede agregar un paquete al proyecto `Node.js` con el comando `npm instal`l en el terminal.
 
 ```bash
 npm install <name of package>
 ```
 
-Al ejecutar el comando install, la herramienta de línea de comandos se conecta a un registro global, captura el código y lo coloca en una carpeta node_modules en la raíz del proyecto.
+Al ejecutar el comando `install`, la herramienta de línea de comandos se conecta a un registro global, captura el código y lo coloca en una carpeta `node_modules` en la raíz del proyecto.
 
-Algunos modificadores comunes (flags --) para el comando install incluyen:
+Algunos modificadores comunes (`flags --`) para el comando `install` incluyen:
 
-En el caso de los paquetes de solo desarrollo, use `--save-dev` o `-D`. Este modificador guarda en la propiedad devDependencies de package.json. Estas dependencias suelen ser herramientas de formato, lint, compilación, transpilación y pruebas.
+- En el caso de los **paquetes de solo desarrollo**, use `--save-dev` o `-D`. Este modificador guarda en la propiedad `devDependencies` de `package.json`. Estas dependencias suelen ser herramientas de formato, lint, compilación, transpilación y pruebas.
 
-En el caso de los paquetes de solo producción, use `--production`.
+- En el caso de los **paquetes de solo producción**, use `--production`.
 Este modificador excluye los paquetes de solo desarrollo.
 
-Para las herramientas disponibles globalmente, use -g. Las herramientas de línea de comandos a menudo se instalan globalmente en lugar de importarlas en proyectos.
+- Para las **herramientas disponibles globalmente**, use `-g`. Las herramientas de línea de comandos a menudo se instalan globalmente en lugar de importarlas en proyectos.
 
-<!-- easter egg two - understand and document the use of .bin npx -g and other similar concepts -->
+**easter egg two - understand and document the use of .bin npx -g and other similar concepts**
 
-Las dependencias globales se instalan en un directorio de todo el sistema, no en el nivel de instrucción node_modules. Sin embargo, los paquetes globales pueden desordenar el sistema.
+Las dependencias globales se instalan en un directorio de todo el sistema, no en el nivel de instrucción `node_modules`. Sin embargo, los paquetes globales pueden desordenar el sistema.
 
-El comando npx lo resuelve instalando temporalmente paquetes. Use npx <name> para capturar un paquete, ejecutarlo y, a continuación, quitarlo.
+El comando `npx` lo resuelve instalando temporalmente paquetes. Use `npx <name>` para capturar un paquete, ejecutarlo y, a continuación, quitarlo.
 
 Después de la instalación, el directorio del proyecto tiene el siguiente aspecto:
 
@@ -466,11 +465,11 @@ src
 index.js
 ```
 
-### Comandos de la CLI de npm
+### Comandos de la `CLI` de `npm`
 
-La herramienta de línea de comandos de npm tiene bastantes comandos para ayudarle con tareas como instalar paquetes, crear paquetes e inicializar proyectos de Node.js.
+La herramienta de línea de comandos de `npm` tiene bastantes comandos para ayudarle con tareas como instalar paquetes, crear paquetes e inicializar proyectos de `Node.js`.
 
-Los comandos de NPM se dividen en categorías:
+Los comandos de `NPM` se dividen en categorías:
 
 - **Administración de dependencias:** Comandos para instalar, actualizar y quitar paquetes.
 - **Ejecución de scripts:** Comandos para administrar flujos de desarrollo, como pruebas y compilación de código.
@@ -485,11 +484,11 @@ npm --help
 
 ### Verificar instalaciones
 
-Para ver lo que hay en la carpeta package.json en cuanto a dependencias instaladas, use `npm list`.
+Para ver lo que hay en la carpeta `package.json` en cuanto a dependencias instaladas, use `npm list`.
 
-El comando `npm list` enumera todos los paquetes del directorio node_modules que se instalaron. Ten en cuenta que cada paquete instalado instaló todas sus propias dependencias.
+El comando `npm list` enumera todos los paquetes del directorio `node_modules` que se instalaron. Ten en cuenta que cada paquete instalado instaló todas sus propias dependencias.
 
-Dado que el comando list puede dar lugar a una larga lista, lo que dificulta su comprensión, puedes enumerar paquetes en diferentes profundidades con el comando list. En la profundidad 0, el comando muestra el mismo contenido que tiene en la sección dependencies del archivo package.json.
+Dado que el comando `list` puede dar lugar a una larga lista, lo que dificulta su comprensión, puedes enumerar paquetes en diferentes profundidades con el comando `list`. En la profundidad 0, el comando muestra el mismo contenido que tiene en la sección dependencies del archivo `package.json`.
 
 ```bash
 npm list --depth=<depth>
@@ -505,7 +504,7 @@ Si ha instalado el paquete `Jest`, `npm list --depth=0` producirá una salida si
 
 Si ya no necesita un paquete, quítelo. La eliminación de una dependencia mantiene el proyecto limpio y ahorra espacio.
 
-Esta limpieza es especialmente importante para las aplicaciones de página única (SPA), como Angular, React o Vue como ejemplos conocidos, pero se aplica en general.
+Esta limpieza es especialmente importante para las aplicaciones de página única (`SPA`), como Angular, React o Vue como ejemplos conocidos, pero se aplica en general.
 
 Estas aplicaciones agrupan y comprimen el código en un archivo o varios servidos al explorador.
 
@@ -523,9 +522,9 @@ La eliminación es útil cuando desea quitar varias dependencias sin ejecutar la
 
 ## Ejercicio: Instalación de paquetes
 
-El equipo de ANFORA planea desarrollar varias aplicaciones Node.js. Han encontrado Jest, un conocido marco de pruebas de configuración cero, en el registro npm. Quieren instalar Jest, escribir algunas pruebas y ejecutarlas para evaluar su eficacia.
+El equipo de ANFORA planea desarrollar varias aplicaciones `Node.js`. Han encontrado `Jest`, un conocido marco de pruebas de configuración cero, en el registro `npm`. Quieren instalar `Jest`, escribir algunas pruebas y ejecutarlas para evaluar su eficacia.
 
-### Adición de un paquete de prueba con la CLI de npm
+### Adición de un paquete de prueba con la `CLI` de `npm`
 
 Tiene algún código que extrae una dirección de una cadena. El trabajo es sencillo, siga los siguientes pasos:
 
@@ -550,7 +549,7 @@ address-parser.js
 package.json
 ```
 
-- Abra el archivo address-parser.js. Debería ser similar a este archivo:
+- Abra el archivo `address-parser.js`. Debería ser similar a este archivo:
 
 ```js
 exports.addressParser = function parseOrder(order) {
@@ -561,17 +560,17 @@ exports.addressParser = function parseOrder(order) {
 };
 ```
 
-- Esta función toma una cadena y analiza la información relativa al pedido que realiza un cliente, el lugar donde debe entregarse y el método de pago. Ahora se agregará Jest y se escribirán algunas pruebas para la función.
+- Esta función toma una cadena y analiza la información relativa al pedido que realiza un cliente, el lugar donde debe entregarse y el método de pago. Ahora se agregará `Jest` y se escribirán algunas pruebas para la función.
 
-- Cierre el archivo address-parser.js.
+- Cierre el archivo `address-parser.js`.
 
-- Ejecute este comando para instalar el paquete de Jest:
+- Ejecute este comando para instalar el paquete de `Jest`:
 
 ```bash
 npm install jest --save-dev
 ```
 
-- Después de instalar el paquete de Jest, abra el archivo package.json y busque la sección devDependencies. Debería ver una entrada similar a este ejemplo en la que el valor de la propiedad jest es un número de versión semántico:
+- Después de instalar el paquete de `Jest`, abra el archivo `package.json` y busque la sección `devDependencies`. Debería ver una entrada similar a este ejemplo en la que el valor de la propiedad jest es un número de versión semántico:
 
 ```json
 "devDependencies": {
@@ -579,25 +578,24 @@ npm install jest --save-dev
 }
 ```
 
-- En el archivo package.json, busque la sección scripts. Reemplace la entrada de la acción test por el código siguiente:
+- En el archivo `package.json`, busque la sección `scripts`. Reemplace la entrada de la acción `test` por el código siguiente:
 
 ```json
 "test": "jest"
 ```
 
-- Guarde los cambios y cierre el archivo package.json.
+- Guarde los cambios y cierre el archivo `package.json`.
 
-- En el terminal, cree una subcarpeta denominada **tests**.
+- En el terminal, cree una subcarpeta denominada **`tests`**.
 
 ```bash
 mkdir __tests__
 ```
 
-Nota
+Nota:
+Asegúrese de usar caracteres de subrayado dobles al crear la carpeta **`tests`**. La carpeta `tests` es una convención de nomenclatura que usa `Jest`, el marco de pruebas. `Jest` reconoce automáticamente los archivos de una carpeta `tests` (o archivos con `.test.` o `.spec.` en sus nombres) como archivos de prueba y los incluye al ejecutar pruebas. Esta convención ayuda a mantener los archivos de prueba organizados y fácilmente identificables en el proyecto.
 
-Asegúrese de usar caracteres de subrayado dobles al crear la carpeta **tests**. La carpeta tests es una convención de nomenclatura que usa Jest, el marco de pruebas. Jest reconoce automáticamente los archivos de una carpeta tests (o archivos con .test. o .spec. en sus nombres) como archivos de prueba y los incluye al ejecutar pruebas. Esta convención ayuda a mantener los archivos de prueba organizados y fácilmente identificables en el proyecto.
-
-- En la carpeta **tests**, cree un archivo denominado address-parser.js y agregue el contenido siguiente al archivo:
+- En la carpeta **`tests`**, cree un archivo denominado `address-parser.js` y agregue el contenido siguiente al archivo:
 
 ```js
 const { addressParser } = require('../address-parser');
@@ -621,7 +619,7 @@ describe('Address Parser', () => {
 
 La tarea anterior ha sido completada genial, sigue así!
 
-- Comprueba la capacidad de análisis de la función address-parser.js.
+- Comprueba la capacidad de análisis de la función `address-parser.js`.
 
 - Garantiza que la función puede analizar correctamente la información necesaria.
 
@@ -658,11 +656,11 @@ Ran all test suites.
 
 Terminado. La prueba se ha superado y ha agregado la función de prueba mediante la instalación de una dependencia.
 
-¡Enhorabuena! Ha instalado correctamente Jest como una dependencia, ha escrito pruebas para el código de la aplicación y ha ejecutado las pruebas. Parece que Jest está a la altura de las expectativas y que probablemente en ANFORA estarán satisfechos con el resultado de esta evaluación.
+¡Enhorabuena! Ha instalado correctamente `Jest` como una dependencia, ha escrito pruebas para el código de la aplicación y ha ejecutado las pruebas. Parece que `Jest` está a la altura de las expectativas y que probablemente en ANFORA estarán satisfechos con el resultado de esta evaluación.
 
 ---
 
-## Administración de actualizaciones de dependencias en el proyecto de Node.js
+## Administración de actualizaciones de dependencias en el proyecto de `Node.js`
 
 Como desarrollador en ANFORA, es importante mantener nuestros paquetes actualizados.
 
@@ -670,7 +668,7 @@ Esto ayuda a garantizar nuestro uso de las características y correcciones más 
 
 También nos ayuda a evitar vulnerabilidades de seguridad.
 
-En esta unidad, aprenderás a administrar dependencias en un proyecto de Node.js y a actualizar paquetes, usar el control de versiones semántico y administrar incidencias de seguridad.
+En esta unidad, aprenderás a administrar dependencias en un proyecto de `Node.js` y a actualizar paquetes, usar el control de versiones semántico y administrar incidencias de seguridad.
 
 ### Consideraciones antes de actualizar un paquete
 
@@ -705,12 +703,12 @@ Antes de actualizar una o más dependencias, debe configurar el archivo package.
 
 Node.js usa un conjunto de símbolos que le permiten definir cómo quiere que se actualicen los paquetes.
 
-### Actualización de un paquete con la CLI de npm
+### Actualización de un paquete con la `CLI` de `npm`
 
 Puede instalar un paquete mediante el comando install o update en npm. Ahora estos comandos son principalmente intercambiables. Para actualizar un paquete, normalmente se usa:
 
-Versión más reciente: npm update <package name>@latest.
-Versión específica: npm update <package name>@<optional version number>.
+Versión más reciente: `npm update <package name>@latest`.
+Versión específica: `npm update <package name>@<optional version number>`.
 
 El proceso de actualización depende de dos factores:
 
@@ -722,7 +720,7 @@ El proceso de actualización depende de dos factores:
 
 Tres archivos se complementan en el control de versiones de las dependencias:
 
-- **package.json:**
+- **`package.json`:**
 
 Este archivo define la versión del paquete que desea usar.
 

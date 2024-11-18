@@ -11,8 +11,9 @@ npm install react
 
 Para usar un registro privado, debes configurarlo en tu archivo `.npmrc`:
 
+
+**easter egg one - create your own npm registry, you can use gitea, verdaccio etc**.
 ```bash
-# easter egg one - create your own npm registry, you can use gitea, verdaccio etc.
 registry=https://tu-registro-privado.com/
 ```
 
