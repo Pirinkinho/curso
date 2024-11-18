@@ -27,13 +27,13 @@ Después de completar este módulo, sabrás:
 
 ### Configuración inicial
 
-Le damos la bienvenida al mundo de la administración de proyectos de Node.js con NPM (Node Package Manager. Vamos a profundizar en los aspectos básicos de las dependencias y cómo puede sobrecargar el proceso de desarrollo. Para facilitar la comprensión de cada una de las piezas del ecosistema de dependencias hemos usado descripciones con ejemplos del día a día que te permitirán recordar mejor para que sirve cada una:
+Le damos la bienvenida al mundo de la administración de proyectos de Node.js con NPM (Node Package Manager). Vamos a profundizar en los aspectos básicos de las dependencias y cómo puede sobrecargar el proceso de desarrollo. Para facilitar la comprensión de cada una de las piezas del ecosistema de dependencias hemos usado descripciones con ejemplos del día a día que te permitirán recordar mejor para que sirve cada una:
 
 **Empaquetado y Administración de paquetes**
 
-`NPM`, el administrador de paquetes predeterminado para Node.js, es el arma secreta para incorporar código externo en los proyectos. Es como tener un asistente personal para ayudarle a crear aplicaciones de forma más rápida y eficaz. En conclusión la herramienta de cli que usarás para casi todo para desarrollar tu programa o librería.
+`NPM`, el administrador de paquetes predeterminado para Node.js, es el arma secreta para incorporar código externo en los proyectos. Es como tener un asistente personal para ayudarle a crear aplicaciones de forma más rápida y eficaz. En conclusión la herramienta de CLI que usarás para casi todo, para desarrollar tu programa o librería.
 
-- Id a la terminar y teclead `npm` para comprobar que teneis la herramienta instalada:
+- Id a la terminal y teclead `npm` para comprobar que teneis la herramienta instalada:
 
 ```bash
 $ npm
@@ -77,7 +77,7 @@ La administración de paquetes es el arte de controlarlos e implica el uso conju
 
 - El `registro npm`, un tesoro de paquetes públicos listos para usar en sus proyectos.
 
-- El proceso de desarollo empaquetado y publicación de todo el proyecto mediante los tres elementos anteriores. Lo cual es un requisito obligatorio para crear un proyecto y trabajar con dependencias.
+- El proceso de desarrollo empaquetado y publicación de todo el proyecto mediante los tres elementos anteriores. Lo cual es un requisito obligatorio para crear un proyecto y trabajar con dependencias.
 
 **Creación del archivo package.json**
 
@@ -159,7 +159,7 @@ Las acciones `start` y test son especiales en que puede omitir la palabra run en
 
 ### Uso de un entorno de desarrollo predefinido
 
-Este módulo de entrenamiento propone un entorno de desarrollo en el equipo local, en la seccion de detalles puedes encontrar el uso de contenedores de manera opcional.
+Este módulo de entrenamiento propone un entorno de desarrollo en el equipo local, en la sección de detalles puedes encontrar el uso de contenedores de manera opcional.
 
 <details><summary>Detalles contenedores</summary>
 
@@ -290,7 +290,7 @@ Node.js tiene paquetes integrados para tareas como la administración de archivo
 
 ### Cuándo y cómo seleccionar un paquete npm
 
-Como nuevo desarrollador de ANFORA, debe agregar funcionalidad a un proyecto. Podría escribir el código usted mismo, pero decide usar un paquete existente. Esta decisión de desarrollo es un escenario común. Antesde usar código de terceros es importante aplicar el siguiente análisis:
+Como nuevo desarrollador de ANFORA, debe agregar funcionalidad a un proyecto. Podría escribir el código usted mismo, pero decide usar un paquete existente. Esta decisión de desarrollo es un escenario común. Antes de usar código de terceros es importante aplicar el siguiente análisis:
 
 ### ¿Cuándo debe usar un paquete existente?
 
@@ -333,7 +333,7 @@ npm install react
 Para usar un registro privado, debes configurarlo en tu archivo `.npmrc`:
 
 ```bash
-# easter egg one - create your own npm registry, you can use gitea, verdaccio etc.
+# easter egg one - create your own npm registry, you can use gitea, verdaccio, etc.
 registry=https://tu-registro-privado.com/
 ```
 
