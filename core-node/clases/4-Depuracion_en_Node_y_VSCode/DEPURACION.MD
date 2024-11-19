@@ -606,7 +606,7 @@ Vaya a la pestaña `Ejecutar`, y en `Run and Debug`  de `Visual Studio Code`, se
 
 Visual Studio Code crea el archivo de configuración `.vscode/launch.json` en la `raíz del área de trabajo` y abre el archivo de inicio para su edición.
 
-De forma predeterminada, se crea una configuración de inicio para ejecutar el archivo que está abierto actualmente. En este ejemplo, el archivo abierto es mycurrency.js. Puede modificar la configuración de inicio para personalizar cómo se debe iniciar el programa al depurar.
+De forma predeterminada, se crea una configuración de inicio para ejecutar el archivo que está abierto actualmente. En este ejemplo, el archivo abierto es `mycurrency.js`. Puede modificar la configuración de inicio para personalizar cómo se debe iniciar el programa al depurar.
 
 En la configuración de inicio, vea el valor de la propiedad program.
 
@@ -638,21 +638,21 @@ Para crear configuraciones de inicio diferentes del proyecto, seleccione `Agrega
 
 ### Análisis de los problemas
 
-Asegúrese de que el entorno de Visual Studio Code está listo para supervisar el proceso de depuración:
+Asegúrese de que el entorno de `Visual Studio Code` está listo para supervisar el proceso de depuración:
 
-El panel del depurador debe estar abierto a la izquierda. Use el icono de pestaña Ejecutar de la izquierda para alternar la visibilidad del panel.
+El panel del depurador debe estar abierto a la izquierda. Use el icono de pestaña `Ejecutar` de la izquierda para alternar la visibilidad del panel.
 
-La consola de depuración debe estar abierta en la parte inferior. Para abrir la consola, seleccione Ver>Consola de depuración o pulse Ctrl+Shift+Y (Windows, Linux) o Cmd+Shift+Y (Mac).
+La `consola de depuración` debe estar abierta en la parte inferior. Para abrir la consola, seleccione `Ver>Consola de depuración` o pulse `Ctrl+Shift+Y` (Windows, Linux) o `Cmd+Shift+Y` (Mac).
 
 De este modo, estará listo para iniciar la depuración.
 
-En los controles de inicio del depurador, inicie el programa con la depuración habilitada (la flecha verde).
+En los `controles de inicio del depurador`, inicie el programa con la depuración habilitada (la flecha verde).
 
 ![alt text](start.png)
 
 Debería ver que el programa finaliza rápidamente. Eso es normal porque todavía no ha agregado ningún punto de interrupción.
 
-Debería ver este texto en la consola de depuración, seguido de una excepción.
+Debería ver este texto en la `consola de depuración`, seguido de una excepción.
 
 ```bash
 The value of 10 EUR is:
@@ -684,21 +684,21 @@ Aquí se pueden ver dos errores:
 
 > Sugerencia
 
-- Establezca "outputCapture": "std", en el archivo de configuración de inicio para aumentar la salida del registro.
-- Establezca un punto de registro en lugar de un punto de interrupción para evitar detener la ejecución del programa. Un punto de registro no se "divide" en el depurador, sino que registra un mensaje en la consola.
-- Los puntos de registro son especialmente útiles para insertar registros durante la depuración de servidores de producción que no se pueden pausar ni detener.
+- Establezca `"outputCapture": "std"`, en el archivo de configuración de inicio para aumentar la salida del registro.
+- Establezca un `punto de registro` en lugar de un `punto de interrupción` para evitar detener la ejecución del programa. Un `punto de registro` no se "divide" en el `depurador`, sino que registra un mensaje en la consola.
+- Los `puntos de registro` son especialmente útiles para insertar registros durante la depuración de servidores de producción que no se pueden pausar ni detener.
 
 ### Corrección de los dígitos mostrados
 
 Para empezar, corregiremos el primer problema. Como no ha escrito este código y en él se llama a diferentes funciones, primero debe intentar entender el flujo de ejecución mediante la ejecución paso a paso.
 
-### Uso de puntos de interrupción y de la ejecución paso a paso
+### Uso de `puntos de interrupción` y de la `ejecución paso a paso`
 
-Para agregar un punto de interrupción, haga clic en el margen izquierdo de la línea 39, en printForeignValues(10, 'EUR');.
+Para agregar un `punto de interrupción`, haga clic en el margen izquierdo de la línea 39, en `printForeignValues(10, 'EUR')`;.
 
 ![alt text](line-39.png)
 
-Vuelva a iniciar la depuración y vaya a la función printForeignValues() con el control de depuración Depurar paso a paso por instrucciones:
+Vuelva a iniciar la depuración y vaya a la `función printForeignValues()` con el `control de depuración` `Depurar paso a paso por instrucciones`:
 
 ![alt text](step-button.png)
 
@@ -708,27 +708,27 @@ Ahora dedique un tiempo a inspeccionar los diferentes valores de las variables e
 
 ![alt text](variables-panel.png)
 
-**¿Cuáles son los valores de las variables value y sourceCurrency?**
+**¿Cuáles son los valores de las variables `value` y `sourceCurrency`?**
 
-Para la variable rates, ¿ve las tres claves previstas, USD, EUR y JPY?
+Para la variable `rates`, ¿ve las tres claves previstas, USD, EUR y JPY?
 
-Para avanzar paso a paso hasta que se establezca la variable convertedValue, use el control de depuración Depurar paso a paso por procedimientos:
+Para avanzar paso a paso hasta que se establezca la variable `convertedValue`, use el `control de depuración` `Depurar paso a paso por procedimientos`:
 
 ![alt text](step-over-button.png)
 
-Después de usar el control Depurar paso a paso por procedimientos cinco veces, debería ver que el valor de la variable convertedValue se establece según lo esperado en 11.363636363636365.
+Después de usar el control `Depurar paso a paso por procedimientos` cinco veces, debería ver que el valor de la variable `convertedValue` se establece según lo esperado en 11.363636363636365.
 
-Si realizamos una depuración paso a paso por procedimientos, veremos el valor de la variable displayValue. El valor debe ser la cadena con formato para mostrar con dos dígitos 11.36.
+Si realizamos una `depuración paso a paso por procedimientos`, veremos el valor de la variable `displayValue`. El valor debe ser la cadena con formato para mostrar con dos dígitos 11.36.
 
-Llegados a este punto en el programa, podemos afirmar que las funciones convertToCurrency() y formatValueForDisplay() parecen correctas y devuelven el resultado esperado.
+Llegados a este punto en el programa, podemos afirmar que las funciones `convertToCurrency()` y `formatValueForDisplay()` parecen correctas y devuelven el resultado esperado.
 
 ### Corrección del error
 
-Use el control Depurar paso a paso por instrucciones una vez para llegar a la llamada a la función console.info(). Examine detenidamente esta línea de código. ¿Ve aquí el error?
+Use el control `Depurar paso a paso por instrucciones` una vez para llegar a la llamada a la función `console.info()`. Examine detenidamente esta línea de código. ¿Ve aquí el error?
 
-Es necesario corregir este error de programa mediante la variable displayValue en lugar de la variable convertedValue para imprimir el valor.
+Es necesario corregir este error de programa mediante la variable `displayValue` en lugar de la variable `convertedValue` para imprimir el valor.
 
-Actualice el archivo currency.js para usar el nombre correcto de la variable. Cambie la llamada a la función console.info() en la línea 32 para usar la variable displayValue en lugar de la variable convertedValue:
+Actualice el archivo `currency.js` para usar el nombre correcto de la variable. Cambie la llamada a la función `console.info()` en la línea 32 para usar la variable `displayValue` en lugar de la variable `convertedValue`:
 
 ```js
 console.info(`- ${displayValue} ${targetCurrency}`);
@@ -748,13 +748,12 @@ Come on!
 
 Veamos ahora por qué se bloquea el programa.
 
-- En el archivo currency.js, quite el punto de interrupción que estableció en la línea 39.
+- En el archivo `currency.js`, quite el `punto de interrupción` que estableció en la línea 39.
+Para obligar al programa a pausarse después de que se produzca una excepción, en el panel `Puntos de interrupción`.
 
-Para obligar al programa a pausarse después de que se produzca una excepción, en el panel Puntos de interrupción.
+- Active la casilla `Excepciones no detectadas`.
 
-- Active la casilla Excepciones no detectadas.
-
-- Vuelva a ejecutar el programa en el depurador.
+- Vuelva a ejecutar el programa en el `depurador`.
 
 El programa se debería detener en la excepción y mostrar un extenso informe de errores en el centro de la ventana del editor.
 
@@ -766,18 +765,18 @@ Fíjese en la línea donde se detuvo la ejecución y observe el mensaje de excep
 TypeError: Cannot read property 'toFixed' of undefined.
 ```
 
-A partir de ese mensaje, puede deducir que la función de parámetro value tiene el valor undefined en lugar de un número. Este error es lo que provocó la excepción.
+A partir de ese mensaje, puede deducir que la función de parámetro `value` tiene el valor `undefined` en lugar de un número. Este error es lo que provocó la excepción.
 
 ### Rebobinado de la pila de llamadas
 
-El seguimiento de la pila que aparece debajo del mensaje de error puede ser algo difícil de descifrar. La buena noticia es que Visual Studio Code procesa de forma automática la pila de llamadas de función. De forma predeterminada, solo muestra la información significativa en el panel Pila de llamadas. Vamos a usar la información de pila de llamadas para buscar el código que provocó esta excepción.
+El seguimiento de la pila que aparece debajo del mensaje de error puede ser algo difícil de descifrar. La buena noticia es que `Visual Studio Code` procesa de forma automática la pila de llamadas de función. De forma predeterminada, solo muestra la información significativa en el panel `Pila de llamadas`. Vamos a usar la información de pila de llamadas para buscar el código que provocó esta excepción.
 
-Sabemos que la excepción se produjo en la llamada a la función formatValueForDisplay().
+Sabemos que la excepción se produjo en la llamada a la función `formatValueForDisplay()`.
 
-- En el panel del depurador, vaya al panel Pila de llamadas.
-- Haga doble clic en la función bajo ella: la función printForeignValues. Para ver dónde se llamó a la función formatValueForDisplay()
+- En el panel del `depurador`, vaya al panel `Pila de llamadas`.
+- Haga `doble clic` en la función bajo ella: la función `printForeignValues`. Para ver dónde se llamó a la función `formatValueForDisplay()`
 
-Visual Studio Code va a la línea de la función printForeignValues del archivo currency.js, donde se llamó a la función formatValueForDisplay():
+`Visual Studio Code` va a la línea de la función `printForeignValues` del archivo `currency.js`, donde se llamó a la función `formatValueForDisplay()`:
 
 ```js
 const displayValue = formatValueForDisplay(convertedValue);
@@ -785,21 +784,21 @@ const displayValue = formatValueForDisplay(convertedValue);
 
 - Examine detenidamente esta línea de código.
 
-El parámetro que provoca la excepción proviene de la variable convertedValue. Tendrá que averiguar en qué punto este valor de parámetro se convierte en undefined.
+El parámetro que provoca la excepción proviene de la variable `convertedValue`. Tendrá que averiguar en qué punto este valor de parámetro se convierte en `undefined`.
 
-Una opción consiste en agregar un punto de interrupción en esta línea e inspeccionar la variable cada vez el punto de interrupción se detenga en esta línea. Sin embargo, no sabemos cuándo puede producirse el valor incorrecto y, en programas complejos, este enfoque de depuración puede ser complicado. Echemos un vistazo a un método alternativo.
+Una opción consiste en agregar un `punto de interrupción` en esta línea e inspeccionar la variable cada vez el `punto de interrupción` se detenga en esta línea. Sin embargo, no sabemos cuándo puede producirse el valor incorrecto y, en programas complejos, este enfoque de depuración puede ser complicado. Echemos un vistazo a un método alternativo.
 
-### Adición de un punto de interrupción condicional
+### Adición de un `punto de interrupción condicional`
 
-Lo que sería útil en nuestro caso es poder detener el depurador en este punto de interrupción solo cuando el valor de la variable convertedValue es undefined. Afortunadamente, Visual Studio Code puede realizar esta acción con opciones de clic con el botón derecho del mouse.
+Lo que sería útil en nuestro caso es poder detener el `depurador` en este `punto de interrupción` solo cuando el valor de la variable `convertedValue` es `undefined`. Afortunadamente, `Visual Studio Code` puede realizar esta acción con opciones de `clic con el botón derecho` del mouse.
 
-En el archivo currency.js, en el margen izquierdo de la línea 31, haga clic con el botón derecho y seleccione Add Conditional Breakpoint (Agregar punto de interrupción condicional).
+En el archivo `currency.js`, en el margen izquierdo de la línea 31, haga `clic con el botón derecho` y seleccione `Add Conditional Breakpoint` (Agregar `punto de interrupción condicional`).
 
 ![alt text](conditional.png)
 
-- Después de hacer clic con el botón derecho.
+Después de hacer `clic con el botón derecho`.
 
-- Escriba la siguiente condición para desencadenar el punto de interrupción y presione Entrar:
+- Escriba la siguiente condición para desencadenar el `punto de interrupción` y presione `Entrar`:
 
 ```js
 `convertedValue === undefined`;
@@ -813,11 +812,11 @@ El programa debería detenerse ahora en la línea 31 y podemos examinar los valo
 
 Dedique un tiempo a analizar el estado actual del programa.
 
-El valor de la variable convertedValue procede de la llamada a la función convertToCurrency(value, sourceCurrency, targetCurrency). Es necesario comprobar los valores de parámetro en esta llamada de función y confirmar que son correctos.
+El valor de la variable `convertedValue` procede de la llamada a la función `convertToCurrency(value, sourceCurrency, targetCurrency)`. Es necesario comprobar los valores de parámetro en esta llamada de función y confirmar que son correctos.
 
-En concreto, es necesario examinar la variable value y confirmar que tiene el valor esperado 10.
+En concreto, es necesario examinar la variable `value` y confirmar que tiene el valor esperado 10.
 
-- Analice el código de la función convertToCurrency().
+- Analice el código de la función `convertToCurrency()`.
 
 ```js
 function convertToCurrency(value, sourceCurrency, targetCurrency) {
@@ -826,9 +825,9 @@ return exchangeRate && value \* exchangeRate;
 }
 ```
 
-Sabe que el resultado de este código es undefined. También sabe que la variable value está establecida en 10. Esta información nos ayuda a ver que el problema debe estar en el valor de la variable exchangeRate.
+Sabe que el resultado de este código es `undefined`. También sabe que la variable `value` está establecida en 10. Esta información nos ayuda a ver que el problema debe estar en el valor de la variable `exchangeRate`.
 
-- En su archivo currency.js, mantenga el puntero sobre la variable rates para echar un vistazo:
+- En su archivo `currency.js`, mantenga el puntero sobre la variable `rates` para echar un vistazo:
 
 ![alt text](peeking.png)
 
@@ -836,33 +835,33 @@ La intención es obtener la tasa de cambio de EUR a JPY, pero, si despliega el v
 
 ### Corrección de las tasas de conversión que faltan
 
-Ahora que sabe que faltan algunas tasas de conversión, veremos los motivos. Para quitar todos los puntos de interrupción existentes, seleccione el icono Quitar todos los puntos de interrupción en el panel Puntos de interrupción.
+Ahora que sabe que faltan algunas tasas de conversión, veremos los motivos. Para quitar todos los `puntos de interrupción` existentes, seleccione el icono `Quitar todos los puntos de interrupción` en el panel `Puntos de interrupción`.
 
 ![alt text](remove.png)
 
-### Inspección de la variable rates
+### Inspección de la variable `rates`
 
-Vamos a establecer un punto de interrupción para ver la variable rates.
+Vamos a establecer un `punto de interrupción` para ver la variable `rates`.
 
-- En el archivo currency.js, agregue un punto de interrupción en la línea 37 de la función setExchangeRate(0.88, 'USD', 'EUR');.
+- En el archivo `currency.js`, agregue un `punto de interrupción` en la línea 37 de la función `setExchangeRate(0.88, 'USD', 'EUR')`;.
 
-- En el panel Inspección, seleccione Más y escriba rates.
+- En el panel `Inspección`, seleccione `Más` y escriba `rates`.
 
-Cada vez que se cambia el valor de la variable rates, el valor actualizado se muestra en el panel Inspección.
+Cada vez que se cambia el valor de la variable `rates`, el valor actualizado se muestra en el panel `Inspección`.
 
 - Reinicie el programa.
 
-Cuando el punto de interrupción se detenga en la primera llamada a la función setExchangeRate(), use el control Paso a paso por procedimientos.
+Cuando el `punto de interrupción` se detenga en la primera llamada a la función `setExchangeRate()`, use el control `Paso a paso por procedimientos`.
 
-- En el panel Inspección, examine el valor de la variable rates.
+- En el panel `Inspección`, examine el valor de la variable `rates`.
 
 En este momento, puede ver que USD y EUR tienen tasas de conversión opuestas coincidentes, como se esperaba.
 
-- Realice el paso a paso por procedimiento de nuevo por la segunda llamada a la función setExchangeRate().
+- Realice el `paso a paso por procedimiento` de nuevo por la segunda llamada a la función `setExchangeRate()`.
 
 Verá que USD y JPY tienen tasas de conversión opuestas coincidentes, pero no hay nada entre EUR y JPY.
 
-Ha llegado el momento de examinar el código de la función setExchangeRate().
+Ha llegado el momento de examinar el código de la función `setExchangeRate()`.
 
 ```js
 function setExchangeRate(rate, sourceCurrency, targetCurrency) {
@@ -879,13 +878,13 @@ function setExchangeRate(rate, sourceCurrency, targetCurrency) {
 }
 ```
 
-Las líneas más importantes en esta función son las dos últimas. Ha encontrado el segundo error. Las tasas de conversión solo se establecen entre las variables sourceCurrency y targetCurrency. El programa también debe calcular la tasa de conversión para las otras divisas que se agregaron.
+Las líneas más importantes en esta función son las dos últimas. Ha encontrado el segundo error. Las tasas de conversión solo se establecen entre las variables `sourceCurrency` y `targetCurrency`. El programa también debe calcular la tasa de conversión para las otras divisas que se agregaron.
 
 ### Corrección del código
 
 Vamos a corregir el código para el problema de tasa de conversión.
 
-- Actualice el archivo currency.js para calcular la tasa de conversión de las otras divisas.
+- Actualice el archivo `currency.js` para calcular la tasa de conversión de las otras divisas.
 
 - Reemplace el código de las líneas 12 y 13:
 
@@ -909,17 +908,17 @@ rates[targetCurrency][currency] = 1 / (rate _ pivotRate);
 
 - Guarde los cambios en el archivo.
 
-El código actualizado establece la tasa de conversión para cualquier otra divisa que no sea sourceCurrency y targetCurrency. El programa utiliza la tasa de conversión de sourceCurrency para deducir la tasa entre la otra divisa y targetCurrency. A continuación, el código establece la tasa de conversión para la otra divisa en consecuencia.
+El código actualizado establece la tasa de conversión para cualquier otra divisa que no sea `sourceCurrency` y `targetCurrency`. El programa utiliza la tasa de conversión de `sourceCurrency` para deducir la tasa entre la otra divisa y `targetCurrency`. A continuación, el código establece la tasa de conversión para la otra divisa en consecuencia.
 
 > Nota
 
-Esta corrección solo funciona si ya existen tasas entre sourceCurrency y otras divisas, lo que es una limitación aceptable en este caso.
+Esta corrección solo funciona si ya existen tasas entre `sourceCurrency` y otras divisas, lo que es una limitación aceptable en este caso.
 
 ### Prueba de la corrección
 
 Vamos a probar el cambio que hemos realizado.
 
-- Quite todos los puntos de interrupción y las variables de inspección.
+- Quite todos los `puntos de interrupción` y las `variables de inspección`.
 
 - Reinicie el programa.
 
@@ -937,33 +936,33 @@ The value of 10 EUR is:
 
 ### Prueba de conocimientos
 
-1. ¿Cómo se ejecuta Node.js con el modo de inspección habilitado?
+1. ¿Cómo se ejecuta `Node.js` con el `modo de inspección` habilitado?
 
-- [ ] Con el comando node inspect myscript.js.
+- [x] Con el comando `node inspect myscript.js`.
 
-- [ ] Con el comando node --inspect myscript.js.
+- [ ] Con el comando `node --inspect myscript.js`.
 
-- [ ] Se usa el comando `node myscript.js.
+- [ ] Se usa el comando `node myscript.js`.
 
-- [ ] Se escribe debug en REPL de Node.js.
+- [ ] Se escribe `debug` en `REPL` de `Node.js`.
 
-2. ¿Cómo se puede hacer que un depurador pause la ejecución del programa en una línea de código específica?
+2. ¿Cómo se puede hacer que un `depurador` pause la ejecución del programa en una línea de código específica?
 
-- [ ] Se usa el comando node --inspect-brk myscript.js.
+- [ ] Se usa el comando `node --inspect-brk myscript.js`.
 
 - [ ] Se ejecuta paso a paso el código hasta llegar a la línea deseada.
 
 - [ ] Se convierte en comentario el código no deseado.
 
-- [ ] Se establece un punto de interrupción en el código.
+- [x] Se establece un `punto de interrupción` en el código.
 
 3. ¿Cuál es la mejor manera de imprimir información en la consola durante la depuración?
 
-- [ ] Se establece un punto de interrupción.
+- [ ] Se establece un `punto de interrupción`.
 
-- [ ] Se agrega una llamada a console.log() en el código.
+- [ ] Se agrega una llamada a `console.log()` en el código.
 
-- [ ] Se establece un punto de registro. CORRECTA A ESTUDIAR...
+- [x] Se establece un `punto de registro`. CORRECTA A ESTUDIAR...
 
 - [ ] Se inspecciona una variable.
 
@@ -973,14 +972,14 @@ The value of 10 EUR is:
 
 Como desarrollador, lo más probable es que le interese pasar la mayor parte del tiempo codificando características nuevas, pero la detección y la corrección de errores a menudo interrumpirán esta tarea.
 
-Como ya ha experimentado en esta lección, el uso de depuradores puede ser una estrategia eficaz para depurar los problemas de programas de Node.js. Tanto con el depurador integrado para sesiones rápidas como con el de Visual Studio Code para proyectos más complejos, ha aprendido a localizar y corregir los errores. Ha aprendido cómo puede depurar y encontrar errores incluso sin conocer el código de antemano.
+Como ya ha experimentado en esta lección, el uso de `depuradores` puede ser una estrategia eficaz para depurar los problemas de programas de `Node.js`. Tanto con el `depurador integrado` para sesiones rápidas como con el de `Visual Studio Code` para proyectos más complejos, ha aprendido a localizar y corregir los errores. Ha aprendido cómo puede depurar y encontrar errores incluso sin conocer el código de antemano.
 
 > Capítulo 4: El Detective del Código
 
 Javier, cual Sherlock Holmes del código, encuentra y soluciona su primer bug crítico. Casi sin querer, descubre una vulnerabilidad.
 
-Investigando más, Javier descubre la potencia de GDB para analizar el comportamiento del código a bajo nivel(y depura la lib de compresion (xz https://en.wikipedia.org/wiki/XZ_Utils_backdoor) y se encuentra esta maravilla).
+Investigando más, Javier descubre la potencia de `GDB` para analizar el comportamiento del código a bajo nivel [y depura la lib de compresion (xz https://en.wikipedia.org/wiki/XZ_Utils_backdoor) y se encuentra esta maravilla].
 
 Esto despierta su curiosidad por la seguridad informática. Decide añadir una capa extra de seguridad a UTOPIA, no solo para proteger su proyecto, sino también para aprender más sobre hacking ético.
 
-"¡Podría haber sido un desastre! Pero ha sido un eéxito!", piensa aliviado, mientras decide aprender más sobre seguridad informática, entendiendo que la vulnerabilidad fue puesta ahí a propósito… por un antiguo desarrollador de XZ, decide revisar el código de ANFORA. ¡A seguir depurando!
+"¡Podría haber sido un desastre! Pero ha sido un eéxito!", piensa aliviado, mientras decide aprender más sobre seguridad informática, entendiendo que la vulnerabilidad fue puesta ahí a propósito… por un antiguo desarrollador de XZ, decide revisar el código de **ANFORA**. ¡A seguir depurando!
