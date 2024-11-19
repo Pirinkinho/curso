@@ -504,7 +504,7 @@ Si ha instalado el paquete `Jest`, `npm list --depth=0` producirá una salida si
 
 Si ya no necesita un paquete, quítelo. La eliminación de una dependencia mantiene el proyecto limpio y ahorra espacio.
 
-Esta limpieza es especialmente importante para las aplicaciones de página única (`SPA`), como Angular, React o Vue como ejemplos conocidos, pero se aplica en general.
+Esta limpieza es especialmente importante para las aplicaciones de página única (`SPA`), como `Angular`, `React` o `Vue` como ejemplos conocidos, pero se aplica en general.
 
 Estas aplicaciones agrupan y comprimen el código en un archivo o varios servidos al explorador.
 
@@ -522,7 +522,7 @@ La eliminación es útil cuando desea quitar varias dependencias sin ejecutar la
 
 ## Ejercicio: Instalación de paquetes
 
-El equipo de ANFORA planea desarrollar varias aplicaciones `Node.js`. Han encontrado `Jest`, un conocido marco de pruebas de configuración cero, en el registro `npm`. Quieren instalar `Jest`, escribir algunas pruebas y ejecutarlas para evaluar su eficacia.
+El equipo de **ANFORA** planea desarrollar varias aplicaciones `Node.js`. Han encontrado `Jest`, un conocido marco de pruebas de configuración cero, en el registro `npm`. Quieren instalar `Jest`, escribir algunas pruebas y ejecutarlas para evaluar su eficacia.
 
 ### Adición de un paquete de prueba con la `CLI` de `npm`
 
@@ -656,13 +656,13 @@ Ran all test suites.
 
 Terminado. La prueba se ha superado y ha agregado la función de prueba mediante la instalación de una dependencia.
 
-¡Enhorabuena! Ha instalado correctamente `Jest` como una dependencia, ha escrito pruebas para el código de la aplicación y ha ejecutado las pruebas. Parece que `Jest` está a la altura de las expectativas y que probablemente en ANFORA estarán satisfechos con el resultado de esta evaluación.
+¡Enhorabuena! Ha instalado correctamente `Jest` como una dependencia, ha escrito pruebas para el código de la aplicación y ha ejecutado las pruebas. Parece que `Jest` está a la altura de las expectativas y que probablemente en **ANFORA** estarán satisfechos con el resultado de esta evaluación.
 
 ---
 
 ## Administración de actualizaciones de dependencias en el proyecto de `Node.js`
 
-Como desarrollador en ANFORA, es importante mantener nuestros paquetes actualizados.
+Como desarrollador en **ANFORA**, es importante mantener nuestros paquetes actualizados.
 
 Esto ayuda a garantizar nuestro uso de las características y correcciones más recientes.
 
@@ -683,25 +683,25 @@ Antes de actualizar un paquete, tenga en cuenta lo siguiente:
 
 El control de versiones semántico es un estándar clave en el desarrollo de software.
 
-Es fundamental tanto para la publicación como para el uso de paquetes de npm Ayuda a administrar los riesgos de actualización indicando el tipo de cambios en una nueva versión.
+Es fundamental tanto para la publicación como para el uso de paquetes de `npm` Ayuda a administrar los riesgos de actualización indicando el tipo de cambios en una nueva versión.
 
 Un número de versión tiene secciones específicas para reflejar estos cambios:
 
 | Tipo de versión  | Posición | Sintaxis      | Qué sucede                                                                                                                                                   | Enfoque de actualización                                                                                                     |
 | ---------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| Major            | 1º       | `x.0.0` o `*` | Los cambios de 1.0.0 a 2.0.0 indican cambios importantes. Pueden ser necesarios ajustes de código.                                                           | Comodidad con actualizaciones inmediatas a la versión principal más reciente y reconocimiento de posibles cambios de código. |
-| Minor            | 2º       | `1.x.0` o `^` | Los cambios de 1.2.9 a 1.3.0 presentan nuevas características. El código existente debería seguir funcionando. Normalmente, las actualizaciones son seguras. | Aceptación de nuevas características, pero sin cambios importantes.                                                          |
-| Revisión (Patch) | 3º       | `1.1.x` o `~` | Los cambios de 1.0.7 a 1.0.8 significan correcciones de errores. Las actualizaciones deberían ser seguras.                                                   | Aceptación de correcciones de errores.                                                                                       |
+| Major            | 1º       | `x.0.0` o `*` | Los cambios de `1.0.0` a `2.0.0` indican cambios importantes. Pueden ser necesarios ajustes de código.                                                           | Comodidad con actualizaciones inmediatas a la versión principal más reciente y reconocimiento de posibles cambios de código. |
+| Minor            | 2º       | `1.x.0` o `^` | Los cambios de `1.2.9` a `1.3.0` presentan nuevas características. El código existente debería seguir funcionando. Normalmente, las actualizaciones son seguras. | Aceptación de nuevas características, pero sin cambios importantes.                                                          |
+| Revisión (Patch) | 3º       | `1.1.x` o `~` | Los cambios de `1.0.7` a `1.0.8` significan correcciones de errores. Las actualizaciones deberían ser seguras.                                                   | Aceptación de correcciones de errores.                                                                                       |
 
-En el caso de los proyectos de Node.js pequeños, puede actualizar libremente a las versiones más recientes.
+En el caso de los proyectos de `Node.js` pequeños, puede actualizar libremente a las versiones más recientes.
 
 En el caso de los proyectos más grandes, sin embargo, las actualizaciones requieren una minuciosa reflexión y no siempre son automáticas.
 
 Por lo general, la actualización de dependencias más pequeñas, con menos dependencias propias, facilita el proceso.
 
-Antes de actualizar una o más dependencias, debe configurar el archivo package.json para obtener un comportamiento predecible al ejecutar el comando `npm update <name of dependency>`.
+Antes de actualizar una o más dependencias, debe configurar el archivo `package.json` para obtener un comportamiento predecible al ejecutar el comando `npm update <name of dependency>`.
 
-Node.js usa un conjunto de símbolos que le permiten definir cómo quiere que se actualicen los paquetes.
+`Node.js` usa un conjunto de símbolos que le permiten definir cómo quiere que se actualicen los paquetes.
 
 ### Actualización de un paquete con la `CLI` de `npm`
 
@@ -718,49 +718,44 @@ El proceso de actualización depende de dos factores:
 
 ### Descripción del control de versiones
 
-Tres archivos se complementan en el control de versiones de las dependencias:
+**Tres archivos** se complementan en el control de versiones de las dependencias:
 
-- **`package.json`:**
-
-Este archivo define la versión del paquete que desea usar.
-
+- **`package.json`:** Este archivo define la versión del paquete que desea usar.
 Es el archivo de manifiesto del proyecto. Contiene los metadatos del proyecto, incluidas las dependencias.
 
-- **package-lock.json:** Este archivo describe el árbol exacto que se generó, de modo que las instalaciones posteriores pueden generar árboles idénticos, independientemente de las actualizaciones de dependencias intermedias.
+- **`package-lock.json`:** Este archivo describe el árbol exacto que se generó, de modo que las instalaciones posteriores pueden generar árboles idénticos, independientemente de las actualizaciones de dependencias intermedias.Este archivo está pensado para enviarse a repositorios de origen.
 
-Este archivo está pensado para enviarse a repositorios de origen.
+- **`shrinkwrap.json`:** El comando de la `CLI` `npm shrinkwrap` crea este archivo y es similar a `package-lock.json`.
 
-- **shrinkwrap.json:** El comando de la CLI npm shrinkwrap crea este archivo y es similar a package-lock.json.
+La principal **diferencia** entre los comandos es que los usuarios *no pueden invalidar las versiones del paquete especificadas* en `npm-shrinkwrap.json`.
 
-La principal diferencia entre los comandos es que los usuarios no pueden invalidar las versiones del paquete especificadas en npm-shrinkwrap.json.
+Además, el archivo `npm-shrinkwrap.json` es compatible con versiones anteriores de `npm` (versiones 2-4), mientras que `package-lock.json` es compatible con `npm` versión 5 y posteriores.
 
-Además, el archivo npm-shrinkwrap.json es compatible con versiones anteriores de npm (versiones 2-4), mientras que package-lock.json es compatible con npm versión 5 y posteriores.
+Por lo tanto, puede encontrar `npm-shrinkwrap.json` al mantener los código base heredados. La mayoría de los desarrolladores usarán `package-lock.json` en lugar de `npm-shrinkwrap.json`.
 
-Por lo tanto, puede encontrar npm-shrinkwrap.json al mantener los código base heredados. La mayoría de los desarrolladores usarán package-lock.json en lugar de npm-shrinkwrap.json.
-
-Una excepción en la que se prefiere npm-shrinkwrap.json es para las instalaciones globales de demonios y herramientas de línea de comandos en las que los desarrolladores desean asegurarse de que se instalan las versiones exactas de los paquetes especificados.
+Una **excepción** en la que se prefiere `npm-shrinkwrap.json` es para las instalaciones globales de demonios y herramientas de línea de comandos en las que los desarrolladores desean asegurarse de que se instalan las versiones exactas de los paquetes especificados.
 
 ### Ejemplo de determinación de la versión del paquete
 
-Imagine que usa la versión 1.2 en el código y, luego, se publica la versión 1.4 y se interrumpe el código por un bug en la nueva versión.
+Imagine que usa la `versión 1.2` en el código y, luego, se publica la `versión 1.4`y se interrumpe el código por un bug en la nueva versión.
 
 Si alguien instala la aplicación en este momento, obtendrá una aplicación que no funciona.
 
-Sin embargo, si hay un archivo package-lock.json que especifica la versión 1.2, esa versión se instalará.
+Sin embargo, si hay un archivo `package-lock.json` que especifica la `versión 1.2`, esa versión se instalará.
 
 Este es un ejemplo de cómo determinar la versión instalada de un paquete:
 
-Si los archivos package.json y package-lock.json coinciden en la versión, no hay ningún conflicto.
+Si los archivos `package.json` y `package-lock.json` coinciden en la versión, no hay ningún conflicto.
 
-Por ejemplo, si package.json especifica 1.x y package-lock.json especifica la versión 1.4, se instalará la versión 1.4.
+Por ejemplo, si `package.json` especifica `1.x` y `package-lock.json` especifica la `versión 1.4`, se instalará la `versión 1.4`.
 
-Si package.json especifica una versión más específica, como 1.8.x, invalida el archivo package-lock.json, que indica la versión anterior de 1.4.
+Si `package.json` especifica una versión más específica, como `1.8.x`, invalida el archivo `package-lock.json`, que indica la versión anterior de `1.4`.
 
-En este caso, se instalará la versión 1.8.0 o una versión de revisión posterior, si existe.
+En este caso, se instalará la `versión 1.8.0` o una versión de revisión posterior, si existe.
 
-### Búsqueda y actualización de paquetes obsoletos con npm obsoleto
+### Búsqueda y actualización de paquetes obsoletos con `npm obsoleto`
 
-El comando npm outdated se usa para identificar los paquetes con versiones más recientes disponibles.
+El comando `npm outdated` se usa para identificar los paquetes con versiones más recientes disponibles.
 
 Cuando se ejecuta, proporciona una lista de estos paquetes obsoletos(add-example-review):
 
@@ -783,7 +778,7 @@ Las columnas de la salida incluyen lo siguiente:
 
 **Acerca de `npm audit`:**
 
-Después de ejecutar `npm install` o `npm update`, npm realiza automáticamente una auditoría de seguridad (`npm audit`). El registro mostrará:
+Después de ejecutar `npm install` o `npm update`, `npm` realiza automáticamente una auditoría de seguridad (`npm audit`). El registro mostrará:
 
 - La versión del paquete instalado.
 - Una lista de vulnerabilidades encontradas, categorizadas por nivel de severidad (crítica, alta, moderada, baja).
@@ -803,11 +798,11 @@ Para corregir un problema y aplicar una actualización, puede ejecutar el comand
 
 El comando `npm audit fix` intenta resolver las vulnerabilidades mediante la actualización a una versión secundaria en la que el problema no existe. Sin embargo, es posible que no esté disponible si la corrección se encuentra realmente en la siguiente versión principal.
 
-En tales casos, tal vez tenga que usar `npm audit fix --force`, que puede introducir cambios importantes mediante la actualización a la versión principal. La ejecución de este comando es una decisión que no debería tomar a la ligera. Debe tener en cuenta los cambios importantes y usar npm update para actualizar el código, incluidas las vulnerabilidades.
+En tales casos, tal vez tenga que usar `npm audit fix --force`, que puede introducir cambios importantes mediante la actualización a la versión principal. La ejecución de este comando es una decisión que no debería tomar a la ligera. Debe tener en cuenta los cambios importantes y usar `npm update` para actualizar el código, incluidas las vulnerabilidades.
 
 Una vulnerabilidad es un error de código que los atacantes pueden aprovechar para realizar acciones malintencionadas, lo que puede poner en riesgo los datos y sistemas. Es fundamental abordar estas vulnerabilidades rápidamente.
 
-Dada la frecuente detección de vulnerabilidades, GitHub tiene una característica que examina los repositorios y crea solicitudes de cambios de forma automática en las que se sugieren actualizaciones a versiones más seguras.
+Dada la frecuente detección de vulnerabilidades, `GitHub` tiene una característica que examina los repositorios y crea solicitudes de cambios de forma automática en las que se sugieren actualizaciones a versiones más seguras.
 
 Ejecutar `npm audit` con regularidad es un procedimiento recomendado para identificar y corregir vulnerabilidades, lo que contribuye a la seguridad general del proyecto.
 
@@ -815,25 +810,25 @@ Ejecutar `npm audit` con regularidad es un procedimiento recomendado para identi
 
 El flujo de trabajo recomendado para las actualizaciones es:
 
-- **npm run test:** compruebe que las pruebas existentes se pasan antes de iniciar este proceso de actualización.
-- **npm audit: ** para comprobar si hay vulnerabilidades en la versión actual que usa. En la información de npm audit es posible que se recomiende la actualización a una versión principal. Debe revisar cuidadosamente los cambios importantes si se enumeran.
-- **npm outdated: ** para enumerar todos los paquetes obsoletos. Este comando proporciona información en las columnas Deseado, Último y Ubicación.
+- **`npm run test`:** compruebe que las pruebas existentes se pasan antes de iniciar este proceso de actualización.
+- **`npm audit`:** para comprobar si hay vulnerabilidades en la versión actual que usa. En la información de `npm audit` es posible que se recomiende la actualización a una versión principal. Debe revisar cuidadosamente los cambios importantes si se enumeran.
+- **`npm outdated`:** para enumerar todos los paquetes obsoletos. Este comando proporciona información en las columnas Deseado, Último y Ubicación.
 
-### Actualice con npm update:
+### Actualice con `npm update`:
 
-- Para proyectos más pequeños (algunas dependencias en package.json: puede probar npm update para actualizar todas las dependencias y, a continuación, ejecutar las pruebas.
+- Para proyectos más pequeños (algunas dependencias en `package.json`: puede probar `npm update` para actualizar todas las dependencias y, a continuación, ejecutar las pruebas.
 
-- Para proyectos más grandes (con muchas dependencias en package.json: actualice un único paquete o una familia de paquetes (como Next.js y React) y, a continuación, ejecute las pruebas.
+- Para proyectos más grandes (con muchas dependencias en `package.json`: actualice un único paquete o una familia de paquetes (como `Next.js` y `React`) y, a continuación, ejecute las pruebas.
 
-- npm audit: compruebe que no hay vulnerabilidades críticas o de nivel alto. Si todavía hay vulnerabilidades, use npm update con el nombre del paquete y la versión principal recomendada en npm audit.
+- `npm audit`: compruebe que no hay vulnerabilidades críticas o de nivel alto. Si todavía hay vulnerabilidades, use `npm update` con el nombre del paquete y la versión principal recomendada en `npm audit`.
 
-- Ejecute npm run test otra vez.
+- Ejecute `npm run test` otra vez.
 
 ---
 
-## Ejercicio: Administración de actualizaciones de dependencias en el proyecto de Node.js
+## Ejercicio: Administración de actualizaciones de dependencias en el proyecto de `Node.js`
 
-ANFORA le ha asignado la tarea de trabajar en una aplicación que tiene algunas dependencias no actualizadas. La aplicación es pequeña y solo tiene algunas dependencias. La actualización del código debería ser sencilla. Vea si puede actualizar la aplicación para aprovechar las características más recientes. Durante el proceso, si encuentra alguna vulnerabilidad, corríjala.
+**ANFORA** le ha asignado la tarea de trabajar en una aplicación que tiene algunas dependencias no actualizadas. La aplicación es pequeña y solo tiene algunas dependencias. La actualización del código debería ser sencilla. Vea si puede actualizar la aplicación para aprovechar las características más recientes. Durante el proceso, si encuentra alguna vulnerabilidad, corríjala.
 
 - En una nueva ventana de terminal (Ctrl + Mayús + `), cambie a la carpeta que contiene los archivos de este ejercicio:
 
@@ -988,9 +983,9 @@ npm audit fix --force
 
 Si su proyecto tiene alguna prueba, ejecútela para verificar que la actualización no ha dañado nada.
 
-Siga estos mismos pasos para actualizar lo-dash a la versión 4.17.20 sin vulnerabilidades.
+Siga estos mismos pasos para actualizar `lo-dash` a la versión `4.17.20` sin vulnerabilidades.
 
-Las vulnerabilidades se han corregido, pero la versión node-fetch sigue siendo una versión principal. Si se superan todas las pruebas, corrija la versión especificada en el archivo package.json a la versión más reciente:
+Las vulnerabilidades se han corregido, pero la versión node-fetch sigue siendo una versión principal. Si se superan todas las pruebas, corrija la versión especificada en el archivo `package.json` a la versión más reciente:
 
 ```json
 "node-fetch": "^3.3.2"
@@ -1002,7 +997,7 @@ A continuación, ejecute el siguiente comando para actualizar el proyecto:
 npm update
 ```
 
-Ahora su proyecto no debería tener vulnerabilidades npm y debería estar en la versión principal actual.Felicidades. Ha actualizado las dependencias y ha corregido las vulnerabilidades del proyecto.
+Ahora su proyecto no debería tener vulnerabilidades npm y debería estar en la versión principal actual. Felicidades. Ha actualizado las dependencias y ha corregido las vulnerabilidades del proyecto.
 
 ## Prueba de conocimientos
 
@@ -1010,61 +1005,61 @@ Elija la mejor respuesta para cada pregunta y, después, seleccione Comprobar la
 
 Comprobación de conocimientos
 
-1. ¿Cómo se instala un marco de pruebas como Jest?
+1. ¿Cómo se instala un marco de pruebas como `Jest`?
 
-- [ ] Ejecute npm install jest:
+- [ ] Ejecute `npm install jest`:
 
-- [ ] Ejecute npm install jest --save-dev:
+- [x] Ejecute `npm install jest --save-dev`:
 
-- [ ] Mediante la ejecución de npm install jest --save.
+- [ ] Mediante la ejecución de `npm install jest --save`.
 
-- [ ] Mediante la ejecución de npm download jest --save-dev.
+- [ ] Mediante la ejecución de `npm download jest --save-dev`.
 
-2. ¿Cuál es la razón principal para usar npx?
+2. ¿Cuál es la razón principal para usar `npx`?
 
-- [ ] La dependencia se descarga directamente en el proceso de Node.js y se quita después de que se ejecute el comando. Esta herramienta resulta útil cuando se quieren ejecutar comandos con poca frecuencia.
+- [x] La dependencia se descarga directamente en el proceso de `Node.js` y se quita después de que se ejecute el comando. Esta herramienta resulta útil cuando se quieren ejecutar comandos con poca frecuencia.
 
-- [ ] La instalación de dependencias mediante npx es más segura que la instalación global de estas.
+- [ ] La instalación de dependencias mediante `npx` es más segura que la instalación global de estas.
 
-- [ ] La instalación de dependencias mediante npx es más rápida que la instalación global de estas.
+- [ ] La instalación de dependencias mediante `npx` es más rápida que la instalación global de estas.
 
-- [ ] No es necesario usar sudo antes de ejecutarlo, como en el caso de una instalación global.
+- [ ] No es necesario usar `sudo` antes de ejecutarlo, como en el caso de una instalación global.
 
-3. ¿Cómo se configura un archivo package.json para que solo obtenga actualizaciones de revisión (corrección de errores)?
+3. ¿Cómo se configura un archivo `package.json` para que solo obtenga actualizaciones de revisión (corrección de errores)?
 
-- [ ]Busque la entrada en dependencies o devDependencies. Establezca la entrada para que se parezca a esta: "<library>": "\*"
+- [ ] Busque la entrada en `dependencies` o `devDependencies`. Establezca la entrada para que se parezca a esta: `"<library>": "\*"`
 
-- [ ]Busque la entrada en dependencies o devDependencies. Establezca la entrada para que se parezca a esta: "<library>": "1.x.0"
+- [ ] Busque la entrada en `dependencies` o `devDependencies`. Establezca la entrada para que se parezca a esta: `"<library>": "1.x.0"`
 
-- [ ]Busque la entrada en dependencies o devDependencies. Establezca la entrada para que se parezca a esta: "<library>": "1.0.x"
+- [ ] Busque la entrada en `dependencies` o `devDependencies`. Establezca la entrada para que se parezca a esta: `"<library>": "1.0.x"`
 
-- [ ]Busque la entrada en dependencies o devDependencies. Establezca la entrada para que se parezca a esta: "<library>": "^1.0.x"
+- [x] Busque la entrada en `dependencies` o `devDependencies`. Establezca la entrada para que se parezca a esta: `"<library>": "^1.0.x"`
 
-4. ¿Cuáles son algunos de los scripts que se recomienda configurar en un archivo package.json al principio de un proyecto?
+4. ¿Cuáles son algunos de los scripts que se recomienda configurar en un archivo `package.json` al principio de un proyecto?
 
-- [ ]start, test y build
+- [ ] start, test y build
 
-- [ ]start y test
+- [ ] start y test
 
-- [ ]start
+- [ ] start
 
-- [ ]start, test, lint, build
+- [x] start, test, lint, build
 
 ---
 
 ## Resumen
 
-En primer lugar, has aprendido a instalar dependencias que la aplicación puede usar.
+- En primer lugar, has aprendido a **instalar dependencias** que la aplicación puede usar.
 
-El uso de dependencias en la aplicación permite crear la aplicación más rápido porque el código ya está escrito.
+- El uso de dependencias en la aplicación permite crear la aplicación más rápido porque el código ya está escrito.
 
-Además, es una buena idea confiar en paquetes probados en lugar de escribir algo usted mismo. El uso de estos paquetes es una buena idea especialmente cuando se agrega autenticación y autorización a la aplicación.
+- Además, es una buena idea confiar en **paquetes probados** en lugar de escribir algo usted mismo. El uso de estos paquetes es una buena idea especialmente cuando se agrega autenticación y autorización a la aplicación.
 
-Después, se han presentado varias formas de instalar una dependencia: de manera local, global y a través de la herramienta npm. Normalmente, instalará las dependencias localmente.
+- Después, se han presentado varias formas de **instalar una dependencia**: de manera local, global y a través de la herramienta `npm`. Normalmente, instalará las dependencias localmente.
 
-Después, ha aprendido a actualizar las dependencias. Las dependencias se actualizan por varias razones en forma de correcciones de errores, características nuevas o cambios más grandes. En el archivo package.json, puede configurar los tipos de actualizaciones que le interesan por cada dependencia. Si trabaja en un entorno empresarial, se recomienda considerar cuidadosamente el enfoque en relación con los tipos de actualizaciones que acepta.
+- Después, ha aprendido a **actualizar las dependencias**. Las dependencias se actualizan por varias razones en forma de correcciones de errores, características nuevas o cambios más grandes. En el archivo `package.json`, puede configurar los tipos de actualizaciones que le interesan por cada dependencia. Si trabaja en un entorno empresarial, se recomienda considerar cuidadosamente el enfoque en relación con los tipos de actualizaciones que acepta.
 
-Para finalizar, en la última unidad del módulo, ha obtenido más información sobre el archivo package.json. Ha visto varios campos, en concreto los de metadatos que describen una aplicación. También se han descrito los scripts que puede crear para administrar el proyecto de Node.js durante la fase de desarrollo.
+- Para finalizar, en la última unidad del módulo, ha obtenido más información sobre el archivo **`package.json`**. Ha visto varios campos, en concreto los de metadatos que describen una aplicación. También se han descrito los scripts que puede crear para administrar el proyecto de Node.js durante la fase de desarrollo.
 
 > Capítulo 3: El Poder de la Organización
 
