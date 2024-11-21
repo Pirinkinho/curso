@@ -236,7 +236,7 @@ debug>
 exec n
 ```
 
-En la consola debería aparecer 5 (cinco) como resultado. Avance paso a paso en el código y ejecute el comando s hasta que el punto de ejecución se encuentre al principio del bucle. Se necesitan cinco pasos con el comando `s` para llegar a este punto:
+En la `consola` debería aparecer `5` (cinco) como resultado. Avance paso a paso en el código y ejecute el comando s hasta que el punto de ejecución se encuentre al principio del bucle. Se necesitan cinco pasos con el comando `s` para llegar a este punto:
 
 ```bash
 break in fibonacci.js:7
@@ -433,7 +433,7 @@ Al analizar la causa de un defecto del programa, consulte el estado de las varia
 - Las `variables de clausura` son aquellas a las que se accede desde la clausura actual, si hay alguna. Una `clausura` combina el ámbito local de una función con el ámbito de la función externa a la que pertenece.
 
 ### Ambitos
-
+A
 Entre las posibles acciones se incluyen:
 
 - **Desplegar los ámbitos**: Puede desplegar los ámbitos y las variables seleccionando la flecha. Al desplegar objetos, verá todas las propiedades definidas en este objeto.
@@ -531,7 +531,7 @@ De este modo, puede comprobar rápidamente el valor de una variable, probar una 
 Los `linters` marcarán las instrucciones `console.log` como errores. Para obtener el mismo efecto que las instrucciones `console.log`, use `puntos de registro` de `Visual Studio Code` en su lugar, que se imprimen en la consola de depuración.
 
 Agregue un `punto de registro` haciendo `clic con el botón derecho` en la misma área que se usa para agregar un **punto de interrupción** y, a continuación seleccione `Agregar punto de registro`. Escriba un mensaje para que se muestre en ese punto del código.
-
+a
 ![alt text](log-point.png)
 
 Como sucede con los **puntos de interrupción**, los `puntos de registro` no modifican el código de ningún modo y solo se usan durante la depuración. Ya no tiene ninguna excusa para permitir que `console.log('here')` se use en producción.
