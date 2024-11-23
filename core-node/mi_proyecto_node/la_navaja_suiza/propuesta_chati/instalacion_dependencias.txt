@@ -1,0 +1,9 @@
+
+
+Instalación de Dependencias
+Primero, inicializa el proyecto e instala las dependencias necesarias:
+
+mkdir utilidades-web
+cd utilidades-web
+npm init -y
+npm install express ejs multer axios dotenv mathjs chart.js fs-extra

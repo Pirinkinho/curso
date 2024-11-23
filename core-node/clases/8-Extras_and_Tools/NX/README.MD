@@ -1,4 +1,4 @@
-# Anexo: Conceptos Avanzados y Atomic Design con Web Components
+# Anexo: `Conceptos Avanzados` y `Atomic Design` con `Web Components`
 
 ## Índice de Anexos
 
@@ -10,9 +10,9 @@
 
 ## 1. Comunicación entre Componentes
 
-### 1.1 Custom Events
+### 1.1 `Custom Events`
 
-Los Web Components pueden comunicarse mediante eventos personalizados:
+Los `Web Components` pueden comunicarse mediante `eventos personalizados`:
 
 ```typescript
 // Componente Emisor
@@ -37,7 +37,7 @@ export class ReceiverComponent extends HTMLElement {
 }
 ```
 
-### 1.2 Prop Binding
+### 1.2 `Prop Binding`
 
 Pasando datos mediante atributos:
 
@@ -61,7 +61,7 @@ export class DataComponent extends HTMLElement {
 
 ### 1.3 Estado Compartido
 
-Implementando un store simple:
+Implementando un `store` simple:
 
 ```typescript
 class Store {
@@ -92,7 +92,7 @@ export class ConnectedComponent extends HTMLElement {
 }
 ```
 
-## 2. Implementación de Routing
+## 2. Implementación de `Routing`
 
 ### 2.1 Router Básico
 
@@ -139,7 +139,7 @@ export class RouterComponent extends HTMLElement {
 customElements.define('app-router', RouterComponent);
 ```
 
-### 2.2 Uso del Router
+### 2.2 Uso del `Router`
 
 ```html
 <app-router>
@@ -151,9 +151,9 @@ customElements.define('app-router', RouterComponent);
 </app-router>
 ```
 
-## 3. Integración con APIs REST
+## 3. Integración con `APIs` `REST`
 
-### 3.1 Servicio Base
+### 3.1 Servicio `Base`
 
 ```typescript
 class HttpService {
@@ -179,7 +179,7 @@ class HttpService {
 }
 ```
 
-### 3.2 Componente de Usuario con API Integration
+### 3.2 Componente de Usuario con `API Integration`
 
 ```typescript
 interface User {
@@ -230,7 +230,7 @@ export class UserListComponent extends HTMLElement {
 customElements.define('user-list', UserListComponent);
 ```
 
-### 3.3 Formulario de Creación de Usuario
+### 3.3 Formulario de `Creación de Usuario`
 
 ```typescript
 export class UserFormComponent extends HTMLElement {
@@ -269,9 +269,9 @@ export class UserFormComponent extends HTMLElement {
 }
 ```
 
-## 4. Patrones Avanzados de Web Components
+## 4. Patrones Avanzados de `Web Components`
 
-### 4.1 Mixins y Composición
+### 4.1 `Mixins` y Composición
 
 ```typescript
 // Mixin para funcionalidad de tema
@@ -302,7 +302,7 @@ class EnhancedComponent extends ThemeMixin(StateMixin(HTMLElement)) {
 }
 ```
 
-### 4.2 Shadow DOM Templates
+### 4.2 Shadow `DOM Templates`
 
 ```typescript
 export class TemplateComponent extends HTMLElement {
@@ -330,7 +330,7 @@ export class TemplateComponent extends HTMLElement {
 }
 ```
 
-### 4.3 Lazy Loading de Componentes
+### 4.3 `Lazy Loading de Componentes`
 
 ```typescript
 export class LazyComponent extends HTMLElement {
@@ -358,9 +358,9 @@ export class LazyComponent extends HTMLElement {
 }
 ```
 
-## 5. Laboratorio de Componentes Atómicos
+## 5. Laboratorio de `Componentes Atómicos`
 
-### 5.1 Principios de Atomic Design
+### 5.1 Principios de `Atomic Design`
 
 1. **Átomos**: Componentes básicos indivisibles
 2. **Moléculas**: Grupos de átomos funcionando juntos
@@ -368,7 +368,7 @@ export class LazyComponent extends HTMLElement {
 4. **Templates**: Esqueletos de páginas
 5. **Páginas**: Instancias específicas de templates
 
-### 5.2 UI Kit Basado en el Código
+### 5.2 `UI Kit` Basado en el Código
 
 #### 5.2.1 Átomos
 
@@ -563,7 +563,7 @@ export class MainLayoutTemplate extends HTMLElement {
   --spacing-8: 2rem;
 ```
 
-# Anexo: Mejoras Avanzadas para Web Components con NX
+# Anexo: `Mejoras Avanzadas` para `Web Components` con `NX`
 
 ## Índice
 1. [Implementación de Routing Avanzado](#1-implementación-de-routing-avanzado)
@@ -632,7 +632,7 @@ class Router {
 }
 ```
 
-### 1.2 Configuración de Rutas con Lazy Loading
+### 1.2 Configuración de Rutas con `Lazy Loading`
 
 ```typescript
 // routes.ts
@@ -724,9 +724,9 @@ export class AppStore extends Store<{ counter: number }> {
 }
 ```
 
-## 3. Capacidades PWA
+## 3. Capacidades `PWA`
 
-### 3.1 Configuración del Service Worker
+### 3.1 Configuración del `Service Worker`
 
 ```typescript
 // service-worker.ts
@@ -755,7 +755,7 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 });
 ```
 
-### 3.2 Manifest.json
+### 3.2 `Manifest.json`
 
 ```json
 {
@@ -787,7 +787,7 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 }
 ```
 
-### 3.3 Registro del Service Worker
+### 3.3 Registro del `Service Worker`
 
 ```typescript
 // register-sw.ts
@@ -805,7 +805,7 @@ export async function registerServiceWorker() {
 
 ## 4. Optimización de Rendimiento
 
-### 4.1 Code Splitting y Dynamic Imports
+### 4.1 `Code Splitting` y `Dynamic Imports`
 
 ```typescript
 // Configuración de Webpack en project.json
@@ -852,7 +852,7 @@ export class OptimizedImageComponent extends HTMLElement {
 }
 ```
 
-### 4.3 Performance Monitoring
+### 4.3 `Performance Monitoring`
 
 ```typescript
 // performance-monitor.ts
@@ -876,7 +876,7 @@ export class PerformanceMonitor {
 }
 ```
 
-## 5. Server-Side Rendering
+## 5. `Server-Side Rendering`
 
 ### 5.1 Configuración del Servidor
 
@@ -907,7 +907,7 @@ app.get('*', async (req, res) => {
 });
 ```
 
-### 5.2 Hydratación del Cliente
+### 5.2 "Hydratación" del Cliente
 
 ```typescript
 // client.ts
@@ -918,7 +918,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-### 5.3 Componentes SSR-Ready
+### 5.3 Componentes `SSR-Ready`
 
 ```typescript
 // ssr-component.ts
@@ -950,12 +950,12 @@ export class SSRComponent extends LitElement {
 ## Conclusiones y Mejores Prácticas
 
 1. **Routing**:
-   - Implementar lazy loading para rutas
+   - Implementar `lazy loading` para rutas
    - Manejar transiciones suaves
    - Gestionar el estado de la navegación
 
 2. **Estado**:
-   - Mantener un único source of truth
+   - Mantener un único `source of truth`
    - Implementar acciones inmutables
    - Usar patrones de observador para actualizaciones
 
@@ -966,11 +966,11 @@ export class SSRComponent extends LitElement {
 
 4. **Rendimiento**:
    - Monitorear métricas clave (FCP, LCP, TTI)
-   - Implementar code splitting efectivo
+   - Implementar `code splitting` efectivo
    - Optimizar recursos y carga
 
 5. **SSR**:
-   - Balancear entre SSR y client-side rendering
+   - Balancear entre `SSR` y `client-side rendering`
    - Implementar hydratación eficiente
    - Manejar estado inicial correctamente
 
@@ -980,7 +980,7 @@ Se recomienda implementar estas mejoras de forma progresiva:
 
 1. Primero: Routing y Estado
 2. Segundo: Optimizaciones de rendimiento
-3. Tercero: Capacidades PWA
-4. Cuarto: SSR (si es necesario)
+3. Tercero: Capacidades `PWA`
+4. Cuarto: `SSR` (si es necesario)
 
 Cada mejora debe ser probada y medida para asegurar que aporta valor real al proyecto.

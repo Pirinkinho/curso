@@ -1,16 +1,16 @@
-# Aplicación Web Estática con NX y Web Components
+# `Aplicación Web Estática` con `NX` y `Web Components`
 
 ## Introduccion
 
 > Capítulo 6: El Arquitecto de la Interfaz
 
-En ANFORA, le piden a Javier crear una sencilla WEB para un proyecto interno. Paralelamente, aplica este conocimiento en UTOPIA. Decide implementar su propia WEB y un sistema básico de autenticación, con el objetivo de controlar la aplicación desde diferentes dispositivos, comienza a utilizar IA para programar y esto le hace entender lo importante que es el tiempo de aprendizaje.
+En **ANFORA**, le piden a Javier crear una sencilla `WEB` para un proyecto interno. Paralelamente, aplica este conocimiento en UTOPIA. Decide implementar su propia `WEB` y un sistema básico de autenticación, con el objetivo de controlar la aplicación desde diferentes dispositivos, comienza a utilizar `IA` para programar y esto le hace entender lo importante que es el tiempo de aprendizaje.
 
-Ahora, fascinado por las posibilidades que ofrecen herramientas como AutoGen, investiga cómo incorporarlas a su flujo de trabajo para automatizar la creación de documentación y tutoriales para UTOPIA, pensando en un futuro en el que pueda ayudar a otros a aprender a programar.
+Ahora, fascinado por las posibilidades que ofrecen herramientas como `AutoGen`, investiga cómo incorporarlas a su flujo de trabajo para automatizar la creación de documentación y tutoriales para UTOPIA, pensando en un futuro en el que pueda ayudar a otros a aprender a programar.
 
-Usaremos el proyecto code/code-node-web basado en NX para crear una WEB que será parte visual de nuestro proyecto.
+Usaremos el proyecto `code/code-node-web` basado en `NX` para crear una `WEB` que será parte visual de nuestro proyecto.
 
-Este clase te guiará en la creación de una aplicación web estática utilizando NX como herramienta de desarrollo y Web Components para la interfaz de usuario. Aprenderás a configurar el proyecto, crear componentes web personalizados y estructurar tu aplicación.
+Este clase te guiará en la creación de una `aplicación web estática` utilizando `NX`como herramienta de desarrollo y `Web Components` para la interfaz de usuario. Aprenderás a configurar el proyecto, crear componentes web personalizados y estructurar tu aplicación.
 
 ## Índice
 
@@ -25,9 +25,9 @@ Este clase te guiará en la creación de una aplicación web estática utilizand
 
 ### Requisitos Previos
 
-- Node.js (versión 12 o superior)
-- NX CLI instalado globalmente
-- Conocimientos básicos de TypeScript y Web Components
+- `Node.js` (versión 12 o superior)
+- `NX CLI` instalado globalmente
+- Conocimientos básicos de `TypeScript` y `Web Components`
 
 ### Crear nuevo proyecto
 
@@ -88,14 +88,14 @@ customElements.define('core-node-web-root', AppElement);
 
 ### Ciclo de Vida de los Componentes
 
-Los Web Components tienen varios métodos del ciclo de vida:
+Los `Web Components` tienen varios métodos del ciclo de vida:
 
 1. `constructor()`: Inicialización del componente
 2. `connectedCallback()`: Cuando el componente se añade al DOM
 3. `disconnectedCallback()`: Cuando el componente se elimina del DOM
 4. `attributeChangedCallback()`: Cuando un atributo observado cambia
 
-### Ejemplo de Implementación con Estado
+### Ejemplo de Implementación con `Estado`
 
 ```typescript
 export class AppElement extends HTMLElement {
@@ -126,9 +126,9 @@ export class AppElement extends HTMLElement {
 }
 ```
 
-## Estilos y CSS
+## `Estilos` y `CSS`
 
-### Estilos Encapsulados
+### `Estilos Encapsulados`
 
 Los estilos se pueden definir en un archivo separado (`app.element.css`) y se importan en el componente:
 
@@ -170,7 +170,7 @@ Los estilos siguen una estructura modular:
 
 ## Testing
 
-### Configuración de Jest
+### Configuración de `Jest`
 
 El archivo `jest.config.js` configura el entorno de testing:
 
@@ -192,9 +192,9 @@ module.exports = {
 };
 ```
 
-### Escribiendo Tests
+### Escribiendo `Tests`
 
-Los tests se escriben usando Jest (`app.element.spec.ts`):
+Los `tests` se escriben usando `Jest` (`app.element.spec.ts`):
 
 ```typescript
 import { AppElement } from './app.element';
@@ -217,9 +217,9 @@ describe('AppElement', () => {
 });
 ```
 
-## Configuración de Build
+## Configuración de `Build`
 
-### Project.json
+### `Project.json`
 
 El archivo `project.json` configura las opciones de build:
 
@@ -242,7 +242,7 @@ El archivo `project.json` configura las opciones de build:
 }
 ```
 
-### Comandos de Build
+### Comandos de `Build`
 
 ```bash
 # Desarrollo
@@ -262,27 +262,27 @@ nx lint ui
 
 1. **Componentes Atómicos**: Crear componentes pequeños y reutilizables
 2. **Custom Events**: Usar eventos personalizados para la comunicación entre componentes
-3. **Shadow DOM**: Considerar el uso de Shadow DOM para encapsulación total
+3. **Shadow DOM**: Considerar el uso de `Shadow DOM` para encapsulación total
 4. **Lazy Loading**: Implementar carga perezosa para componentes grandes
-5. **Performance**: Minimizar manipulaciones del DOM
+5. **Performance**: Minimizar manipulaciones del `DOM`
 
 ## Conclusión
 
-Este tutorial te ha mostrado cómo crear una aplicación web estática usando NX y Web Components. Las ventajas de este enfoque incluyen:
+Este tutorial te ha mostrado cómo crear una aplicación web estática usando `NX` y `Web Components`. Las ventajas de este enfoque incluyen:
 
 - Desarrollo modular y mantenible
 - Componentes nativos del navegador
 - Herramientas modernas de desarrollo
 - Testing integrado
-- Build optimizado para producción
+- `Build` optimizado para producción
 
 Para mejorar esta implementación, considera:
 
-1. Implementar routing
+1. Implementar `routing`
 2. Añadir gestión de estado
-3. Integrar PWA capabilities
+3. Integrar `PWA capabilities`
 4. Optimizar el rendimiento
-5. Añadir SSR (Server-Side Rendering)
+5. Añadir `SSR` (Server-Side Rendering)
 
 > Ejercicio clase, implementar los 5 puntos... CS3.5 Game!
 
@@ -290,6 +290,6 @@ Para mejorar esta implementación, considera:
 
 > Capítulo 6: El Arquitecto de la Interfaz
 
-Crear una API pura para ANFORA le da a Javier la excusa perfecta para perfeccionar su propia API usando NX para UTOPIA.
+Crear una `API` pura para **ANFORA** le da a Javier la excusa perfecta para perfeccionar su propia `API` usando `NX` para UTOPIA.
 
-AutoGen se convierte en su mejor amigo. "Documentar es divertido… ¿verdad?", se pregunta mientras genera documentación automáticamente mientras pasea con su móvil por La Plaza del Castillo mientras va hacia lo viejo, las palomas, siempre presentes, parecen asentir cada vez que usa su móvil y salen volando en la misma dirección, esto le empieza a recordar un podcast sobre ciberseguridad que tenía pendiente...
+`AutoGen` se convierte en su mejor amigo. "Documentar es divertido… ¿verdad?", se pregunta mientras genera documentación automáticamente mientras pasea con su móvil por La Plaza del Castillo mientras va hacia lo viejo, las palomas, siempre presentes, parecen asentir cada vez que usa su móvil y salen volando en la misma dirección, esto le empieza a recordar un podcast sobre ciberseguridad que tenía pendiente...

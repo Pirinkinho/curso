@@ -1,20 +1,20 @@
-# Introducción a la administración de API en Node.js con JavaScript
+# Introducción a la administración de `API` en `Node.js` con `JavaScript`
 
 ## Introduccion
 
 > Capítulo 7: El Director del Tráfico
 
-Javier perfecciona las rutas de su API en UTOPIA, creando una estructura flexible y escalable para las futuras funcionalidades. Define endpoints específicos para controlar los diferentes módulos, como la domótica, finanzas y aprendizaje. Se siente cómodo gestionando el flujo de información de la aplicación. En ANFORA su API ya funciona a la perfección, cumpliendo los requisitos de la empresa, cree es hora de dar un paso más y buscar queso nuevo.
+Javier perfecciona las rutas de su `API` en UTOPIA, creando una estructura flexible y escalable para las futuras funcionalidades. Define `endpoints` específicos para controlar los diferentes módulos, como la domótica, finanzas y aprendizaje. Se siente cómodo gestionando el flujo de información de la aplicación. En **ANFORA** su `API` ya funciona a la perfección, cumpliendo los requisitos de la empresa, cree es hora de dar un paso más y buscar queso nuevo.
 
-Usaremos el proyecto code/code-node-web basado en NX para crear una API que será parte lógica de nuestro proyecto.
+Usaremos el proyecto `code/code-node-web` basado en `NX` para crear una `API` que será parte lógica de nuestro proyecto.
 
-La api sera una api node sencilla sin express, al igual que la ui, tendras test bien hechos que al modificar fallaran.
+La `API` sera una `API node` sencilla sin `express`, al igual que la ui, tendras `test` bien hechos que al modificar fallaran.
 
 ---
 
-## API REST con Node.js nativo
+## `API REST` con `Node.js` nativo
 
-Esta clase explica cómo crear una API REST completa usando Node.js nativo sin depender de frameworks externos como Express. Cubriremos la implementación de un servidor HTTPS, manejo de rutas, métodos HTTP, archivos estáticos y más.
+Esta clase explica cómo crear una `API REST` completa usando `Node.js` nativo sin depender de `frameworks` externos como `Express`. Cubriremos la implementación de un `servidor HTTPS`, `manejo de rutas`, `métodos HTTP`, `archivos estáticos` y más.
 
 ## Índice
 
@@ -31,9 +31,9 @@ Esta clase explica cómo crear una API REST completa usando Node.js nativo sin d
 
 ### Requisitos previos
 
-- Node.js instalado (versión 12 o superior)
-- Certificados SSL para HTTPS (OPCIONAL)
-- Conocimientos básicos de JavaScript y Node.js
+- `Node.js` instalado (versión 12 o superior)
+- `Certificados SSL` para `HTTPS` (OPCIONAL)
+- Conocimientos básicos de `JavaScript` y `Node.js`
 
 ### Estructura del proyecto
 
@@ -48,11 +48,11 @@ lib/
     └── index.html
 ```
 
-## Estructura del servidor HTTPS
+## Estructura del `servidor HTTPS`
 
 ### Configuración básica
 
-El servidor HTTPS requiere certificados SSL. Primero, importamos los módulos necesarios:
+El `servidor HTTPS` requiere `certificados SSL`. Primero, importamos los `módulos` necesarios:
 
 ```javascript
 const https = require('https');
@@ -60,9 +60,9 @@ const fs = require('fs');
 const path = require('path');
 ```
 
-### Certificados SSL
+### `Certificados SSL`
 
-Los certificados se cargan al iniciar el servidor:
+Los `certificados` se cargan al iniciar el servidor:
 
 ```javascript
 const options = {
@@ -71,7 +71,7 @@ const options = {
 };
 ```
 
-Para desarrollo local, puedes generar certificados autofirmados usando OpenSSL:
+Para desarrollo local, puedes generar `certificados autofirmados` usando `OpenSSL`:
 
 ```bash
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
@@ -79,9 +79,9 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -node
 
 ## Sistema de enrutamiento
 
-### Router objeto
+### `Router objeto`
 
-El router utiliza un objeto para almacenar las rutas por método HTTP:
+El `router` utiliza un objeto para almacenar las rutas por `método HTTP`:
 
 ```javascript
 const router = {
@@ -93,7 +93,7 @@ const router = {
 };
 ```
 
-### Manejo de parámetros URL
+### Manejo de `parámetros URL`
 
 La función `extractURLParams` extrae parámetros dinámicos de las URLs:
 
@@ -116,9 +116,9 @@ const extractURLParams = (path, pattern) => {
 
 ## Manejo de peticiones
 
-### Parsing del body
+### `Parsing` del body
 
-Para peticiones POST y PUT, necesitamos parsear el body:
+Para peticiones `POST` y `PUT`, necesitamos `parsear` el body:
 
 ```javascript
 const parseBody = (req) => {
@@ -140,7 +140,7 @@ const parseBody = (req) => {
 
 ### Manejo de respuestas
 
-Configuramos headers comunes y formato JSON:
+Configuramos `headers` comunes y `formato JSON`:
 
 ```javascript
 res.setHeader('Content-Type', 'application/json');
@@ -167,7 +167,7 @@ const serveStaticFile = async (req, res, filepath) => {
 };
 ```
 
-### Tipos MIME
+### Tipos `MIME`
 
 Determinamos el tipo de contenido basado en la extensión del archivo:
 
@@ -186,9 +186,9 @@ const getContentType = (filepath) => {
 };
 ```
 
-## Gestión de CORS
+## Gestión de `CORS`
 
-Implementamos headers CORS para permitir peticiones cross-origin:
+Implementamos headers `CORS` para permitir peticiones `cross-origin`:
 
 ```javascript
 const setCORSHeaders = (res) => {
@@ -201,11 +201,11 @@ const setCORSHeaders = (res) => {
 };
 ```
 
-## Implementación de endpoints
+## Implementación de `endpoints`
 
 ### Definición de rutas
 
-Ejemplo de implementación de CRUD para usuarios:
+Ejemplo de implementación de `CRUD` para usuarios:
 
 ```javascript
 router.GET['/api/users'] = (req, res) => {
@@ -234,16 +234,16 @@ router.PUT['/api/users/:id'] = async (req, res) => {
 };
 ```
 
-## Seguridad y certificados SSL
+## Seguridad y `certificados SSL`
 
 ### Mejores prácticas
 
-1. Usar HTTPS siempre
-2. Implementar rate limiting
+1. Usar `HTTPS` siempre
+2. Implementar `rate limiting`
 3. Validar entrada de usuarios
-4. Usar headers de seguridad
+4. Usar `headers de seguridad`
 
-### Headers de seguridad recomendados
+### `Headers de seguridad` recomendados
 
 ```javascript
 res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -255,7 +255,7 @@ res.setHeader('X-XSS-Protection', '1; mode=block');
 
 ### Ejemplos de peticiones
 
-Puedes probar la API usando curl o postman:
+Puedes probar la `API` usando `curl` o `postman`:
 
 ```bash
 # GET todos los usuarios
@@ -279,8 +279,8 @@ curl -X DELETE https://localhost:3000/api/users/1234
 
 > Capítulo 7: El Director del Tráfico
 
-Rutas, endpoints, control de flujo... Javier orquesta la información en UTOPIA como un director de orquesta dirigiendo una sinfonía digital.
+Rutas, `endpoints`, control de flujo... Javier orquesta la información en UTOPIA como un director de orquesta dirigiendo una sinfonía digital.
 
-ANFORA está contenta con su API. Él está contento con UTOPIA. Todo parece perfecto y eso ... le inquieta, su ultimo experimento IA le recuerda que debe probar lo del podcast de las palomas.
+**ANFORA** está contenta con su `API`. Él está contento con UTOPIA. Todo parece perfecto y eso ... le inquieta, su ultimo experimento `IA` le recuerda que debe probar lo del podcast de las palomas.
 
-Sin embargo decide usar un sistema de camaras de bajo coste y una API de camaras publicas para analizar el comportamiento de las palomas que le rodean en tiempo real.
+Sin embargo decide usar un sistema de camaras de bajo coste y una `API` de camaras publicas para analizar el comportamiento de las palomas que le rodean en tiempo real.

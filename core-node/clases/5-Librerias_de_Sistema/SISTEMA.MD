@@ -74,7 +74,7 @@ La lista ordenada alfanumérica de elementos tiene este aspecto:
 
 ### Determinación del tipo de contenido con `isDirectory`
 
-Cuando se lee el contenido de un directorio, se obtienen las carpetas y los archivos como una matriz de cadenas. Para distinguir cuáles son archivos y cuáles directorios, se puede pasar la opción `withFileTypes`. Esta opción devuelve una matriz de `objetos Dirent`, en lugar de una matriz de cadenas. El `objeto Dirent` tiene los métodos `isFile` y `isDirectory`, que se pueden usar para determinar con qué tipo de objeto estamos tratando.
+Cuando se lee el contenido de un directorio, se obtienen las carpetas y los archivos como una matriz de cadenas. Para distinguir cuáles son archivos y cuáles directorios, se puede pasar la opción `withFileTypes`. Esta opción devuelve una matriz de `objetos Dirent` (directory entity), en lugar de una matriz de cadenas. El `objeto Dirent` tiene los métodos `isFile` y `isDirectory`, que se pueden usar para determinar con qué tipo de objeto estamos tratando.
 
 ```js
 const fs = require('fs').promises;
