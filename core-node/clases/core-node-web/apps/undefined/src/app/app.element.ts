@@ -1,39 +1,11 @@
 import './app.element.css';
-import 'regenerator-runtime/runtime';
 
 export class AppElement extends HTMLElement {
   public static observedAttributes = [];
 
-  public makeHTTPRequest = async function () => {
-    const response = await fetch('http://localhost:8080/api/users', {
-      mode: 'no-cors',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
-    try {
-      const response = await fetch('http://localhost:8080/api/users', {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-      });
-      const data = await response.json();
-      console.log('Response:', data);
-  } catch (error) {
-      console.error('Error fetching data:', error);
-  }
-  }
-    console.log('Response', response /*  await response.json() */);
-    /* alert(
-      'Response error egg three - Solve why we are getting this error and not the data json response'*/
-  };
-
   connectedCallback() {
-    const title = 'https://virgil.io/'; // These app is a joke, it's a prank search engine to stay focused on your own projects
-    const present = `
+    const title = 'undefined';
+    this.innerHTML = `
     <div class="wrapper">
       <div class="container">
         <!--  WELCOME  -->
@@ -115,7 +87,7 @@ export class AppElement extends HTMLElement {
                 />
               </svg>
             </a>
-            <a href="https://blog.nrwl.io/?utm_source=nx-project" target="_blank" rel="noreferrer" class="list-item-link">
+            <a href="https://nx.dev/blog/?utm_source=nx-project" target="_blank" rel="noreferrer" class="list-item-link">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -147,7 +119,7 @@ export class AppElement extends HTMLElement {
                 />
               </svg>
             </a>
-            <a href="https://www.youtube.com/c/Nrwl_io/videos?utm_source=nx-project&sub_confirmation=1" target="_blank" rel="noreferrer" class="list-item-link">
+            <a href="https://www.youtube.com/@NxDevtools/videos?utm_source=nx-project&sub_confirmation=1" target="_blank" rel="noreferrer" class="list-item-link">
               <svg
                 role="img"
                 viewBox="0 0 24 24"
@@ -177,7 +149,7 @@ export class AppElement extends HTMLElement {
                 />
               </svg>
             </a>
-            <a href="https://nx.dev/tutorial/01-create-application?utm_source=nx-project" target="_blank" rel="noreferrer" class="list-item-link">
+            <a href="https://nx.dev/react-tutorial/1-code-generation?utm_source=nx-project" target="_blank" rel="noreferrer" class="list-item-link">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -260,28 +232,52 @@ export class AppElement extends HTMLElement {
                 />
               </svg>
               <span>
-                Install Nx Console
-                <span>Plugin for VSCode</span>
+                Install Nx Console for VSCode
+                <span>The official VSCode extension for Nx.</span>
               </span>
             </a>
-            <div id="nx-cloud" class="rounded shadow">
-              <div>
+            <a
+                id="nx-console-jetbrains"
+                class="button-pill rounded shadow"
+                href="https://plugins.jetbrains.com/plugin/21060-nx-console"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
-                  viewBox="0 0 120 120"
-                  fill="none"
+                  height="48"
+                  width="48"
+                  viewBox="20 20 60 60"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M120 15V30C103.44 30 90 43.44 90 60C90 76.56 76.56 90 60 90C43.44 90 30 103.44 30 120H15C6.72 120 0 113.28 0 105V15C0 6.72 6.72 0 15 0H105C113.28 0 120 6.72 120 15Z"
-                    fill="#0E2039"
-                  />
-                  <path
-                    d="M120 30V105C120 113.28 113.28 120 105 120H30C30 103.44 43.44 90 60 90C76.56 90 90 76.56 90 60C90 43.44 103.44 30 120 30Z"
-                    fill="white"
-                  />
+                  <path d="m22.5 22.5h60v60h-60z" />
+                  <g fill="#fff">
+                    <path d="m29.03 71.25h22.5v3.75h-22.5z" />
+                    <path d="m28.09 38 1.67-1.58a1.88 1.88 0 0 0 1.47.87c.64 0 1.06-.44 1.06-1.31v-5.98h2.58v6a3.48 3.48 0 0 1 -.87 2.6 3.56 3.56 0 0 1 -2.57.95 3.84 3.84 0 0 1 -3.34-1.55z" />
+                    <path d="m36 30h7.53v2.19h-5v1.44h4.49v2h-4.42v1.49h5v2.21h-7.6z" />
+                    <path d="m47.23 32.29h-2.8v-2.29h8.21v2.27h-2.81v7.1h-2.6z" />
+                    <path d="m29.13 43.08h4.42a3.53 3.53 0 0 1 2.55.83 2.09 2.09 0 0 1 .6 1.53 2.16 2.16 0 0 1 -1.44 2.09 2.27 2.27 0 0 1 1.86 2.29c0 1.61-1.31 2.59-3.55 2.59h-4.44zm5 2.89c0-.52-.42-.8-1.18-.8h-1.29v1.64h1.24c.79 0 1.25-.26 1.25-.81zm-.9 2.66h-1.57v1.73h1.62c.8 0 1.24-.31 1.24-.86 0-.5-.4-.87-1.27-.87z" />
+                    <path d="m38 43.08h4.1a4.19 4.19 0 0 1 3 1 2.93 2.93 0 0 1 .9 2.19 3 3 0 0 1 -1.93 2.89l2.24 3.27h-3l-1.88-2.84h-.87v2.84h-2.56zm4 4.5c.87 0 1.39-.43 1.39-1.11 0-.75-.54-1.12-1.4-1.12h-1.44v2.26z" />
+                    <path d="m49.59 43h2.5l4 9.44h-2.79l-.67-1.69h-3.63l-.67 1.69h-2.71zm2.27 5.73-1-2.65-1.06 2.65z" />
+                    <path d="m56.46 43.05h2.6v9.37h-2.6z" />
+                    <path d="m60.06 43.05h2.42l3.37 5v-5h2.57v9.37h-2.26l-3.53-5.14v5.14h-2.57z" />
+                    <path d="m68.86 51 1.45-1.73a4.84 4.84 0 0 0 3 1.13c.71 0 1.08-.24 1.08-.65 0-.4-.31-.6-1.59-.91-2-.46-3.53-1-3.53-2.93 0-1.74 1.37-3 3.62-3a5.89 5.89 0 0 1 3.86 1.25l-1.26 1.84a4.63 4.63 0 0 0 -2.62-.92c-.63 0-.94.25-.94.6 0 .42.32.61 1.63.91 2.14.46 3.44 1.16 3.44 2.91 0 1.91-1.51 3-3.79 3a6.58 6.58 0 0 1 -4.35-1.5z" />
+                  </g>
+                </svg>
+                <span>
+                  Install Nx Console for JetBrains
+                  <span>
+                    Available for WebStorm, Intellij IDEA Ultimate and more!
+                  </span>
+                </span>
+              </a>
+            <div id="nx-cloud" class="rounded shadow">
+              <div>
+                <svg id="nx-cloud-logo" role="img" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="transparent" viewBox="0 0 24 24">
+                  <path stroke-width="2" d="M23 3.75V6.5c-3.036 0-5.5 2.464-5.5 5.5s-2.464 5.5-5.5 5.5-5.5 2.464-5.5 5.5H3.75C2.232 23 1 21.768 1 20.25V3.75C1 2.232 2.232 1 3.75 1h16.5C21.768 1 23 2.232 23 3.75Z" />
+                  <path stroke-width="2" d="M23 6v14.1667C23 21.7307 21.7307 23 20.1667 23H6c0-3.128 2.53867-5.6667 5.6667-5.6667 3.128 0 5.6666-2.5386 5.6666-5.6666C17.3333 8.53867 19.872 6 23 6Z" />
                 </svg>
                 <h2>
-                  NxCloud
+                  Nx Cloud
                   <span>
                     Enable faster CI & better DX
                   </span>
@@ -291,7 +287,7 @@ export class AppElement extends HTMLElement {
                 You can activate distributed tasks executions and caching by
                 running:
               </p>
-              <pre>nx connect-to-nx-cloud</pre>
+              <pre>nx connect</pre>
               <a href="https://nx.app/?utm_source=nx-project" target="_blank" rel="noreferrer"> What is Nx Cloud? </a>
             </div>
             <a id="nx-repo" class="button-pill rounded shadow" href="https://github.com/nrwl/nx?utm_source=nx-project" target="_blank" rel="noreferrer">
@@ -335,10 +331,10 @@ export class AppElement extends HTMLElement {
               Add UI library
             </summary>
             <pre><span># Generate UI lib</span>
-nx g @nrwl/angular:lib ui
+nx g @nx/angular:lib ui
 
 <span># Add a component</span>
-nx g @nrwl/angular:component button --project ui</pre>
+nx g @nx/angular:component ui/src/lib/button</pre>
           </details>
           <details>
             <summary>
@@ -406,183 +402,6 @@ nx affected:e2e</pre>
       </div>
     </div>
       `;
-    const future = `
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node.js & Nx School</title>
-    <style>
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #000;
-            color: #fff;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            padding: 1rem;
-            border-bottom: 1px solid #333;
-        }
-        h1, h2, h3 {
-            color: #0ff;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #aaa;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        .card {
-            background-color: #111;
-            border: 1px solid #333;
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        .card ul {
-            padding-left: 1.5rem;
-            color: #aaa;
-        }
-        .card li::before {
-            content: '▹';
-            color: #0ff;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .button {
-            display: inline-block;
-            background-color: transparent;
-            color: #0ff;
-            border: 1px solid #0ff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0ff;
-            color: #000;
-        }
-        pre {
-            background-color: #111;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            color: #0ff;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid #333;
-            color: #aaa;
-        }
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Node.js & Nx School</h1>
-    </header>
-    <main class="container">
-        <section class="hero">
-            <h2>Welcome to the Future of Development</h2>
-            <p>Master Node.js and Nx in our cutting-edge digital dojo</p>
-        </section>
-        <section class="grid">
-            <div class="card">
-                <h3>Node.js Mastery</h3>
-                <p>Harness the power of JavaScript on the server</p>
-                <ul>
-                    <li>Asynchronous programming</li>
-                    <li>RESTful API development</li>
-                    <li>Database integration</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Nx Toolkit</h3>
-                <p>Supercharge your development workflow</p>
-                <ul>
-                    <li>Monorepo management</li>
-                    <li>Efficient build system</li>
-                    <li>Scalable architecture</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <h3>Featured Lessons</h3>
-            <div class="grid">
-                <div class="card">
-                    <h3>Building a RESTful API</h3>
-                    <a href="#" class="button">Start Lesson</a>
-                </div>
-                <div class="card">
-                    <h3>Nx Workspace Setup</h3>
-                    <a href="#" class="button">Start Lesson</a>
-                </div>
-                <div class="card">
-                    <h3>Advanced Node.js Patterns</h3>
-                    <a href="#" class="button">Start Lesson</a>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h3>Pure Node.js API</h3>
-            <div class="card">
-                <h3>Lightweight REST API</h3>
-                <p>No dependencies, just pure Node.js power</p>
-                <pre><code>const http = require('http');
-
-const server = http.createServer((req, res) => {
-  if (req.url === '/api/data' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Welcome to the future' }));
-  } else {
-    res.writeHead(404);
-    res.end();
   }
-});
-
-server.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
-            </div>
-        </section>
-    </main>
-    <footer>
-        © 2024 Node.js & Nx School. Embrace the future of development.
-    </footer>
-</body>
-</html>
-      `;
-    const isFuture = false;
-    this.innerHTML = isFuture ? future : present;
-    setTimeout(() => this.makeHTTPRequest(), 2000);
-  }
-
-customElements.define('core-node-web-root', AppElement);
+}
+customElements.define('..-root', AppElement);

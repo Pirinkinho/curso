@@ -6,7 +6,37 @@
 
 En **ANFORA**, le piden a Javier crear una sencilla `WEB` para un proyecto interno. Paralelamente, aplica este conocimiento en UTOPIA. Decide implementar su propia `WEB` y un sistema básico de autenticación, con el objetivo de controlar la aplicación desde diferentes dispositivos, comienza a utilizar `IA` para programar y esto le hace entender lo importante que es el tiempo de aprendizaje.
 
-Ahora, fascinado por las posibilidades que ofrecen herramientas como `AutoGen`, investiga cómo incorporarlas a su flujo de trabajo para automatizar la creación de documentación y tutoriales para UTOPIA, pensando en un futuro en el que pueda ayudar a otros a aprender a programar.
+Ahora, fascinado por las posibilidades que ofrecen herramientas como `AutoGen`*, investiga cómo incorporarlas a su flujo de trabajo para automatizar la creación de documentación y tutoriales para UTOPIA, pensando en un futuro en el que pueda ayudar a otros a aprender a programar.
+
+
+* AutoGen es un término que puede referirse a diferentes cosas según el contexto. Aquí te explico algunos de los usos comunes del término:
+
+- 1. Código Generado Automáticamente
+En programación, AutoGen puede hacer referencia al código que se genera automáticamente mediante herramientas o scripts. Este código se utiliza para reducir el esfuerzo manual en tareas repetitivas, como configurar archivos, crear boilerplate (código básico), o manejar tareas específicas en proyectos grandes.
+`Ejemplo`: Al trabajar con herramientas como Swagger (para APIs) o frameworks como Angular, parte del código puede generarse automáticamente.
+Propósito: Aumentar la productividad y minimizar errores humanos.
+
+
+- 2. Herramienta AutoGen para Archivos de Configuración
+Específicamente, AutoGen también puede referirse a una herramienta de software llamada AutoGen, diseñada para generar automáticamente archivos de configuración o scripts a partir de definiciones preescritas.
+`Aplicación`: Generación de opciones de línea de comandos para programas.
+Creación de scripts de inicialización o configuración para sistemas complejos.
+Sitio oficial: AutoGen
+
+
+- 3. AutoGeneración de Contenido
+En algunos contextos, el término AutoGen se utiliza para describir sistemas que generan contenido automáticamente, como textos, imágenes, o configuraciones. Por ejemplo:
+Herramientas como ChatGPT generan texto automáticamente.
+Algoritmos de Machine Learning generan contenido en función de patrones de datos.
+- 4. Etiquetas en Sistemas
+En algunas aplicaciones o repositorios, una carpeta, archivo, o sección llamada AutoGen indica que el contenido ha sido generado automáticamente. Esto es común en:
+Sistemas de compilación (como CMake).
+Proyectos de código abierto donde se generan automáticamente configuraciones o librerías durante la instalación.
+- 5. Otros Contextos El término puede aparecer en:
+`Videojuegos`: Puede referirse a niveles generados proceduralmente (AutoGen Worlds).
+`Infraestructura de red`: Generación automática de configuraciones para redes complejas.
+`Diseño asistido por computadora (CAD)`: Generación de geometrías o patrones predefinidos.
+
 
 Usaremos el proyecto `code/code-node-web` basado en `NX` para crear una `WEB` que será parte visual de nuestro proyecto.
 
@@ -68,23 +98,6 @@ core-node-web/
 
 ### Componente Principal
 
-El componente principal (`app.element.ts`) se define como una clase que extiende `HTMLElement`:
-
-```typescript
-export class AppElement extends HTMLElement {
-  public static observedAttributes = [];
-
-  connectedCallback() {
-    this.innerHTML = `
-      <div class="wrapper">
-        <!-- Contenido del componente -->
-      </div>
-    `;
-  }
-}
-
-customElements.define('core-node-web-root', AppElement);
-```
 
 ### Ciclo de Vida de los Componentes
 

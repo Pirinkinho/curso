@@ -1,35 +1,7 @@
 import './app.element.css';
-import 'regenerator-runtime/runtime';
 
 export class AppElement extends HTMLElement {
   public static observedAttributes = [];
-
-  public makeHTTPRequest = async function () => {
-    const response = await fetch('http://localhost:8080/api/users', {
-      mode: 'no-cors',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
-    try {
-      const response = await fetch('http://localhost:8080/api/users', {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-      });
-      const data = await response.json();
-      console.log('Response:', data);
-  } catch (error) {
-      console.error('Error fetching data:', error);
-  }
-  }
-    console.log('Response', response /*  await response.json() */);
-    /* alert(
-      'Response error egg three - Solve why we are getting this error and not the data json response'*/
-  };
 
   connectedCallback() {
     const title = 'https://virgil.io/'; // These app is a joke, it's a prank search engine to stay focused on your own projects
@@ -580,9 +552,37 @@ server.listen(3000, () => console.log('Server running on port 3000'));</code></p
 </body>
 </html>
       `;
-    const isFuture = false;
+    const isFuture = true;
+
+
+
+    let elige = Number(prompt("Introduce un número (0, 1 o 2):")); 
+    const miNombre = "Koldo";
+
+    switch (elige) {
+        case 0:
+            elige = "present";
+            break; 
+        case 1:
+            elige = "future";
+            break;
+        case 2:
+            elige = miNombre;
+            break;
+        default:
+            elige = "Valor no válido"; 
+    }
+
+console.log(elige);
+this.innerHTML = elige
+    setTimeout(() => this.makeHTTPRequest(), 2000);
+
+
+
+
     this.innerHTML = isFuture ? future : present;
     setTimeout(() => this.makeHTTPRequest(), 2000);
   }
 
-customElements.define('core-node-web-root', AppElement);
+}
+customElements.define('core-node-koldo-root', AppElement);

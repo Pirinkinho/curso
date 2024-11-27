@@ -1,0 +1,10 @@
+{
+  "name": "undefined-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/undefined-e2e/src",
+  "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["undefined"],
+  "// targets": "to see all targets run: nx show project undefined-e2e --web",
+  "targets": {}
+}
