@@ -1,14 +1,14 @@
-# Creación de un proyecto de Node.js y trabajo con dependencias
+# Creación de un proyecto de Node.js y trabajo con dependencias.
 
-## Introducción
+## Introducción.
 
 > Capítulo 3: El Poder de la Organización
+>
+>El proyecto `u.top.ia` empieza a crecer en complejidad. Javier descubre la librería NX y el concepto de monorepos. Organiza el código de manera eficiente, lo que le permite implementar funcionalidades de forma mucho más rápida y escalable.
+>
+>Javier se siente empoderado al ver cómo las buenas prácticas le facilitan el desarrollo de un proyecto, aparentemente complejo, con una relativa facilidad. La modularidad de NX le inspira nuevas ideas para `u.top.ia`. Piensa en integrar un módulo para controlar la domótica de su hogar, otro para gestionar las finanzas personales, e incluso, un sistema de recomendaciones personalizadas de aprendizaje. Sin embargo deberá enfrentarse al gran reto de las dependencias.
 
-El proyecto `u.top.ia` empieza a crecer en complejidad. Javier descubre la librería NX y el concepto de monorepos. Organiza el código de manera eficiente, lo que le permite implementar funcionalidades de forma mucho más rápida y escalable.
-
-Javier se siente empoderado al ver cómo las buenas prácticas le facilitan el desarrollo de un proyecto, aparentemente complejo, con una relativa facilidad. La modularidad de NX le inspira nuevas ideas para `u.top.ia`. Piensa en integrar un módulo para controlar la domótica de su hogar, otro para gestionar las finanzas personales, e incluso, un sistema de recomendaciones personalizadas de aprendizaje. Sin embargo deberá enfrentarse al gran reto de las dependencias.
-
-## Objetivos de aprendizaje
+## Objetivos de aprendizaje.
 
 Después de completar este módulo, sabrás:
 
