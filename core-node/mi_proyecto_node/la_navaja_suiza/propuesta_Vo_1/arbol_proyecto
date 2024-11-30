@@ -43,5 +43,3 @@ Para comenzar a trabajar en tu proyecto:
 Ahora tienes una estructura básica para tu proyecto "La navaja suíza". Cada utilidad (convertidor de unidades, test de personalidad, etc.) será una página separada que puedes desarrollar individualmente.
 
 Recuerda que necesitarás implementar la lógica específica para cada utilidad en sus respectivos archivos (por ejemplo, `convertidor-unidades.js`, `test-personalidad.js`, etc.).
-
-¿Hay alguna utilidad específica que te gustaría que desarrolláramos primero o tienes alguna pregunta sobre la estructura del proyecto?
