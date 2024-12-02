@@ -1,3 +1,4 @@
+
 // Importamos el módulo express
 const express = require('express');
 
@@ -9,7 +10,7 @@ const port = 3000;
 
 // Ruta de prueba
 app.get('/', (req, res) => {
-  res.send('¡Hola, mundo! Mi aplicación está corriendo.');
+  res.send('¡Hola, mundo! Mi aplicación está corriendo. En serio.');
 });
 
 // Iniciamos el servidor

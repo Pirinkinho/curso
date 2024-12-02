@@ -415,6 +415,6 @@ En este módulo has aprendido que `Node.js` es un entorno de ejecución para apl
 >
 >Javier, después de una intensa semana aprendiendo los fundamentos de `JavaScript`, se siente como si hubiera absorbido toda la biblioteca de Alejandría en 7 días. Decide analizar las librerias más potentes y con más funcionalidades que se usan en el mercado usando `github` y la pagina del registro `npm`, esto le hace descubrir una cantidad increible de conocimiento que puede aprovechar para aplicar en la empresa y lanza su propuesta...
 >
->Lo que no esperaba era que `ANFORA`, en un acto de aparente locura (o genialidad), lo ascendiera a desarrollador de producto. "Debe ser por mi irresistible encanto..." pensó Javier irónicamente, ignorando por completo que un misterioso grupo de "eco-espías" movía los hilos tras bambalinas para acelerar un plan de cambio bastante valioso. ¡A por el módulo 3!
+>Lo que no esperaba era que `ANFORA`  , en un acto de aparente locura (o genialidad), lo ascendiera a desarrollador de producto. "Debe ser por mi irresistible encanto..." pensó Javier irónicamente, ignorando por completo que un misterioso grupo de "eco-espías" movía los hilos tras bambalinas para acelerar un plan de cambio bastante valioso. ¡A por el módulo 3!
 
 [^1]: Internet de las cosas.
