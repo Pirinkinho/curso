@@ -1,37 +1,37 @@
-# Creación de un proyecto de Node.js y trabajo con dependencias.
+# Creación de un proyecto de `Node.js` y trabajo con dependencias.
 
 ## Introducción.
 
 > Capítulo 3: El Poder de la Organización
 >
->El proyecto `u.top.ia` empieza a crecer en complejidad. Javier descubre la librería NX y el concepto de monorepos. Organiza el código de manera eficiente, lo que le permite implementar funcionalidades de forma mucho más rápida y escalable.
+>El proyecto `u.top.ia` empieza a crecer en complejidad. Javier descubre la librería `NX` y el concepto de `monorepos`. Organiza el código de manera eficiente, lo que le permite implementar funcionalidades de forma mucho más rápida y escalable.
 >
->Javier se siente empoderado al ver cómo las buenas prácticas le facilitan el desarrollo de un proyecto, aparentemente complejo, con una relativa facilidad. La modularidad de NX le inspira nuevas ideas para `u.top.ia`. Piensa en integrar un módulo para controlar la domótica de su hogar, otro para gestionar las finanzas personales, e incluso, un sistema de recomendaciones personalizadas de aprendizaje. Sin embargo deberá enfrentarse al gran reto de las dependencias.
+>Javier se siente empoderado al ver cómo las buenas prácticas le facilitan el desarrollo de un proyecto, aparentemente complejo, con una relativa facilidad. La modularidad de `NX` le inspira nuevas ideas para `u.top.ia`. Piensa en integrar un módulo para controlar la domótica de su hogar, otro para gestionar las finanzas personales, e incluso, un sistema de recomendaciones personalizadas de aprendizaje. Sin embargo deberá enfrentarse al gran reto de las dependencias.
 
 ## Objetivos de aprendizaje.
 
 Después de completar este módulo, sabrás:
 
-- Inicializar proyectos de Node.js
-- Entender en qué consiste el archivo de manifiesto package.json y usarlo para su beneficio
-- Agregar y eliminar paquetes del proyecto de Node.js
-- Administrar las dependencias de paquete y actualizarlas de forma predecible
+- Inicializar proyectos de `Node.js`.
+- Entender en qué consiste el archivo de manifiesto `package.json` y usarlo para su beneficio.
+- Agregar y eliminar paquetes del proyecto de `Node.js`.
+- Administrar las dependencias de paquete y actualizarlas de forma predecible.
 - Probar e implementar librerías y frameworks para casi todo.
 
-### Requisitos previos
+## Requisitos previos.
 
-- Git
+- `Git`.
 - Conocimientos básicos de edición de texto y archivos de código.
-- Experiencia básica en JavaScript.
+- Experiencia básica en `JavaScript`.
 - Experiencia con la línea de comandos.
 
-### Configuración inicial
+## Configuración inicial.
 
-Le damos la bienvenida al mundo de la administración de proyectos de Node.js con NPM (Node Package Manager). Vamos a profundizar en los aspectos básicos de las dependencias y cómo puede sobrecargar el proceso de desarrollo. Para facilitar la comprensión de cada una de las piezas del ecosistema de dependencias hemos usado descripciones con ejemplos del día a día que te permitirán recordar mejor para que sirve cada una:
+Le damos la bienvenida al mundo de la administración de proyectos de `Node.js` con `NPM (Node Package Manager)`. Vamos a profundizar en los aspectos básicos de las dependencias y cómo puede sobrecargar el proceso de desarrollo. Para facilitar la comprensión de cada una de las piezas del ecosistema de dependencias hemos usado descripciones con ejemplos del día a día que te permitirán recordar mejor para que sirve cada una:
 
-**Empaquetado y Administración de paquetes**
+## Empaquetado y Administración de paquetes.
 
-`NPM`, el administrador de paquetes predeterminado para Node.js, es el arma secreta para incorporar código externo en los proyectos. Es como tener un asistente personal para ayudarle a crear aplicaciones de forma más rápida y eficaz. En conclusión la herramienta de CLI que usarás para casi todo, para desarrollar tu programa o librería.
+`NPM`, el administrador de paquetes predeterminado para `Node.js`, es el arma secreta para incorporar código externo en los proyectos. Es como tener un asistente personal para ayudarle a crear aplicaciones de forma más rápida y eficaz. En conclusión la herramienta de `CLI` que usarás para casi todo, para desarrollar tu programa o librería.
 
 - Id a la terminal y teclead `npm` para comprobar que teneis la herramienta instalada:
 
@@ -71,7 +71,7 @@ Configuration fields: npm help 7 config
 
 La administración de paquetes es el arte de controlarlos e implica el uso conjunto de todas las partes:
 
-- La herramienta de la CLI de `npm`, su manitas personal para instalar y administrar paquetes desde el registro npm.
+- La herramienta de la `CLI` de `npm`, su manitas personal para instalar y administrar paquetes desde el registro npm.
 
 - El archivo `package.json`, el plano técnico del proyecto. Está lleno de metadatos sobre su proyecto y se encarga de administrar las dependencias y los archivos de paquetes.
 
@@ -79,15 +79,15 @@ La administración de paquetes es el arte de controlarlos e implica el uso conju
 
 - El proceso de desarrollo empaquetado y publicación de todo el proyecto mediante los tres elementos anteriores. Lo cual es un requisito obligatorio para crear un proyecto y trabajar con dependencias.
 
-**Creación del archivo package.json**
+## Creación del archivo `package.json`.
 
 Crear un `package.json` es tan sencillo como ejecutar el comando `npm init`.
 
 Hay dos maneras principales de hacerlo:
 
-- npm init: Este comando es como una guía fácil, lo que le lleva a través de un proceso paso a paso que solicita detalles sobre el proyecto, como su nombre, versión y descripción.
+- `npm init`: Este comando es como una guía fácil, lo que le lleva a través de un proceso paso a paso que solicita detalles sobre el proyecto, como su nombre, versión y descripción.
 
-- npm init -y: Este comando es la versión rápida de entrenamiento de npm init. Repasa las preguntas y rellena los valores predeterminados por usted.
+- `npm init -y`: Este comando es la versión rápida de entrenamiento de `npm init`. Repasa las preguntas y rellena los valores predeterminados por usted.
 
 > Aquí tiene un anticipo del archivo de package.json que generará.
 
@@ -108,9 +108,9 @@ Hay dos maneras principales de hacerlo:
 }
 ```
 
-### Descripción de las áreas de archivo package.json
+### Descripción de las áreas de archivo `package.json`.
 
-Piense en el archivo package.json como un cofre del tesoro, lleno de gemas preciosas que dan a su proyecto su brillo. Estas gemas son las propiedades del archivo package.json y se dividen en tres categorías principales:
+Piense en el archivo `package.json` como un cofre del tesoro, lleno de gemas preciosas que dan a su proyecto su brillo. Estas gemas son las propiedades del archivo `package.json` y se dividen en tres categorías principales:
 
 **Metainformación:** Estas propiedades son como las joyas de la corona, definiendo la metainformación sobre el proyecto. Incluyen el nombre del proyecto, la descripción, el autor, las palabras clave y mucho más.
 
@@ -120,19 +120,19 @@ A medida que avanzamos, aprenderás a usar estas propiedades para `instalar`, `a
 
 **Scripts:** Estos son los comandos de terminal que hacen que se produzcan las tareas del proyecto. Puede enumerar scripts para tareas como iniciar, compilar, probar y lint.
 
-### Creación de tareas con scripts
+### Creación de tareas con scripts.
 
-En el archivo package.json, debe incluir al menos cuatro scripts comunes:
+En el archivo `package.json`, debe incluir al menos cuatro scripts comunes:
 
-- **start:** Este script da vida a su proyecto. Por ejemplo, podría usar el comando node ./src/index.js.
-- **build:** Este script prepara el proyecto para su gran debut. Puede transformar TypeScript en JavaScript, por ejemplo.
+- **start:** Este script da vida a su proyecto. Por ejemplo, podría usar el `comando node` `./src/index.js`.
+- **build:** Este script prepara el proyecto para su gran debut. Puede transformar `TypeScript` en `JavaScript`, por ejemplo.
 - **test:** Este script comprueba el estado del proyecto, normalmente mediante un paquete de prueba.
-- **lint:** Este script ordena el código, comprobando si hay problemas de estilo y formato mediante una herramienta como ESLint.
+- **lint:** Este script ordena el código, comprobando si hay problemas de estilo y formato mediante una herramienta como `ESLint`.
   Estos nombres de script son como palabras mágicas, reconocidas universalmente en la comunidad de desarrolladores y esenciales para mantener el proyecto organizado.
 
-### Estandarización de nombres de script
+### Estandarización de nombres de script.
 
-En el archivo package.json, los scripts se definen con una acción y un comando:
+En el archivo `package.json`, los scripts se definen con una acción y un comando:
 
 ```json
 "scripts" : {
@@ -151,13 +151,13 @@ Este es un ejemplo:
 }
 ```
 
-### Ejecutar un script
+### Ejecutar un script.
 
 Para ejecutar un script en un terminal, escriba el comando `npm run <action>`. Por ejemplo, `npm run lint`.
 
-Las acciones `start` y test son especiales en que puede omitir la palabra run en el comando. En lugar de escribir el comando `npm run start`, puede escribir `npm start`.
+Las acciones `start` y `test` son especiales en que puede omitir la palabra `run` en el comando. En lugar de escribir el comando `npm run start`, puede escribir `npm start`.
 
-### Uso de un entorno de desarrollo predefinido
+### Uso de un entorno de desarrollo predefinido.
 
 Este módulo de entrenamiento propone un entorno de desarrollo en el equipo local, en la sección de detalles puedes encontrar el uso de contenedores de manera opcional.
 
@@ -167,15 +167,15 @@ Este módulo de entrenamiento propone un entorno de desarrollo en el equipo loca
 
 Revisar `.devcontainer/devcontainer.json`
 
-Este contenedor proporciona todo el entorno necesario para que pueda usar este módulo de entrenamiento sin tener que instalar un IDE o Node.js. No es necesario saber nada sobre el contenedor para completar este módulo de entrenamiento. Pero si te interesa puedes buscar información y hacer el ejercicio en casa usando contenedores, el ejercicio podrá presentarse como ejercicio voluntario.
+Este contenedor proporciona todo el entorno necesario para que pueda usar este módulo de entrenamiento sin tener que instalar un `IDE` o `Node.js`. No es necesario saber nada sobre el contenedor para completar este módulo de entrenamiento. Pero si te interesa puedes buscar información y hacer el ejercicio en casa usando contenedores, el ejercicio podrá presentarse como ejercicio voluntario.
 
 </details>
 
-### Ejercicio: Configuración del archivo package.json
+### Ejercicio: Configuración del archivo `package.json`.
 
-Es un desarrollador de Node.js en ANFORA. Le interesa mucho saber cómo configurar un nuevo proyecto de Node.js. El programa de instalación incluye la generación de un archivo package.json y la creación de algunos scripts comunes que se usarán durante el ciclo de vida del proyecto.
+Es un desarrollador de `Node.js` en **ANFORA**. Le interesa mucho saber cómo configurar un nuevo proyecto de `Node.js`. El programa de instalación incluye la generación de un archivo `package.json` y la creación de algunos scripts comunes que se usarán durante el ciclo de vida del proyecto.
 
-- Abrir el proyecto y usar el entorno local en Visual Studio Code en el contexto de un directorio vacío.
+- Abrir el proyecto y usar el entorno local en `Visual Studio Code` en el contexto de un directorio vacío.
 
 - Abra un nuevo terminal en el editor.
 
@@ -191,9 +191,9 @@ Compruebe que Node.js está instalado en el entorno:
 node --version
 ```
 
-### Configuración de un nuevo proyecto de Node.js
+### Configuración de un nuevo proyecto de `Node.js`.
 
-Para esta unidad, se le ha proporcionado el código fuente de JavaScript. El trabajo consiste en crear el archivo package.json.
+Para esta unidad, se le ha proporcionado el código fuente de `JavaScript`. El trabajo consiste en crear el archivo `package.json`.
 
 En el terminal, cambie a la carpeta de este ejercicio:
 
@@ -217,7 +217,7 @@ El archivo `package.json` que tiene un aspecto similar a este ejemplo:
 
 ```json
 {
-  "name": "3-exercise-package-json",
+  "name": "anfora-",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -283,13 +283,13 @@ Ahora tiene un buen archivo package.json en el que puede compilar a medida que c
 
 ---
 
-## Incorporación de paquetes al proyecto de `Node.js`
+## Incorporación de paquetes al proyecto de `Node.js`.
 
 `Node.js` tiene paquetes integrados para tareas como la administración de archivos y el control `HTTP`. Pero también hay una amplia gama de paquetes de terceros que se ofrecen en el [registro NPM](https://www.npmjs.com).
 
-### Cuándo y cómo seleccionar un paquete `npm`
+### Cuándo y cómo seleccionar un paquete `npm`.
 
-Como nuevo desarrollador de ANFORA, debe agregar funcionalidad a un proyecto. Podría escribir el código usted mismo, pero decide usar un paquete existente. Esta decisión de desarrollo es un escenario común. Antes de usar código de terceros es importante aplicar el siguiente análisis:
+Como nuevo desarrollador de `ANFORA`, debe agregar funcionalidad a un proyecto. Podría escribir el código usted mismo, pero decide usar un paquete existente. Esta decisión de desarrollo es un escenario común. Antes de usar código de terceros es importante aplicar el siguiente análisis:
 
 ### ¿Cuándo debe usar un paquete existente?
 
@@ -303,18 +303,18 @@ Estos son algunos de factores que se deben tener en cuenta:
 
 Los desarrolladores pueden encontrar y descargar paquetes de varios orígenes, como:
 
-- **Registros:** Los registros son colecciones de paquetes, como el registro npm. También puede hospedar su propio registro.
-- **Repositorios:** Puede instalar paquetes directamente desde una dirección URL de GitHub.
+- **Registros:** Los registros son colecciones de paquetes, como el `registro npm`. También puede hospedar su propio registro.
+- **Repositorios:** Puede instalar paquetes directamente desde una dirección URL de `GitHub`.
 - **Archivos:** Los paquetes se pueden instalar desde una carpeta local o un archivo comprimido, lo que resulta útil para probar sus propios paquetes.
 - **Directorios:** También puede instalar directamente desde un directorio.
 
-## Instalando paquetes NPM desde diferentes fuentes
+## Instalando paquetes `NPM` desde diferentes fuentes.
 
 Aquí hay algunos ejemplos de cómo instalar paquetes npm desde diferentes fuentes:
 
 **Registros:**
 
-Por defecto, npm usa el registro público de npm (https://registry.npmjs.org/). Puedes instalar paquetes directamente desde allí usando el comando `npm install`:
+Por defecto, npm usa el registro público de npm <https://registry.npmjs.org/>. Puedes instalar paquetes directamente desde allí usando el comando `npm install`:
 
 ```bash
 npm install <nombre-del-paquete>  # Instala la última versión
@@ -331,10 +331,14 @@ npm install react
 
 Para usar un registro privado, debes configurarlo en tu archivo `.npmrc`:
 
+## <mark>\*↓ ↓ ↓ ↓ Huevo de pascua 1. ↓ ↓ ↓ ↓\*</mark>
+
 ```bash
 # easter egg one - create your own npm registry, you can use gitea, verdaccio, etc.
 registry=https://tu-registro-privado.com/
 ```
+
+## <mark>\*↑ ↑ ↑ ↑ Huevo de pascua 1. ↑ ↑ ↑ ↑\*</mark>
 
 Luego, instala paquetes como lo harías normalmente:
 
@@ -342,9 +346,9 @@ Luego, instala paquetes como lo harías normalmente:
 npm install <nombre-del-paquete>
 ```
 
-**Repositorios (GitHub):**
+**Repositorios (`GitHub)`:**
 
-Puedes instalar paquetes directamente desde GitHub usando la siguiente sintaxis:
+Puedes instalar paquetes directamente desde `GitHub` usando la siguiente sintaxis:
 
 ```bash
 npm install <usuario-github>/<repositorio-github>#<rama-o-commit>
@@ -418,7 +422,7 @@ npm link mi-paquete
 
 Esto creará un [enlace simbólico](https://www.google.com/search?q=enlace+simbolico&num=10&sca_esv=38d63245fe7a3678&rlz=1C5CHFA_enES999ES999&sxsrf=ADLYWIKJ-SwNubeAk880H1WX_q44sx1_lA%3A1730586092505&ei=7KUmZ8LAHsLPhbIPz8um0AI&ved=0ahUKEwjC5q_K176JAxXCZ0EAHc-lCSoQ4dUDCA8&uact=5&oq=enlace+simbolico&gs_lp=Egxnd3Mtd2l6LXNlcnAiEGVubGFjZSBzaW1ib2xpY28yBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMggQABiABBjLAUjUP1CzDVjzM3ADeACQAQCYAdEBoAHUD6oBBjYuMTEuMbgBA8gBAPgBAZgCFKACzA7CAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgIZEC4YgAQYsAMY0QMYQxjHARjIAxiKBdgBAcICFhAuGIAEGLADGEMY1AIYyAMYigXYAQHCAgQQIxgnwgILEC4YgAQY0QMYxwHCAgUQLhiABMICDhAuGIAEGMcBGI4FGK8BwgIFECEYoAGYAwCIBgGQBhG6BgYIARABGAmSBwQ4LjEyoAe_fw&sclient=gws-wiz-serp) desde tu proyecto al paquete en desarrollo. Cualquier cambio que realices en el paquete en desarrollo se reflejará inmediatamente en tu proyecto.
 
-Estos ejemplos muestran cómo instalar paquetes npm desde diferentes fuentes. Selecciona la opción que mejor se adapte a tus necesidades. Recuerda que para registros privados o repositorios privados, podrías necesitar autenticación.
+Estos ejemplos muestran cómo instalar paquetes `npm` desde diferentes fuentes. Selecciona la opción que mejor se adapte a tus necesidades. Recuerda que para registros privados o repositorios privados, podrías necesitar autenticación.
 
 Una vez que seleccione un paquete, compruebe sus dependencias para tener en cuenta los siguientes factores:
 
@@ -427,28 +431,34 @@ Una vez que seleccione un paquete, compruebe sus dependencias para tener en cuen
 - **Licencias:** Si planea vender el software, asegúrese de que todas las licencias del paquete de dependencias permiten reutilizarlas y revenderlas.
 - **Mantenimiento activo:** Evite las dependencias que están en desuso o que rara vez se actualizan.
 
-Para obtener más información sobre un paquete, visite su página de paquetes en NPM y su repositorio de GitHub. También puede usar el comando `npm`: `npm view <package name>`.
+Para obtener más información sobre un paquete, visite su página de paquetes en `NPM` y su repositorio de `GitHub`. También puede usar el comando `npm`: `npm view <package name>`.
 
-### Procedimiento para instalar un paquete
+### Procedimiento para instalar un paquete.
 
 Para instalar un paquete, use la `CLI` de `npm` instalada con `Node.js`. Puede agregar un paquete al proyecto `Node.js` con el comando `npm instal`l en el terminal.
 
 ```bash
-npm install <name of package>
+npm install < nombre del paquete >
 ```
 
-Al ejecutar el comando `install`, la herramienta de línea de comandos se conecta a un registro global, captura el código y lo coloca en una carpeta `node_modules` en la raíz del proyecto.
+Al ejecutar el comando `install`, la herramienta de `línea de comandos` se conecta a un registro global, captura el código y lo coloca en una carpeta `node_modules` en la raíz del proyecto.
 
 Algunos modificadores comunes (`flags --`) para el comando `install` incluyen:
 
-- En el caso de los **paquetes de solo desarrollo**, use `--save-dev` o `-D`. Este modificador guarda en la propiedad `devDependencies` de `package.json`. Estas dependencias suelen ser herramientas de formato, lint, compilación, transpilación y pruebas.
+- En el caso de los **paquetes de solo desarrollo**, use `--save-dev` o `-D`. Este modificador guarda en la propiedad `devDependencies` de `package.json`. Estas dependencias suelen ser herramientas de formato, lint, compilación, transpilación, ~~depilación~~ y pruebas.
 
 - En el caso de los **paquetes de solo producción**, use `--production`.
 Este modificador excluye los paquetes de solo desarrollo.
 
-- Para las **herramientas disponibles globalmente**, use `-g`. Las herramientas de línea de comandos a menudo se instalan globalmente en lugar de importarlas en proyectos.
+- Para las **herramientas disponibles globalmente**, use `-g`. Las herramientas de `línea de comandos` a menudo se instalan globalmente en lugar de importarlas en proyectos.
 
-**easter egg two - understand and document the use of .bin npx -g and other similar concepts**
+## <mark>\*↓ ↓ ↓ ↓ Huevo de pascua 2. ↓ ↓ ↓ ↓\*</mark>
+
+```bash
+easter egg two - understand and document the use of .bin npx -g and other similar concepts
+```
+
+## <mark>\*↑ ↑ ↑ ↑ Huevo de pascua 2. ↑ ↑ ↑ ↑\*</mark>
 
 Las dependencias globales se instalan en un directorio de todo el sistema, no en el nivel de instrucción `node_modules`. Sin embargo, los paquetes globales pueden desordenar el sistema.
 
@@ -465,7 +475,7 @@ src
 index.js
 ```
 
-### Comandos de la `CLI` de `npm`
+### Comandos de la `CLI` de `npm`.
 
 La herramienta de línea de comandos de `npm` tiene bastantes comandos para ayudarle con tareas como instalar paquetes, crear paquetes e inicializar proyectos de `Node.js`.
 
@@ -482,9 +492,13 @@ Si quiere obtener una lista detallada de todos los comandos, escriba el comando 
 npm --help
 ```
 
-### Verificar instalaciones
+### Verificar instalaciones.
 
 Para ver lo que hay en la carpeta `package.json` en cuanto a dependencias instaladas, use `npm list`.
+
+```bash
+npm list
+```
 
 El comando `npm list` enumera todos los paquetes del directorio `node_modules` que se instalaron. Ten en cuenta que cada paquete instalado instaló todas sus propias dependencias.
 
@@ -500,7 +514,7 @@ Si ha instalado el paquete `Jest`, `npm list --depth=0` producirá una salida si
 ├── jest@26.0.1
 ```
 
-### Limpieza de dependencias
+### Limpieza de dependencias.
 
 Si ya no necesita un paquete, quítelo. La eliminación de una dependencia mantiene el proyecto limpio y ahorra espacio.
 
@@ -520,11 +534,11 @@ La eliminación es útil cuando desea quitar varias dependencias sin ejecutar la
 
 ---
 
-## Ejercicio: Instalación de paquetes
+## Ejercicio: Instalación de paquetes.
 
 El equipo de **ANFORA** planea desarrollar varias aplicaciones `Node.js`. Han encontrado `Jest`, un conocido marco de pruebas de configuración cero, en el registro `npm`. Quieren instalar `Jest`, escribir algunas pruebas y ejecutarlas para evaluar su eficacia.
 
-### Adición de un paquete de prueba con la `CLI` de `npm`
+### Adición de un paquete de prueba con la `CLI` de `npm`.
 
 Tiene algún código que extrae una dirección de una cadena. El trabajo es sencillo, siga los siguientes pasos:
 
@@ -592,7 +606,7 @@ npm install jest --save-dev
 mkdir __tests__
 ```
 
-Nota:
+**Nota:**
 Asegúrese de usar caracteres de subrayado dobles al crear la carpeta **`tests`**. La carpeta `tests` es una convención de nomenclatura que usa `Jest`, el marco de pruebas. `Jest` reconoce automáticamente los archivos de una carpeta `tests` (o archivos con `.test.` o `.spec.` en sus nombres) como archivos de prueba y los incluye al ejecutar pruebas. Esta convención ayuda a mantener los archivos de prueba organizados y fácilmente identificables en el proyecto.
 
 - En la carpeta **`tests`**, cree un archivo denominado `address-parser.js` y agregue el contenido siguiente al archivo:
@@ -660,7 +674,7 @@ Terminado. La prueba se ha superado y ha agregado la función de prueba mediante
 
 ---
 
-## Administración de actualizaciones de dependencias en el proyecto de `Node.js`
+## Administración de actualizaciones de dependencias en el proyecto de `Node.js`.
 
 Como desarrollador en **ANFORA**, es importante mantener nuestros paquetes actualizados.
 
@@ -670,16 +684,16 @@ También nos ayuda a evitar vulnerabilidades de seguridad.
 
 En esta unidad, aprenderás a administrar dependencias en un proyecto de `Node.js` y a actualizar paquetes, usar el control de versiones semántico y administrar incidencias de seguridad.
 
-### Consideraciones antes de actualizar un paquete
+### Consideraciones antes de actualizar un paquete.
 
 Antes de actualizar un paquete, tenga en cuenta lo siguiente:
 
 - **Tipo de actualización:** Comprenda si se trata de una corrección secundaria, una nueva característica o un cambio importante que podría interrumpir el código. El control de versiones semántico puede ayudar a identificar esto.
 - **Configuración del proyecto:** Asegúrese de que el proyecto esté establecido para recibir solo actualizaciones deseadas con el fin de evitar cambios inesperados.
-- **Seguridad:** Manténgase al tanto de las posibles vulnerabilidades. Use la característica de auditoría de npm para identificar y actualizar paquetes problemáticos.
+- **Seguridad:** Manténgase al tanto de las posibles vulnerabilidades. Use la característica de auditoría de `npm` para identificar y actualizar paquetes problemáticos.
 - **Pruebas:** Asegúrese de pasar las pruebas después de la actualización. Si no tiene pruebas, considere la posibilidad de agregarlas. La aplicación puede comportarse de forma diferente después de una actualización y las pruebas validan el comportamiento correcto.
 
-### Control de versiones semántico para definir el comportamiento de actualización
+### Control de versiones semántico para definir el comportamiento de actualización.
 
 El control de versiones semántico es un estándar clave en el desarrollo de software.
 
@@ -703,20 +717,29 @@ Antes de actualizar una o más dependencias, debe configurar el archivo `package
 
 `Node.js` usa un conjunto de símbolos que le permiten definir cómo quiere que se actualicen los paquetes.
 
-### Actualización de un paquete con la `CLI` de `npm`
+### Actualización de un paquete con la `CLI` de `npm`.
 
 Puede instalar un paquete mediante el comando install o update en npm. Ahora estos comandos son principalmente intercambiables. Para actualizar un paquete, normalmente se usa:
 
-Versión más reciente: `npm update <package name>@latest`.
-Versión específica: `npm update <package name>@<optional version number>`.
+- Versión más reciente:
+
+   ```bash
+   `npm update <package name>@latest`
+   ```
+
+- Versión específica:
+
+   ```bash
+   npm update <package name>@<optional version number>`
+   ```
 
 El proceso de actualización depende de dos factores:
 
-- **Argumento de versión:** Si se especifica un número de versión en el comando npm update, npm captura e instala esa versión específica.
+- **Argumento de versión:** Si se especifica un número de versión en el comando `npm update`, `npm` captura e instala esa versión específica.
 
-- **Entrada del archivo de manifiesto:** El archivo package.json contiene reglas para actualizar las dependencias. Por ejemplo, "dependencyName": "1.1.x" significa que npm capturará la versión que coincida con este patrón.
+- **Entrada del archivo de manifiesto:** El archivo `package.json` contiene reglas para actualizar las dependencias. Por ejemplo, `"dependencyName": "1.1.x"` significa que `npm` capturará la versión que coincida con este patrón.
 
-### Descripción del control de versiones
+### Descripción del control de versiones.
 
 **Tres archivos** se complementan en el control de versiones de las dependencias:
 
@@ -735,7 +758,7 @@ Por lo tanto, puede encontrar `npm-shrinkwrap.json` al mantener los código base
 
 Una **excepción** en la que se prefiere `npm-shrinkwrap.json` es para las instalaciones globales de demonios y herramientas de línea de comandos en las que los desarrolladores desean asegurarse de que se instalan las versiones exactas de los paquetes especificados.
 
-### Ejemplo de determinación de la versión del paquete
+### Ejemplo de determinación de la versión del paquete.
 
 Imagine que usa la `versión 1.2` en el código y, luego, se publica la `versión 1.4`y se interrumpe el código por un bug en la nueva versión.
 
@@ -753,7 +776,7 @@ Si `package.json` especifica una versión más específica, como `1.8.x`, invali
 
 En este caso, se instalará la `versión 1.8.0` o una versión de revisión posterior, si existe.
 
-### Búsqueda y actualización de paquetes obsoletos con `npm obsoleto`
+### Búsqueda y actualización de paquetes obsoletos con `npm outdated` (obsoleto).
 
 El comando `npm outdated` se usa para identificar los paquetes con versiones más recientes disponibles.
 
@@ -826,11 +849,11 @@ El flujo de trabajo recomendado para las actualizaciones es:
 
 ---
 
-## Ejercicio: Administración de actualizaciones de dependencias en el proyecto de `Node.js`
+## Ejercicio: Administración de actualizaciones de dependencias en el proyecto de `Node.js`.
 
 **ANFORA** le ha asignado la tarea de trabajar en una aplicación que tiene algunas dependencias no actualizadas. La aplicación es pequeña y solo tiene algunas dependencias. La actualización del código debería ser sencilla. Vea si puede actualizar la aplicación para aprovechar las características más recientes. Durante el proceso, si encuentra alguna vulnerabilidad, corríjala.
 
-- En una nueva ventana de terminal (Ctrl + Mayús + `), cambie a la carpeta que contiene los archivos de este ejercicio:
+- En una nueva ventana de terminal (`Ctrl` + `Mayús` + `` ` ``), cambie a la carpeta que contiene los archivos de este ejercicio:
 
 ```bash
 cd ../7-exercise-dependency-management
@@ -853,11 +876,11 @@ Debería ver la salida sobre los paquetes instalados y las vulnerabilidades.
 
 - Observe que los patrones especifican el carácter de inserción (^), que indica las actualizaciones de la versión secundaria para admitir dependencias: 1.x.
 
-- Abra el archivo index.js para comprender cómo se usan las dependencias del paquete en la aplicación:
+- Abra el archivo `index.js` para comprender cómo se usan las dependencias del paquete en la aplicación:
 
 ```js
 const fetch = require('node-fetch')
-const \_ = require('lodash');
+const _ = require('lodash');
 const path = require('path');
 const fs = require('fs');
 
@@ -874,7 +897,7 @@ fs.writeFileSync(path.join(\_\_dirname, `${filePrefix}-feed.json`), JSON.stringi
 run();
 ```
 
-Este código extrae datos de una API de REST mediante el paquete node-fetch. Procesa la respuesta ordenándola y toma los tres resultados principales mediante el paquete lodash. El resultado se almacena en un archivo.
+Este código extrae datos de una `API` de `REST` mediante el paquete `node-fetch`. Procesa la respuesta ordenándola y toma los tres resultados principales mediante el paquete lodash. El resultado se almacena en un archivo.
 
 ```bash
 npm audit
@@ -933,7 +956,7 @@ lodash 1.3.1 1.3.1 4.17.21 node_modules/lodash 7-exercise-dependency-management
 node-fetch 1.7.3 1.7.3 3.3.2 node_modules/node-fetch 7-exercise-dependency-management
 ```
 
-Las versiones actuales y deseadas son las mismas, pero la versión más reciente es diferente. Se ha cumplido la estrategia de actualización semántica especificada en el package.json, pero las vulnerabilidades siguen existiendo.
+Las versiones actuales y deseadas son las mismas, pero la versión más reciente es diferente. Se ha cumplido la estrategia de actualización semántica especificada en el `package.json`, pero las vulnerabilidades siguen existiendo.
 
 Edite el archivo package.json para permitir explícitamente cambios importantes para corregir las vulnerabilidades a partir del paquete más significativo:
 
@@ -985,7 +1008,7 @@ Si su proyecto tiene alguna prueba, ejecútela para verificar que la actualizaci
 
 Siga estos mismos pasos para actualizar `lo-dash` a la versión `4.17.20` sin vulnerabilidades.
 
-Las vulnerabilidades se han corregido, pero la versión node-fetch sigue siendo una versión principal. Si se superan todas las pruebas, corrija la versión especificada en el archivo `package.json` a la versión más reciente:
+Las vulnerabilidades se han corregido, pero la versión `node-fetch` sigue siendo una versión principal. Si se superan todas las pruebas, corrija la versión especificada en el archivo `package.json` a la versión más reciente:
 
 ```json
 "node-fetch": "^3.3.2"
@@ -997,13 +1020,13 @@ A continuación, ejecute el siguiente comando para actualizar el proyecto:
 npm update
 ```
 
-Ahora su proyecto no debería tener vulnerabilidades npm y debería estar en la versión principal actual. Felicidades. Ha actualizado las dependencias y ha corregido las vulnerabilidades del proyecto.
+Ahora su proyecto no debería tener vulnerabilidades `npm` y debería estar en la versión principal actual. Felicidades. Ha actualizado las dependencias y ha corregido las vulnerabilidades del proyecto.
 
-## Prueba de conocimientos
+## Prueba de conocimientos.
 
 Elija la mejor respuesta para cada pregunta y, después, seleccione Comprobar las respuestas.
 
-Comprobación de conocimientos
+Comprobación de conocimientos.
 
 1. ¿Cómo se instala un marco de pruebas como `Jest`?
 
@@ -1047,7 +1070,7 @@ Comprobación de conocimientos
 
 ---
 
-## Resumen
+## Resumen.
 
 - En primer lugar, has aprendido a **instalar dependencias** que la aplicación puede usar.
 
@@ -1059,10 +1082,10 @@ Comprobación de conocimientos
 
 - Después, ha aprendido a **actualizar las dependencias**. Las dependencias se actualizan por varias razones en forma de correcciones de errores, características nuevas o cambios más grandes. En el archivo `package.json`, puede configurar los tipos de actualizaciones que le interesan por cada dependencia. Si trabaja en un entorno empresarial, se recomienda considerar cuidadosamente el enfoque en relación con los tipos de actualizaciones que acepta.
 
-- Para finalizar, en la última unidad del módulo, ha obtenido más información sobre el archivo **`package.json`**. Ha visto varios campos, en concreto los de metadatos que describen una aplicación. También se han descrito los scripts que puede crear para administrar el proyecto de Node.js durante la fase de desarrollo.
+- Para finalizar, en la última unidad del módulo, ha obtenido más información sobre el archivo **`package.json`**. Ha visto varios campos, en concreto los de metadatos que describen una aplicación. También se han descrito los scripts que puede crear para administrar el proyecto de `Node.js` durante la fase de desarrollo.
 
-> Capítulo 3: El Poder de la Organización
-
-NX y los monorepos le abrieron los ojos a Javier. Su proyecto `u.top.ia` ya no es un amasijo de código, sino una obra de arte arquitectónica digital (o eso cree él).
-
-Ahora sueña con integrar domótica, control financiero y hasta un tutor de programación IA. "Si consigo esto, ¡me nombro emperador de `u.top.ia`!" exclama mientras se frota los ojos después de haber reordenado todo su código con el proyecto Crystal de NX, mientras ignora la extraña sensación de ser observado por una bandada de palomas sospechosamente sincronizadas.
+> Capítulo 3: <u> El Poder de la Organización. </u>
+>
+>`NX` y los monorepos le abrieron los ojos a Javier. Su proyecto `u.top.ia` ya no es un amasijo de código, sino una obra de arte arquitectónica digital (o eso cree él).
+>
+>Ahora sueña con integrar domótica, control financiero y hasta un tutor de programación IA. "Si consigo esto, ¡me nombro emperador de `u.top.ia`!" exclama mientras se frota los ojos después de haber reordenado todo su código con el proyecto Crystal de `NX`, mientras ignora la extraña sensación de ser observado por una bandada de palomas sospechosamente sincronizadas.

@@ -1,6 +1,7 @@
-# Anexo: `Conceptos Avanzados` y `Atomic Design` con `Web Components`
 
-## Índice de Anexos
+# Anexo: `Conceptos Avanzados` y `Atomic Design` con `Web Components`.
+
+## Índice de Anexos.
 
 1. [Comunicación entre Componentes](#1-comunicación-entre-componentes)
 2. [Implementación de Routing](#2-implementación-de-routing)
@@ -8,9 +9,9 @@
 4. [Patrones Avanzados de Web Components](#4-patrones-avanzados-de-web-components)
 5. [Laboratorio de Componentes Atómicos](#5-laboratorio-de-componentes-atómicos)
 
-## 1. Comunicación entre Componentes
+## 1. Comunicación entre Componentes.
 
-### 1.1 `Custom Events`
+### 1.1 `Custom Events`.
 
 Los `Web Components` pueden comunicarse mediante `eventos personalizados`:
 
@@ -37,7 +38,7 @@ export class ReceiverComponent extends HTMLElement {
 }
 ```
 
-### 1.2 `Prop Binding`
+### 1.2 `Prop Binding`.
 
 Pasando datos mediante atributos:
 
@@ -92,9 +93,9 @@ export class ConnectedComponent extends HTMLElement {
 }
 ```
 
-## 2. Implementación de `Routing`
+## 2. Implementación de `Routing`.
 
-### 2.1 Router Básico
+### 2.1 Router Básico.
 
 ```typescript
 export class RouterComponent extends HTMLElement {
@@ -151,9 +152,9 @@ customElements.define('app-router', RouterComponent);
 </app-router>
 ```
 
-## 3. Integración con `APIs` `REST`
+## 3. Integración con `APIs` `REST`.
 
-### 3.1 Servicio `Base`
+### 3.1 Servicio `Base`.
 
 ```typescript
 class HttpService {
@@ -179,7 +180,7 @@ class HttpService {
 }
 ```
 
-### 3.2 Componente de Usuario con `API Integration`
+### 3.2 Componente de Usuario con `API Integration`.
 
 ```typescript
 interface User {
@@ -230,7 +231,7 @@ export class UserListComponent extends HTMLElement {
 customElements.define('user-list', UserListComponent);
 ```
 
-### 3.3 Formulario de `Creación de Usuario`
+### 3.3 Formulario de `Creación de Usuario`.
 
 ```typescript
 export class UserFormComponent extends HTMLElement {
@@ -269,9 +270,9 @@ export class UserFormComponent extends HTMLElement {
 }
 ```
 
-## 4. Patrones Avanzados de `Web Components`
+## 4. Patrones Avanzados de `Web Components`.
 
-### 4.1 `Mixins` y Composición
+### 4.1 `Mixins` y Composición.
 
 ```typescript
 // Mixin para funcionalidad de tema
@@ -302,7 +303,7 @@ class EnhancedComponent extends ThemeMixin(StateMixin(HTMLElement)) {
 }
 ```
 
-### 4.2 Shadow `DOM Templates`
+### 4.2 Shadow `DOM Templates`.
 
 ```typescript
 export class TemplateComponent extends HTMLElement {
@@ -330,7 +331,7 @@ export class TemplateComponent extends HTMLElement {
 }
 ```
 
-### 4.3 `Lazy Loading de Componentes`
+### 4.3 `Lazy Loading de Componentes`.
 
 ```typescript
 export class LazyComponent extends HTMLElement {
@@ -358,19 +359,19 @@ export class LazyComponent extends HTMLElement {
 }
 ```
 
-## 5. Laboratorio de `Componentes Atómicos`
+## 5. Laboratorio de `Componentes Atómicos`.
 
-### 5.1 Principios de `Atomic Design`
+### 5.1 Principios de `Atomic Design`.
 
-1. **Átomos**: Componentes básicos indivisibles
-2. **Moléculas**: Grupos de átomos funcionando juntos
-3. **Organismos**: Grupos de moléculas que forman una sección
-4. **Templates**: Esqueletos de páginas
-5. **Páginas**: Instancias específicas de templates
+1. **Átomos**: Componentes básicos indivisibles.
+2. **Moléculas**: Grupos de átomos funcionando juntos.
+3. **Organismos**: Grupos de moléculas que forman una sección.
+4. **Templates**: Esqueletos de páginas.
+5. **Páginas**: Instancias específicas de templates.
 
-### 5.2 `UI Kit` Basado en el Código
+### 5.2 `UI Kit` Basado en el Código.
 
-#### 5.2.1 Átomos
+#### 5.2.1 Átomos.
 
 ```typescript
 // Botón Átomo
@@ -434,7 +435,7 @@ export class IconAtom extends HTMLElement {
 }
 ```
 
-#### 5.2.2 Moléculas
+#### 5.2.2 Moléculas.
 
 ```typescript
 // Card Molécula
@@ -481,7 +482,7 @@ export class ListItemMolecule extends HTMLElement {
 }
 ```
 
-#### 5.2.3 Organismos
+#### 5.2.3 Organismos.
 
 ```typescript
 // Navigation Organismo
@@ -521,7 +522,7 @@ export class LearningMaterialsOrganism extends HTMLElement {
 }
 ```
 
-#### 5.2.4 Templates
+#### 5.2.4 Templates.
 
 ```typescript
 // Main Layout Template
@@ -545,7 +546,7 @@ export class MainLayoutTemplate extends HTMLElement {
 }
 ```
 
-### 5.3 Estilos del UI Kit
+### 5.3 Estilos del UI Kit.
 
 ```css
 /* Variables de diseño */
@@ -566,15 +567,16 @@ export class MainLayoutTemplate extends HTMLElement {
 # Anexo: `Mejoras Avanzadas` para `Web Components` con `NX`
 
 ## Índice
+
 1. [Implementación de Routing Avanzado](#1-implementación-de-routing-avanzado)
 2. [Gestión de Estado Global](#2-gestión-de-estado-global)
 3. [Capacidades PWA](#3-capacidades-pwa)
 4. [Optimización de Rendimiento](#4-optimización-de-rendimiento)
 5. [Server-Side Rendering](#5-server-side-rendering)
 
-## 1. Implementación de Routing Avanzado
+## 1. Implementación de Routing Avanzado.
 
-### 1.1 Router Personalizado con History API
+### 1.1 Router Personalizado con History API.
 
 ```typescript
 class Router {
@@ -632,7 +634,7 @@ class Router {
 }
 ```
 
-### 1.2 Configuración de Rutas con `Lazy Loading`
+### 1.2 Configuración de Rutas con `Lazy Loading`.
 
 ```typescript
 // routes.ts
@@ -653,9 +655,9 @@ export const setupRoutes = (router: Router) => {
 };
 ```
 
-## 2. Gestión de Estado Global
+## 2. Gestión de Estado Global.
 
-### 2.1 Store Reactivo
+### 2.1 Store Reactivo.
 
 ```typescript
 type Subscriber<T> = (state: T) => void;
@@ -689,7 +691,7 @@ class Store<T> {
 }
 ```
 
-### 2.2 Implementación de Actions y Reducers
+### 2.2 Implementación de Actions y Reducers.
 
 ```typescript
 // actions.ts
@@ -724,9 +726,9 @@ export class AppStore extends Store<{ counter: number }> {
 }
 ```
 
-## 3. Capacidades `PWA`
+## 3. Capacidades `PWA`.
 
-### 3.1 Configuración del `Service Worker`
+### 3.1 Configuración del `Service Worker`.
 
 ```typescript
 // service-worker.ts
@@ -755,7 +757,7 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 });
 ```
 
-### 3.2 `Manifest.json`
+### 3.2 `Manifest.json`.
 
 ```json
 {
@@ -787,7 +789,7 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 }
 ```
 
-### 3.3 Registro del `Service Worker`
+### 3.3 Registro del `Service Worker`.
 
 ```typescript
 // register-sw.ts
@@ -803,9 +805,9 @@ export async function registerServiceWorker() {
 }
 ```
 
-## 4. Optimización de Rendimiento
+## 4. Optimización de Rendimiento.
 
-### 4.1 `Code Splitting` y `Dynamic Imports`
+### 4.1 `Code Splitting` y `Dynamic Imports`.
 
 ```typescript
 // Configuración de Webpack en project.json
@@ -826,7 +828,7 @@ export async function registerServiceWorker() {
 }
 ```
 
-### 4.2 Optimización de Recursos
+### 4.2 Optimización de Recursos.
 
 ```typescript
 // image-optimizer.ts
@@ -852,7 +854,7 @@ export class OptimizedImageComponent extends HTMLElement {
 }
 ```
 
-### 4.3 `Performance Monitoring`
+### 4.3 `Performance Monitoring`.
 
 ```typescript
 // performance-monitor.ts
@@ -876,9 +878,9 @@ export class PerformanceMonitor {
 }
 ```
 
-## 5. `Server-Side Rendering`
+## 5. `Server-Side Rendering`.
 
-### 5.1 Configuración del Servidor
+### 5.1 Configuración del Servidor.
 
 ```typescript
 // server.ts
@@ -907,7 +909,7 @@ app.get('*', async (req, res) => {
 });
 ```
 
-### 5.2 "Hydratación" del Cliente
+### 5.2 "Hydratación" del Cliente.
 
 ```typescript
 // client.ts
@@ -918,7 +920,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-### 5.3 Componentes `SSR-Ready`
+### 5.3 Componentes `SSR-Ready`.
 
 ```typescript
 // ssr-component.ts
@@ -947,40 +949,40 @@ export class SSRComponent extends LitElement {
 }
 ```
 
-## Conclusiones y Mejores Prácticas
+## Conclusiones y Mejores Prácticas.
 
 1. **Routing**:
-   - Implementar `lazy loading` para rutas
-   - Manejar transiciones suaves
-   - Gestionar el estado de la navegación
+   - Implementar `lazy loading` para rutas.
+   - Manejar transiciones suaves.
+   - Gestionar el estado de la navegación.
 
 2. **Estado**:
-   - Mantener un único `source of truth`
-   - Implementar acciones inmutables
-   - Usar patrones de observador para actualizaciones
+   - Mantener un único `source of truth`.
+   - Implementar acciones inmutables.
+   - Usar patrones de observador para actualizaciones.
 
 3. **PWA**:
-   - Asegurar que la app funcione offline
-   - Implementar estrategias de caché efectivas
-   - Proporcionar experiencia de instalación nativa
+   - Asegurar que la app funcione offline.
+   - Implementar estrategias de caché efectivas.
+   - Proporcionar experiencia de instalación nativa.
 
 4. **Rendimiento**:
-   - Monitorear métricas clave (FCP, LCP, TTI)
-   - Implementar `code splitting` efectivo
-   - Optimizar recursos y carga
+   - Monitorear métricas clave (FCP, LCP, TTI).
+   - Implementar `code splitting` efectivo.
+   - Optimizar recursos y carga.
 
 5. **SSR**:
-   - Balancear entre `SSR` y `client-side rendering`
-   - Implementar hydratación eficiente
-   - Manejar estado inicial correctamente
+   - Balancear entre `SSR` y `client-side rendering`.
+   - Implementar hydratación eficiente.
+   - Manejar estado inicial correctamente.
 
-### Implementación Progresiva
+### Implementación Progresiva.
 
 Se recomienda implementar estas mejoras de forma progresiva:
 
-1. Primero: Routing y Estado
-2. Segundo: Optimizaciones de rendimiento
-3. Tercero: Capacidades `PWA`
-4. Cuarto: `SSR` (si es necesario)
+1. Primero: Routing y Estado.
+2. Segundo: Optimizaciones de rendimiento.
+3. Tercero: Capacidades `PWA`.
+4. Cuarto: `SSR` (si es necesario).
 
 Cada mejora debe ser probada y medida para asegurar que aporta valor real al proyecto.

@@ -1,56 +1,57 @@
-# Introducción a la administración de `API` en `Node.js` con `JavaScript`
 
-## Introduccion
+# Introducción a la administración de `API` en `Node.js` con `JavaScript`.
 
-> Capítulo 7: El Director del Tráfico
+## Introduccion.
 
-Javier perfecciona las rutas de su `API` en UTOPIA, creando una estructura flexible y escalable para las futuras funcionalidades. Define `endpoints` específicos para controlar los diferentes módulos, como la domótica, finanzas y aprendizaje. Se siente cómodo gestionando el flujo de información de la aplicación. En **ANFORA** su `API` ya funciona a la perfección, cumpliendo los requisitos de la empresa, cree es hora de dar un paso más y buscar queso nuevo.
+> Capítulo 7: <u> El Director del Tráfico. </u>
+>
+>Javier perfecciona las rutas de su `API` en `UTOPIA`, creando una estructura flexible y escalable para las futuras funcionalidades. Define `endpoints` específicos para controlar los diferentes módulos, como la domótica, finanzas y aprendizaje. Se siente cómodo gestionando el flujo de información de la aplicación. En **ANFORA** su `API` ya funciona a la perfección, cumpliendo los requisitos de la empresa, cree es hora de dar un paso más y buscar queso nuevo.
 
 Usaremos el proyecto `code/code-node-web` basado en `NX` para crear una `API` que será parte lógica de nuestro proyecto.
 
-La `API` sera una `API node` sencilla sin `express`, al igual que la ui, tendras `test` bien hechos que al modificar fallaran.
+La `API` sera una `API node` sencilla sin `express`, al igual que la `ui (siglas de User Interface, Interfaz de Usuario)`, tendras `test` bien hechos que al modificar fallaran.
 
 ---
 
-## `API REST` con `Node.js` nativo
+## `API REST` con `Node.js` nativo.
 
 Esta clase explica cómo crear una `API REST` completa usando `Node.js` nativo sin depender de `frameworks` externos como `Express`. Cubriremos la implementación de un `servidor HTTPS`, `manejo de rutas`, `métodos HTTP`, `archivos estáticos` y más.
 
 ## Índice
 
-1. [Configuración inicial](#configuración-inicial)
-2. [Estructura del servidor HTTPS](#estructura-del-servidor-https)
-3. [Sistema de enrutamiento](#sistema-de-enrutamiento)
-4. [Manejo de peticiones](#manejo-de-peticiones)
+1. [Configuración inicial.](#configuración-inicial)
+2. [Estructura del servidor HTTPS.](#estructura-del-servidor-https)
+3. [Sistema de enrutamiento.](#sistema-de-enrutamiento)
+4. [Manejo de peticiones.](#manejo-de-peticiones)
 5. [Servicio de archivos estáticos](#servicio-de-archivos-estáticos)
-6. [Gestión de CORS](#gestión-de-cors)
-7. [Implementación de endpoints](#implementación-de-endpoints)
-8. [Seguridad y certificados SSL](#seguridad-y-certificados-ssl)
+6. [Gestión de `CORS`.](#gestión-de-cors)
+7. [Implementación de endpoints.](#implementación-de-endpoints)
+8. [Seguridad y certificados `SSL`.](#seguridad-y-certificados-ssl)
 
-## Configuración inicial
+## Configuración inicial.
 
-### Requisitos previos
+### Requisitos previos.
 
 - `Node.js` instalado (versión 12 o superior)
 - `Certificados SSL` para `HTTPS` (OPCIONAL)
 - Conocimientos básicos de `JavaScript` y `Node.js`
 
-### Estructura del proyecto
+### Estructura del proyecto.
 
-```
+```bash
 lib/
 ├── api.js
 ├── api.v2.js
 ├── ssl/
-│   ├── server.cert // key.pem
-│   └── server.key // cert.pem
+│   ├── server.cert # key.pem
+│   └── server.key # cert.pem
 └── public/
     └── index.html
 ```
 
-## Estructura del `servidor HTTPS`
+## Estructura del `servidor HTTPS`.
 
-### Configuración básica
+### Configuración básica.
 
 El `servidor HTTPS` requiere `certificados SSL`. Primero, importamos los `módulos` necesarios:
 
@@ -138,7 +139,7 @@ const parseBody = (req) => {
 };
 ```
 
-### Manejo de respuestas
+### Manejo de respuestas.
 
 Configuramos `headers` comunes y `formato JSON`:
 
@@ -146,9 +147,9 @@ Configuramos `headers` comunes y `formato JSON`:
 res.setHeader('Content-Type', 'application/json');
 ```
 
-## Servicio de archivos estáticos
+## Servicio de archivos estáticos.
 
-### Implementación
+### Implementación.
 
 La función `serveStaticFile` maneja la entrega de archivos estáticos:
 
@@ -167,7 +168,7 @@ const serveStaticFile = async (req, res, filepath) => {
 };
 ```
 
-### Tipos `MIME`
+### Tipos `MIME`.
 
 Determinamos el tipo de contenido basado en la extensión del archivo:
 
@@ -186,7 +187,7 @@ const getContentType = (filepath) => {
 };
 ```
 
-## Gestión de `CORS`
+## Gestión de `CORS`.
 
 Implementamos headers `CORS` para permitir peticiones `cross-origin`:
 
@@ -201,9 +202,9 @@ const setCORSHeaders = (res) => {
 };
 ```
 
-## Implementación de `endpoints`
+## Implementación de `endpoints`.
 
-### Definición de rutas
+### Definición de rutas.
 
 Ejemplo de implementación de `CRUD` para usuarios:
 
@@ -234,14 +235,14 @@ router.PUT['/api/users/:id'] = async (req, res) => {
 };
 ```
 
-## Seguridad y `certificados SSL`
+## Seguridad y `certificados SSL`.
 
-### Mejores prácticas
+### Mejores prácticas.
 
 1. Usar `HTTPS` siempre
-2. Implementar `rate limiting`
-3. Validar entrada de usuarios
-4. Usar `headers de seguridad`
+2. Implementar `rate limiting`.
+3. Validar entrada de usuarios.
+4. Usar `headers de seguridad`.
 
 ### `Headers de seguridad` recomendados
 
@@ -251,9 +252,9 @@ res.setHeader('X-Frame-Options', 'DENY');
 res.setHeader('X-XSS-Protection', '1; mode=block');
 ```
 
-## Pruebas
+## Pruebas.
 
-### Ejemplos de peticiones
+### Ejemplos de peticiones.
 
 Puedes probar la `API` usando `curl` o `postman`:
 
@@ -275,12 +276,12 @@ curl -X PUT https://localhost:3000/api/users/1234 \
 curl -X DELETE https://localhost:3000/api/users/1234
 ```
 
-# Resumen
+# Resumen.
 
-> Capítulo 7: El Director del Tráfico
-
-Rutas, `endpoints`, control de flujo... Javier orquesta la información en UTOPIA como un director de orquesta dirigiendo una sinfonía digital.
-
-**ANFORA** está contenta con su `API`. Él está contento con UTOPIA. Todo parece perfecto y eso ... le inquieta, su ultimo experimento `IA` le recuerda que debe probar lo del podcast de las palomas.
-
-Sin embargo decide usar un sistema de camaras de bajo coste y una `API` de camaras publicas para analizar el comportamiento de las palomas que le rodean en tiempo real.
+> Capítulo 7: <u> El Director del Tráfico. </u>
+>
+>Rutas, `endpoints`, control de flujo... Javier orquesta la información en `UTOPIA` como un director de orquesta dirigiendo una sinfonía digital.
+>
+>**ANFORA** está contenta con su `API`. Él está contento con `UTOPIA`. Todo parece perfecto y eso ... le inquieta, su ultimo experimento `IA` le recuerda que debe probar lo del podcast de las palomas.
+>
+>Sin embargo decide usar un sistema de camaras de bajo coste y una `API` de camaras publicas para analizar el comportamiento de las palomas que le rodean en tiempo real.

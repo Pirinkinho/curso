@@ -84,6 +84,9 @@ Muchas aplicaciones fuera del navegador están en `JavaScript` o lo soportan:
 - Editores de código como `VS Code` y `Atom` (escritos en `JavaScript` o `TypeScript`).
 - Aplicaciones de backend escritas en `JavaScript` y ejecutadas en `Node.js`.
 - Aplicaciones `IoT`[^1] y en tiempo real que usan `JavaScript` y dependen de `Node.js`.
+
+[^1]: Internet de las cosas.
+
 - Tecnologías como `NativeScript` para construir apps móviles nativas con `JavaScript`/`TypeScript`.
 - Aplicaciones con sistemas de plugins en `JavaScript`, como `Sketch`, `Adobe XD` y `Google Apps Script`.
 - `Electron` te permite hacer aplicaciones de escritorio, un proyecto interesante es:
@@ -383,7 +386,7 @@ Visto esto, vamos a probar código en nuestro primer modulo `NPM`!
 
 ### `REPL` (Read-Eval-Print Loop).
 
-Node.js tiene un `REPL` para evaluar código rápidamente. Para iniciarlo, ejecuta `node` en la terminal.
+`Node.js` tiene un `REPL` para evaluar código rápidamente. Para iniciarlo, ejecuta `node` en la terminal.
 
 ### Creación de un script.
 
@@ -417,4 +420,3 @@ En este módulo has aprendido que `Node.js` es un entorno de ejecución para apl
 >
 >Lo que no esperaba era que `ANFORA`  , en un acto de aparente locura (o genialidad), lo ascendiera a desarrollador de producto. "Debe ser por mi irresistible encanto..." pensó Javier irónicamente, ignorando por completo que un misterioso grupo de "eco-espías" movía los hilos tras bambalinas para acelerar un plan de cambio bastante valioso. ¡A por el módulo 3!
 
-[^1]: Internet de las cosas.

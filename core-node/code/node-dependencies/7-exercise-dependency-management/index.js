@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const \_ = require('lodash');
+const _ = require('lodash');
 const path = require('path');
 const fs = require('fs');
 
