@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Fecha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2e2b4; /* Color cálido de fondo */
+            color: #6e4f28; /* Texto color cálido */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #d4a200; /* Color dorado cálido para el título */
+        }
+        button {
+            background-color: #ffbc00; /* Naranja cálido */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e68900; /* Naranja más oscuro */
+        }
+        .input-container {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            margin: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #d4a200;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #backButton {
+            margin-top: 30px;
+            background-color: #ffd700; /* Amarillo cálido */
+            color: #333;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #backButton:hover {
+            background-color: #e6c200; /* Amarillo más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversión de Fecha y Hora</h1>
+    <div class="input-container">
+        <button onclick="mostrarOpcion(1)">Convertir milisegundos a formato humano</button>
+        <button onclick="mostrarOpcion(2)">Convertir formato humano a milisegundos</button>
+    </div>
+
+    <div id="opcion1" class="input-container" style="display:none;">
+        <input type="text" id="milisegundos" placeholder="Ingresa milisegundos">
+        <button onclick="convertirAHumano()">Convertir</button>
+    </div>
+
+    <div id="opcion2" class="input-container" style="display:none;">
+        <input type="text" id="fecha" placeholder="Ingresa fecha (YYYY-MM-DD HH:MM:SS)">
+        <button onclick="convertirAMilisegundos()">Convertir</button>
+    </div>
+
+    <div id="resultado" class="result"></div>
+
+    <!-- Botón para regresar al menú anterior -->
+    <button id="backButton" onclick="volverAlMenu()">Volver al Menú Principal</button>
+
+    <script>
+        function mostrarOpcion(opcion) {
+            // Ocultar ambas opciones
+            document.getElementById('opcion1').style.display = 'none';
+            document.getElementById('opcion2').style.display = 'none';
+
+            // Mostrar la opción seleccionada
+            if (opcion === 1) {
+                document.getElementById('opcion1').style.display = 'block';
+            } else if (opcion === 2) {
+                document.getElementById('opcion2').style.display = 'block';
+            }
+            // Limpiar el resultado
+            document.getElementById('resultado').innerHTML = '';
+        }
+
+        function convertirAHumano() {
+            let milisegundos = document.getElementById('milisegundos').value;
+            if (!isNaN(milisegundos) && milisegundos !== '') {
+                const fecha = new Date(Number(milisegundos));
+                document.getElementById('resultado').innerHTML = `Fecha y hora: ${fecha.toString()}`;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, ingresa un número válido de milisegundos.";
+            }
+        }
+
+        function convertirAMilisegundos() {
+            let fechaStr = document.getElementById('fecha').value;
+            const fecha = new Date(fechaStr);
+            if (!isNaN(fecha.getTime())) {
+                const milisegundos = fecha.getTime();
+                document.getElementById('resultado').innerHTML = `Milisegundos desde 01/01/1970: ${milisegundos}`;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, ingresa una fecha válida.";
+            }
+        }
+
+        function volverAlMenu() {
+            // Redirige al usuario al menú principal, ajusta la URL según tu proyecto
+            window.location.href = "../../public/index.html";
+        }
+    </script>
+</body>
+</html>

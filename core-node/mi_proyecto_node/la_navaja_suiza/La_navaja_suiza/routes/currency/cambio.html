@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Monedas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #FFFAF0; /* Color cálido para el fondo */
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFF8DC; /* Color cálido para el contenedor */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #E2B97F; /* Borde cálido */
+            border-radius: 5px;
+            background-color: #F5DEB3; /* Fondo cálido */
+            color: #8B4513;
+            font-size: 16px;
+        }
+        select:focus, button:focus {
+            outline: none;
+            border-color: #D2691E; /* Resalta el borde cuando está enfocado */
+        }
+        h1 {
+            text-align: center;
+            color: #D2691E; /* Color cálido para el título */
+        }
+        #rates {
+            margin-top: 20px;
+        }
+        .rate {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            background-color: #FFE4B5; /* Color cálido para cada tasa */
+            border-radius: 5px;
+        }
+        #date {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #8B4513; /* Color cálido para la fecha */
+        }
+    </style>
+</head>
+<body>
+
+    <p id="date"></p>
+
+    <div class="container">
+        <h1>Convertidor de Monedas</h1>
+        <!-- Botón para regresar al menú anterior -->
+        <button class="back-button" onclick="goBack()">Volver al Menú</button>
+        <label for="baseCurrency">Selecciona la moneda base:</label>
+        <select id="baseCurrency">
+            <!-- Las opciones de monedas se llenarán dinámicamente -->
+        </select>
+        <button onclick="fetchExchangeRates()">Obtener Tasas de Cambio</button>
+        
+        <div id="rates"></div>
+
+         
+
+    </div>
+
+    <script>
+        // Mapeo de códigos de monedas a nombres humanos
+        const currencyNames = {
+            EUR: "Euro",
+            AED: "Dirham de los Emiratos Árabes Unidos",
+            AFN: "Afghani",
+            ALL: "Lek albanés",
+            AMD: "Dram armenio",
+            ANG: "Florín de las Antillas Neerlandesas",
+            AOA: "Kwanza angoleño",
+            ARS: "Peso argentino",
+            AUD: "Dólar australiano",
+            AWG: "Florín de Aruba",
+            AZN: "Manat azerbaiyano",
+            BAM: "Marco convertible bosnio",
+            BBD: "Dólar de Barbados",
+            BDT: "Taka bengalí",
+            BGN: "Lev búlgaro",
+            BHD: "Dinar bahreiní",
+            BIF: "Franco burundés",
+            BMD: "Dólar bermudeño",
+            BND: "Dólar de Brunéi",
+            BOB: "Boliviano",
+            BRL: "Real brasileño",
+            BSD: "Dólar bahameño",
+            BTN: "Ngultrum butanés",
+            BWP: "Pula botswaniana",
+            BYN: "Rublo bielorruso",
+            BZD: "Dólar beliceño",
+            CAD: "Dólar canadiense",
+            CDF: "Franco congoleño",
+            CHF: "Franco suizo",
+            CLP: "Peso chileno",
+            CNY: "Yuan chino",
+            COP: "Peso colombiano",
+            CRC: "Colón costarricense",
+            CUP: "Peso cubano",
+            CVE: "Escudo caboverdiano",
+            CZK: "Corona checa",
+            DJF: "Franco yibutiano",
+            DKK: "Corona danesa",
+            DOP: "Peso dominicano",
+            DZD: "Dinar argelino",
+            EGP: "Libra egipcia",
+            ERN: "Nakfa eritreo",
+            ETB: "Birr etíope",
+            FJD: "Dólar fiyiano",
+            FKP: "Libra de las Malvinas",
+            FOK: "Corona de las Islas Feroe",
+            GBP: "Libra esterlina",
+            GEL: "Lari georgiano",
+            GGP: "Libra de Guernsey",
+            GHS: "Cedi ghanés",
+            GIP: "Libra de Gibraltar",
+            GMD: "Dalasi gambiano",
+            GNF: "Franco guineano",
+            GTQ: "Quetzal guatemalteco",
+            GYD: "Dólar guyanés",
+            HKD: "Dólar de Hong Kong",
+            HNL: "Lempira hondureño",
+            HRK: "Kuna croata",
+            HTG: "Gourde haitiano",
+            HUF: "Forinto húngaro",
+            IDR: "Rupia indonesia",
+            ILS: "Shekel israelí",
+            IMP: "Libra de Isla de Man",
+            INR: "Rupia india",
+            IQD: "Dinar iraquí",
+            IRR: "Rial iraní",
+            ISK: "Corona islandesa",
+            JEP: "Libra de Jersey",
+            JMD: "Dólar jamaiquino",
+            JOD: "Dinar jordano",
+            JPY: "Yen japonés",
+            KES: "Chelín keniano",
+            KGS: "Som kirguís",
+            KHR: "Riel camboyano",
+            KID: "Dólar de Kiribati",
+            KMF: "Franco comorense",
+            KRW: "Won surcoreano",
+            KWD: "Dinar kuwaití",
+            KYD: "Dólar de las Islas Caimán",
+            KZT: "Tenge kazajo",
+            LAK: "Kip laosiano",
+            LBP: "Libra libanesa",
+            LKR: "Rupia de Sri Lanka",
+            LRD: "Dólar liberiano",
+            LSL: "Loti de Lesoto",
+            LYD: "Dinar libio",
+            MAD: "Dirham marroquí",
+            MDL: "Leu moldavo",
+            MGA: "Ariary malgache",
+            MKD: "Denar macedonio",
+            MMK: "Kyat birmano",
+            MNT: "Tugrik mongol",
+            MOP: "Pataca macanesa",
+            MRU: "Ouguiya mauritano",
+            MUR: "Rupia mauriciana",
+            MVR: "Rufiyaa maldiva",
+            MWK: "Kwacha malauí",
+            MXN: "Peso mexicano",
+            MYR: "Ringgit malayo",
+            MZN: "Metical mozambiqueño",
+            NAD: "Dólar namibio",
+            NGN: "Naira nigeriana",
+            NIO: "Córdoba nicaragüense",
+            NOK: "Corona noruega",
+            NPR: "Rupia nepalí",
+            NZD: "Dólar neozelandés",
+            OMR: "Rial omaní",
+            PAB: "Balboa panameña",
+            PEN: "Nuevo sol peruano",
+            PGK: "Kina papúa-nueva guinea",
+            PHP: "Peso filipino",
+            PKR: "Rupia pakistaní",
+            PLN: "Zloty polaco",
+            PYG: "Guaraní paraguayo",
+            QAR: "Rial catarí",
+            RON: "Leu rumano",
+            RSD: "Dinar serbio",
+            RUB: "Rublo ruso",
+            RWF: "Franco ruandés",
+            SAR: "Riyal saudí",
+            SBD: "Dólar de las Islas Salomón",
+            SCR: "Rupia seychellense",
+            SDG: "Libra sudanesa",
+            SEK: "Corona sueca",
+            SGD: "Dólar singapurense",
+            SHP: "Libra de Santa Elena",
+            SLE: "Leone sierraleonés",
+            SLL: "Leone sierraleonés",
+            SOS: "Chelín somalí",
+            SRD: "Dólar de Surinam",
+            SSP: "Libra sursudanesa",
+            STN: "Dólar de San Tomé y Príncipe",
+            SYP: "Libra siria",
+            SZL: "Lilangeni suazi",
+            THB: "Baht tailandés",
+            TJS: "Somoni tayiko",
+            TMT: "Manat turcomano",
+            TND: "Dinar tunecino",
+            TOP: "Paʻanga tongano",
+            TRY: "Lira turca",
+            TTD: "Dólar trinitense",
+            TVD: "Dólar de Tuvalu",
+            TWD: "Nuevo dólar taiwanés",
+            TZS: "Chelín tanzano",
+            UAH: "Grivna ucraniana",
+            UGX: "Chelín ugandés",
+            USD: "Dólar estadounidense",
+            UYU: "Peso uruguayo",
+            UZS: "Som uzbeko",
+            VES: "Bolívar venezolano",
+            VND: "Dong vietnamita",
+            VUV: "Vatu de Vanuatu",
+            WST: "Tala samoano",
+            XAF: "Franco CFA de África Central",
+            XCD: "Dólar del Caribe Oriental",
+            XDR: "Derechos especiales de giro",
+            XOF: "Franco CFA de África Occidental",
+            XPF: "Franco CFP",
+            YER: "Rial yemení",
+            ZAR: "Rand sudafricano",
+            ZMW: "Kwacha zambiano",
+            ZWL: "Dólar de Zimbabue"
+        };
+
+        // Agregar las monedas al selector de moneda base
+        const baseCurrencySelect = document.getElementById("baseCurrency");
+
+        Object.keys(currencyNames).forEach((currencyCode) => {
+            const option = document.createElement("option");
+            option.value = currencyCode;
+            option.textContent = `${currencyCode} - ${currencyNames[currencyCode]}`;
+            baseCurrencySelect.appendChild(option);
+        });
+
+        // Función para obtener las tasas de cambio desde la API
+        async function fetchExchangeRates() {
+            const baseCurrency = document.getElementById("baseCurrency").value;
+            const apiUrl = `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`;
+            
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.rates) {
+                    const ratesDiv = document.getElementById("rates");
+                    ratesDiv.innerHTML = "";  // Limpiar tasas anteriores
+
+                    // Ordenar las tasas de cambio por nombre de la moneda
+                    const exchangeRates = Object.entries(data.rates)
+                        .map(([currency, rate]) => ({
+                            currencyName: currencyNames[currency] || currency,
+                            currencyCode: currency,
+                            rate: rate.toFixed(4),
+                        }))
+                        .sort((a, b) => a.currencyName.localeCompare(b.currencyName));
+
+                    exchangeRates.forEach(({ currencyName, currencyCode, rate }) => {
+                        const rateDiv = document.createElement("div");
+                        rateDiv.className = "rate";
+                        rateDiv.textContent = `1 ${currencyNames[baseCurrency]} (${baseCurrency}) : ${rate}  ${currencyName} (${currencyCode})`;
+
+                        ratesDiv.appendChild(rateDiv);
+                    });
+
+                    // Obtener la fecha y hora actual en la zona horaria de Europa/Madrid
+                    const options = {
+                        timeZone: 'Europe/Madrid',
+                        hour12: false,
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    };
+                    const currentDate = new Date().toLocaleString('es-ES', options);
+
+                    document.getElementById("date").textContent = `Fecha de actualización (hora de Europa/Madrid): ${currentDate}`;
+                } else {
+                    alert("No se pudieron obtener las tasas de cambio.");
+                }
+            } catch (error) {
+                console.error("Error al obtener los datos de la API:", error);
+                alert("Hubo un problema al obtener las tasas de cambio.");
+            }
+        
+        }
+        
+            function goBack() {
+            // Navegar al menú principal. Cambia 'menu_principal.html' por la ruta correcta de tu archivo.
+            window.location.href = "../../public/index.html";
+        }
+
+        
+    </script>
+</body>
+</html>

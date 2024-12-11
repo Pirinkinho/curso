@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con Descuento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFAF0; /* Fondo cálido */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculadora {
+            background-color: #FFF8DC; /* Fondo suave */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        h1 {
+            color: #FF6347;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pantalla {
+            background-color: #FFF;
+            font-size: 2em;
+            padding: 20px;
+            text-align: right;
+            border: 2px solid #FF6347;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            height: 60px;
+        }
+
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .boton {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #FF4500;
+        }
+
+        .boton-igual {
+            background-color: #FFD700;
+        }
+
+        .boton-igual:hover {
+            background-color: #FFCC00;
+        }
+
+        .input-desconto {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #FF6347;
+            text-align: center;
+        }
+
+        .boton-regreso {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .boton-regreso:hover {
+            background-color: #FF4500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculadora">
+    <h1>Calculadora</h1>
+    <div class="pantalla" id="pantalla">0</div>
+    <div class="botones">
+        <button class="boton" onclick="agregarNumero(7)">7</button>
+        <button class="boton" onclick="agregarNumero(8)">8</button>
+        <button class="boton" onclick="agregarNumero(9)">9</button>
+        <button class="boton" onclick="operar('+')">+</button>
+
+        <button class="boton" onclick="agregarNumero(4)">4</button>
+        <button class="boton" onclick="agregarNumero(5)">5</button>
+        <button class="boton" onclick="agregarNumero(6)">6</button>
+        <button class="boton" onclick="operar('-')">-</button>
+
+        <button class="boton" onclick="agregarNumero(1)">1</button>
+        <button class="boton" onclick="agregarNumero(2)">2</button>
+        <button class="boton" onclick="agregarNumero(3)">3</button>
+        <button class="boton" onclick="operar('*')">*</button>
+
+        <button class="boton" onclick="agregarNumero(0)">0</button>
+        <button class="boton" onclick="agregarDecimal()">.</button>
+        <button class="boton" onclick="limpiar()">C</button>
+        <button class="boton" onclick="operar('/')">/</button>
+
+        <button class="boton boton-igual" onclick="calcular()">=</button>
+    </div>
+
+    <!-- Campos para el descuento -->
+    <h1>Descuento</h1>
+    <input type="number" id="precio" class="input-desconto" placeholder="Precio Total" />
+    <input type="number" id="descuento" class="input-desconto" placeholder="Descuento (%)" />
+    <button class="boton boton-igual" onclick="calcularDescuento()">Calcular</button>
+
+    <div id="resultadoDescuento"></div>
+
+    <!-- Botón para regresar al menú anterior -->
+    <button class="boton-regreso" onclick="regresarAlMenu()">Regresar al Menú</button>
+</div>
+
+<script>
+    let pantalla = document.getElementById('pantalla');
+    let operacion = '';
+    let valorActual = '';
+
+    // Agregar número a la pantalla
+    function agregarNumero(num) {
+        if (pantalla.innerHTML === '0') {
+            pantalla.innerHTML = num;
+        } else {
+            pantalla.innerHTML += num;
+        }
+    }
+
+    // Agregar un punto decimal
+    function agregarDecimal() {
+        if (!pantalla.innerHTML.includes('.')) {
+            pantalla.innerHTML += '.';
+        }
+    }
+
+    // Operación matemática ( +, -, *, / )
+    function operar(oper) {
+        operacion = oper;
+        valorActual = pantalla.innerHTML;
+        pantalla.innerHTML = '0';
+    }
+
+    // Limpiar la pantalla
+    function limpiar() {
+        pantalla.innerHTML = '0';
+        operacion = '';
+        valorActual = '';
+    }
+
+    // Calcular el resultado de las operaciones
+    function calcular() {
+        let resultado;
+        let segundoValor = pantalla.innerHTML;
+        switch (operacion) {
+            case '+':
+                resultado = parseFloat(valorActual) + parseFloat(segundoValor);
+                break;
+            case '-':
+                resultado = parseFloat(valorActual) - parseFloat(segundoValor);
+                break;
+            case '*':
+                resultado = parseFloat(valorActual) * parseFloat(segundoValor);
+                break;
+            case '/':
+                if (segundoValor === '0') {
+                    resultado = 'Error';
+                } else {
+                    resultado = parseFloat(valorActual) / parseFloat(segundoValor);
+                }
+                break;
+            default:
+                resultado = 'Error';
+        }
+        pantalla.innerHTML = resultado;
+        operacion = '';
+        valorActual = '';
+    }
+
+    // Función para calcular el descuento
+    function calcularDescuento() {
+        let precio = parseFloat(document.getElementById('precio').value);
+        let descuento = parseFloat(document.getElementById('descuento').value);
+        
+        if (!isNaN(precio) && !isNaN(descuento)) {
+            let valorDescuento = (precio * descuento) / 100;
+            let precioConDescuento = precio - valorDescuento;
+            document.getElementById('resultadoDescuento').innerHTML = 
+                `Descuento: $${valorDescuento.toFixed(2)}<br>Precio con Descuento: $${precioConDescuento.toFixed(2)}`;
+        } else {
+            document.getElementById('resultadoDescuento').innerHTML = 'Por favor ingresa valores válidos.';
+        }
+    }
+
+    // Función para regresar al menú principal
+    function regresarAlMenu() {
+        window.location.href = '../../public/index.html'; // Ajusta esta ruta según tu servidor
+    }
+</script>
+
+</body>
+</html>

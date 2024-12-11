@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La navaja Suiza</title>
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #FFA07A;
+            --background-color: rgba(255, 245, 225, 0.9);
+            --text-color: #4A4A4A;
+            --shadow-color: rgba(0, 0, 0, 0.15);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom right, #1be758, #FF6B6B);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            background-color: var(--background-color);
+            box-shadow: 0 8px 32px var(--shadow-color);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: slidein 1.5s ease-out;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        main {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .menu-item {
+            padding: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow-color);
+            background-color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>La navaja Suiza</h1>
+        </header>
+        <main>
+            <nav class="menu">
+                <a href="/routes/calculadora/calculadora.html" class="menu-item">Calculadora</a>
+                <a href="/routes/currency/cambio.html" class="menu-item">Cambio de Monedas</a>
+                <a href="/routes/epoch/epoch_unix.html" class="menu-item">Epoch Unix</a>
+                <a href="/routes/fibonacci/fibonacci.html" class="menu-item">Sucesión de Fibonacci</a>
+                <a href="/routes/primes/primos.html" class="menu-item">Números Primos</a>
+                <a href="/routes/weather/weather.html" class="menu-item">El Tiempo</a>
+            </nav>
+        </main>
+        <footer>
+            <p> ↄ (copyleft) 2024 La navaja Suiza. Koldo Sanmartín. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

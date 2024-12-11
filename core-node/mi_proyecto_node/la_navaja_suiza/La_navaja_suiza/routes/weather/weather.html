@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo con geolocalización</title>
+    <style>
+        /* Estilos generales */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7b538; /* Un color cálido de fondo */
+            color: #2a2a2a; /* Color oscuro para el texto */
+        }
+
+        /* Estilos generales para el contenedor de resultados */
+        .resultados {
+            text-align: center;
+            padding: 30px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* Ajustar el tamaño del texto para que no se salga del contenedor */
+        .resultados h1,
+        .resultados p {
+            margin: 15px 0;
+            font-size: 2em; /* Aumentar el tamaño de los textos */
+            font-weight: bold;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        /* Ajuste para los encabezados de texto */
+        .resultados h1 {
+            font-size: 3em;
+            color: #d9534f; /* Rojo cálido para el título */
+        }
+
+        .resultados p {
+            font-size: 1.8em; /* Texto más grande */
+            color: #f4b831; /* Amarillo cálido para los párrafos */
+        }
+
+        /* Color añil para todos los textos */
+        .resultados .añil {
+            color: #4b0082; /* Añil */
+        }
+
+        /* Nuevo color verde para tu ubicación */
+        .resultados .ubicacion {
+            color: #28a745; /* Verde */
+            font-weight: bold;
+        }
+
+        /* Asegura que las imágenes no se desborden */
+        .resultados img {
+            vertical-align: middle;
+            margin-left: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Adaptar el tamaño del contenedor según el texto */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            background-color: #f5a623; /* Amarillo cálido */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        /* Botón de regresar */
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modificar el fondo cuando no se está cargando la información */
+        .loading {
+            font-size: 2em;
+            color: #d9534f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="resultados">
+            <h1>La previsión meteorológica en <span id="ubicacion" class="ubicacion">su ubicación</span>:</h1>
+            <p id="latitud" class="añil">...</p>
+            <p id="longitud" class="añil">...</p>
+            <p id="localidad" class="añil">...</p>
+            <p><span class="añil">La previsión es de </span><span id="previsionTexto" class="añil">...</span></p>
+            <p><span class="añil">La temperatura es de </span><span id="temp" class="añil">...</span><span class="añil"> ºC,</span></p>
+            <p><span class="añil">con una humedad relativa del </span><span id="humedad" class="añil">...</span><span class="añil"> %.</span></p>
+        </div>
+        <!-- Botón para regresar al menú anterior -->
+        <button class="back-button" onclick="volverAlMenu()">Volver al menú</button>
+    </div>
+
+    <script>
+        function volverAlMenu() {
+            // Redirige al menú principal (modifica la ruta según tu configuración)
+            window.location.href = '../../public/index.html'; // Cambia esto según tu ruta en Node.js
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const metodo = prompt("¿Quieres ver el clima de tu ubicación actual? Escribe 's' para usar tu ubicación o 'n' para ingresar el nombre de una ciudad.");
+
+            if (metodo.toLowerCase() === 's') {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+                } else {
+                    alert("La geolocalización no es compatible con este navegador.");
+                }
+            } else if (metodo.toLowerCase() === 'n') {
+                const ciudad = prompt("Introduce el nombre de la ciudad:");
+                obtenerDatosTiempoCiudad(ciudad);
+            } else {
+                alert("Opción no válida. Por favor, recarga la página.");
+            }
+        });
+
+        function successCallback(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            document.getElementById("ubicacion").innerText = "tu ubicación"; // Cambia "su ubicación" a "tu ubicación"
+            obtenerDatosTiempo(lat, lon);
+        }
+
+        function errorCallback(error) {
+            alert("No se pudo obtener la ubicación: " + error.message);
+        }
+
+        function obtenerDatosTiempo(lat, lon) {
+            const apiKey = "2123b15abf5dbccb4b78d19ccea8dd7d";
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=es&appid=${apiKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => mostrarDatos(data, lat, lon))
+                .catch(error => alert('Error al obtener los datos del tiempo: ' + error));
+        }
+
+        function obtenerDatosTiempoCiudad(ciudad) {
+            const apiKey = "2123b15abf5dbccb4b78d19ccea8dd7d";
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&appid=${apiKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === 200) {
+                        const lat = data.coord.lat;
+                        const lon = data.coord.lon;
+                        document.getElementById("ubicacion").innerText = ciudad; // Cambia la ubicación a la ciudad solicitada
+                        obtenerDatosTiempo(lat, lon);
+                    } else {
+                        alert("Ciudad no encontrada.");
+                    }
+                })
+                .catch(error => alert('Error al obtener los datos del tiempo: ' + error));
+        }
+
+        function mostrarDatos(data, lat, lon) {
+            const localidad = data.name || data.sys.country || "globe"; 
+            const latitudDireccion = lat >= 0 ? 'Norte' : 'Sur';
+            const longitudDireccion = lon >= 0 ? 'Este' : 'Oeste';
+            
+            document.getElementById("latitud").innerText = `Latitud: ${Math.abs(lat).toFixed(2)}° ${latitudDireccion}`;
+            document.getElementById("longitud").innerText = `Longitud: ${Math.abs(lon).toFixed(2)}° ${longitudDireccion}`;
+            document.getElementById("localidad").innerText = `Localidad registrada: ${localidad}`;
+            document.getElementById("previsionTexto").innerText = `"${data.weather[0].description}"`;
+            document.getElementById("temp").innerText = (data.main.temp - 273.15).toFixed(2);
+            document.getElementById("humedad").innerText = `${data.main.humidity}`;
+        }
+    </script>
+</body>
+
+</html>

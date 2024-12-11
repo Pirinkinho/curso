@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFAF0; /* Fondo cálido */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #FF6347; /* Color cálido (tomate) */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #contador {
+            background-color: #FFD700; /* Amarillo cálido */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.2em;
+            width: 80%;
+            text-align: center;
+        }
+
+        #resultado {
+            color: #FF00FF; /* Fucsia para los resultados */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+            gap: 10px; /* Espaciado entre los elementos */
+            padding: 10px;
+            overflow: auto; /* Habilita el desplazamiento */
+            max-height: 60vh; /* Altura máxima para el contenedor */
+            width: 80%;
+        }
+
+        .numero {
+            text-align: center;
+            padding: 5px;
+            background-color: #FFF8DC; /* Fondo suave para los números */
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .termina-en-1 {
+            background-color: #ADD8E6; /* Azul claro para los que terminan en 1 */
+        }
+
+        .termina-en-3 {
+            background-color: #98FB98; /* Verde claro para los que terminan en 3 */
+        }
+
+        .termina-en-7 {
+            background-color: #FFB6C1; /* Rosa claro para los que terminan en 7 */
+        }
+
+        .termina-en-9 {
+            background-color: #dbc30a; /* Oliva para los que terminan en 9 */
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #FF6347;
+            margin: 10px;
+            font-size: 1em;
+            width: 60%;
+            text-align: center;
+        }
+
+        button {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #FF4500;
+        }
+
+        .back-button {
+            background-color: #32CD32; /* Verde para el botón de regreso */
+        }
+
+        .back-button:hover {
+            background-color: #228B22; /* Verde más oscuro al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Números Primos</h1>
+    
+    <div id="contador"></div>
+    <div id="resultado"></div>
+    <button class="back-button" onclick="regresar()">Volver al Menú Principal</button>
+
+    <script>
+        // Función que determina si un número es primo
+        function esPrimo(num) {
+            if (num <= 1) return false; // 0 y 1 no son primos
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false; // Divisible por otro número
+            }
+            return true; // Es primo
+        }
+
+        // Función para obtener números primos hasta un límite
+        function obtenerPrimos(limite) {
+            const primos = [];
+            for (let i = 0; i <= limite; i++) {
+                if (esPrimo(i)) {
+                    primos.push(i);
+                }
+            }
+            return primos;
+        }
+
+        // Función para asignar la clase correspondiente según la última cifra
+        function asignarClase(num) {
+            const ultimaCifra = num % 10;
+            if (ultimaCifra === 1) {
+                return 'termina-en-1';
+            } else if (ultimaCifra === 3) {
+                return 'termina-en-3';
+            } else if (ultimaCifra === 7) {
+                return 'termina-en-7';
+            } else if (ultimaCifra === 9) {
+                return 'termina-en-9';
+            } else {
+                return ''; // Si no termina en 1, 3, 7 o 9, no asigna clase especial
+            }
+        }
+
+        // Función para regresar al menú principal
+        function regresar() {
+            window.location.href = '../../public/index.html'; // Cambiar 'menu.html' por la URL del menú principal
+        }
+
+        let verdad = true;
+
+        do {
+            // Pedir al usuario que ingrese un número
+            let limite = prompt("Ingresa un número hasta el que quieras encontrar números primos:");
+
+            // Convertir el valor a un número
+            limite = parseInt(limite);
+
+            // Validar que el número es un entero positivo
+            if (!isNaN(limite) && limite >= 0) {
+                // Obtener los números primos hasta el límite
+                const primos = obtenerPrimos(limite);
+                
+                // Limpiar la salida previa
+                document.getElementById("resultado").innerHTML = '';
+
+                // Crear los elementos div para cada número primo y agregarlos al contenedor
+                primos.forEach((num, index) => {
+                    const div = document.createElement('div');
+                    div.classList.add('numero');
+                    // Asignar la clase dependiendo de la última cifra del número
+                    const clase = asignarClase(num);
+                    if (clase) {
+                        div.classList.add(clase);
+                    }
+                    div.textContent = `${index + 1}º = ${num}`; // Enumerar los números primos
+                    document.getElementById("resultado").appendChild(div);
+                });
+
+                // Mostrar el total de números primos
+                document.getElementById("contador").innerHTML = `<br>Total de números primos: ${primos.length}`;
+                
+                // Modificar el título del encabezado para reflejar el rango
+                document.getElementById("titulo").textContent = `Números primos desde 0 hasta ${limite}`;
+
+                // Terminar el bucle
+                verdad = false;
+            } else {
+                alert("Por favor, ingresa un número válido mayor o igual a 0.");
+            }
+        } while (verdad);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "name": "la-navaja-suiza",
+    "version": "1.0.0",
+    "description": "Una herramienta multifuncional web",
+    "main": "server.js",
+    "scripts": {
+        "build": "next build",
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "next": "^15.0.4",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "readline-sync": "^1.4.10",
+        "semver": "^7.6.3",
+        "systeminformation": "^5.23.6"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.7"
+    }
+}
