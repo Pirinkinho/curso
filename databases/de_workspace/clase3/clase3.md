@@ -1,4 +1,5 @@
-## Restricciones PostgreSQL
+
+# Restricciones PostgreSQL
 
 Las restricciones sirven para garantizar la exactitud de los datos.
 
