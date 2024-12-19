@@ -1,7 +1,8 @@
 
 <!-- 
 * Curso: Albañiles digitales.
-* Nombre del proyecto: "Manual Markdown".
+* Asignatura: Database clase 2.
+* Nombre del proyecto: "Ejercicio clase 2 para evaluar".
 * Autor: Koldo Sanmartín.
 * Fecha creación: Martes 17/12/2024. 
 -->
@@ -12,8 +13,7 @@
 
 Ejercicio:
 
-Basándonos en el modelo de entidad-relación definido en la Clase 1, realizar las
-siguientes acciones:
+Basándonos en el modelo de entidad-relación definido en la Clase 1, realizar las siguientes acciones:
 
 1. Creación de las tablas que sean necesarias.
 
@@ -84,7 +84,7 @@ Abrimos query tool pinchado encima de la base de datos ejercicio2 para trabajar 
 
 1. **Proveedor**, tecleando lo siguiente:
 
-   ```bash
+   ```sql
    insert into proveedor (NIF, direccion, nombre)
    values
    ('32456346Y', 'Madrid', 'Miguel'),
@@ -96,7 +96,7 @@ Abrimos query tool pinchado encima de la base de datos ejercicio2 para trabajar 
 
    Y los 5 registros los ingrasamos en un sólo comando, luego comprobamos que se han ingresado correctamente:
 
-   ```bash
+   ```sql
    select * from proveedor;
    ```
 
@@ -118,7 +118,7 @@ Abrimos query tool pinchado encima de la base de datos ejercicio2 para trabajar 
 
 1. Obtener el lista de los proveedores que tiene la tienda. Tecleando:
 
-   ```bash
+   ```sql
    select * from proveedor;
    ```
   
@@ -126,7 +126,7 @@ Abrimos query tool pinchado encima de la base de datos ejercicio2 para trabajar 
 
 2. Consultar si existe algún cliente que se llame Mario.
 
-   ```bash
+   ```sql
    select * from cliente where nombre like 'Mario';
    ```
   
@@ -134,7 +134,7 @@ Abrimos query tool pinchado encima de la base de datos ejercicio2 para trabajar 
 
 3. Obtener el listado de los productos de la tienda ordenados por precio (ascendente por defecto):
 
-   ```bash
+   ```sql
    select * from producto order by precio;
    ```
 
