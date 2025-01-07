@@ -1,7 +1,9 @@
-## Qué son las bases de datos
+
+## Qué son las bases de datos.
 
 Conjunto de datos estructurados que pertenecen a un mismo contexto y, en cuanto a su función, se utiliza para administrar de forma electrónica grandes cantidades de información.
 Ventajas:
+
 - Acceso rápido
 - Minimización de repetitividad
 - Administración de datos ilimitados
@@ -10,7 +12,8 @@ Ventajas:
 
 Las bases de datos se pueden clasificar según su organización. Nos vamos a centrar en la base de datos relacional ya que es de las más usadas en la actualidad por su dinamismo. 
 
-## Base de datos relacionales
+## Base de datos relacionales.
+
 Está caracterizada por su estructuración en tablas asociadas por relaciones bien definidas.
 El modelo Entidad-Relación es la manera de representar gráficamente la estructura de este tipo de base de datos.
 
@@ -20,7 +23,8 @@ El modelo Entidad-Relación es la manera de representar gráficamente la estruct
 
  ![Alt text](image.png)
 
-## Pasos para acceder a la base de datos desde consola
+## Pasos para acceder a la base de datos desde consola.
+
 1. Tener en cuenta que como lo estamos haciendo a través de docker, lo primero es entrar a la consola propia del contenedor docker "postgres"
 
 `docker exec -ti postgres_container bash`
@@ -31,7 +35,8 @@ El modelo Entidad-Relación es la manera de representar gráficamente la estruct
 
 3. Desde aquí ya se pueden lanzar los comandos sql
 
-## Comandos consola Postgresql
+## Comandos consola Postgresql.
+
 - Para acceder a la base de datos → psql BASE_DE_DATOS -UNOMBRE_USUARIO
 - Para ver la ayuda → \?
 - Para ver la ayuda referente a las sentencias SQL → \h
