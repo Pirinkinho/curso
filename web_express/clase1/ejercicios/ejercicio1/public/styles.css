@@ -1,0 +1,64 @@
+ /* public/stiles.css */
+
+/* Estilos para el header */
+header {
+  background-color: #4CAF50; /* Fondo verde */
+  color: white; /* Texto blanco */
+  padding: 15px 10px; /* Espaciado interno */
+  text-align: center; /* Centrar el texto */
+}
+
+header nav ul {
+  list-style: none; /* Quitar puntos de la lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centrar elementos */
+  gap: 15px; /* Espaciado entre enlaces */
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: white; /* Enlaces en blanco */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  background-color: #3E8E41; /* Fondo más oscuro al pasar el ratón */
+}
+
+/* Estilos para el body */
+h2 {
+  color: #ce0c1c; /* Color verde agradable */
+  font-family: 'Arial', sans-serif; /* Fuente clara y moderna */
+  font-size: 2rem; /* Tamaño de fuente más grande */
+  text-align: center; /* Centrado en la página */
+  margin: 20px 0; /* Espaciado arriba y abajo */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  background-color: #f0f0f0; /* Fondo claro */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 1px solid #ddd; /* Línea tenue alrededor */
+}
+
+
+/* Estilos para el footer */
+footer {
+  background-color: #333; /* Fondo negro */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centrar texto */
+  padding: 10px 0;
+  position: fixed; /* Fijar al fondo de la ventana */
+  bottom: 0;
+  width: 100%; /* Que ocupe todo el ancho */
+  font-size: 14px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronómetro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #time {
+      font-size: 2em;
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cronómetro</h1>
+  <div id="time">00:00:00</div>
+  <button id="start">Iniciar</button>
+  <button id="stop">Detener</button>
+
+  <script>
+    let startTime = null;
+    let elapsedTime = 0;
+    let timerInterval = null;
+
+    function formatTime(ms) {
+      const totalSeconds = Math.floor(ms / 1000);
+      const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const seconds = String(totalSeconds % 60).padStart(2, '0');
+      return `${hours}:${minutes}:${seconds}`;
+    }
+
+    function updateDisplay() {
+      const currentTime = Date.now();
+      const timeDiff = currentTime - startTime + elapsedTime;
+      document.getElementById('time').textContent = formatTime(timeDiff);
+    }
+
+    document.getElementById('start').addEventListener('click', () => {
+      if (!timerInterval) {
+        startTime = Date.now();
+        timerInterval = setInterval(updateDisplay, 1000);
+      }
+    });
+
+    document.getElementById('stop').addEventListener('click', () => {
+      if (timerInterval) {
+        elapsedTime += Date.now() - startTime;
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    });
+  </script>
+</body>
+</html>
