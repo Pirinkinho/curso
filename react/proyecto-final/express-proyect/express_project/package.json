@@ -1,0 +1,36 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "My base project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start-dev": "nodemon app.js",
+    "start-services": "docker-compose -f docker/dev/docker-compose.services.yml up -d --build --force-recreate && exit 0",
+    "stop-services": "docker-compose -f docker/dev/docker-compose.services.yml stop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "app",
+    "express"
+  ],
+  "author": "flopez@veridas.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "mustache-express": "^1.3.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.26.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

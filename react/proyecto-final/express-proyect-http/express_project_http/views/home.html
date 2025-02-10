@@ -1,0 +1,59 @@
+<!-- views/user.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div>
+      <h2>User logged</h2>
+      <p><b>ID:</b> {{user.id}}</p>
+      <p><b>Email:</b> {{user.email}}</p>
+      <p><b>Type:</b> {{user.type}}</p>
+      <p><b>Active:</b> {{user.active}}</p>
+    </div>
+    <div>
+      <h2>Teacher</h2>
+      <p><b>ID:</b> {{teacher.id}}</p>
+      <p><b>DNI:</b> {{teacher.dni}}</p>
+      <p><b>Name:</b> {{teacher.name}}</p>
+      <p><b>Last Name:</b> {{teacher.last_name}}</p>
+      <p><b>Date of birth:</b> {{teacher.date_of_birth}}</p>
+    </div>
+    <br />
+    <br />
+    <h3>Users</h3>
+    <table border="1">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>DNI</th>
+        <th>Name</th>
+        <th>Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#teacher.students}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{dni}}</td>
+        <td>{{name}}</td>
+        <td>{{last_name}}</td>
+      </tr>
+      {{/teacher.students}}
+    </tbody>
+    </table>
+    <br>
+    <br>
+    <form method="get" action="{{originalUrl}}">
+      <input type="submit" value="Back" />
+    </form>
+    <br>
+    <form method="post" action="/logout">
+      <input type="submit" value="Logout" />
+    </form>
+  </body>
+</html>

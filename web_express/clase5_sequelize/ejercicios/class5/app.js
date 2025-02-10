@@ -25,12 +25,17 @@ app.get("/students", (req, res) => {
 // Ejercicio 3, 4 y 5
 // install xpress-validator: npm install --save express-validator
 // importar: const { body, validationResult } = require('express-validator');
+
 // añadir middleware para comprobar que el campo email es un email válido
 app.post("/students", 
-  body("email").notEmpty().withMessage("Email is required").bail().isEmail().withMessage('Invalid email format'), // validamos que sea un email. Ejercicio 3
-  body("name").exists().withMessage('Name is required').notEmpty().withMessage('Name cannot be empty'), //validamos que el campo exista y no sea vacío.
-  body("last_name").exists().withMessage('Last name is required').notEmpty().withMessage('Last name cannot be empty'), //validamos que el campo exista y no sea vacío.
-  body("date_of_birth").exists().withMessage('Date of birth is required').notEmpty().withMessage('Date of birth cannot be empty').bail().isDate().withMessage('Invalid date format'), // validamos que sea una fecha. Ejercicio 4
+  // validamos que sea un email. Ejercicio 3
+  body("email").notEmpty().withMessage("Email is required").bail().isEmail().withMessage('Invalid email format'), 
+  // validamos que el campo exista y no sea vacío.
+  body("name").exists().withMessage('Name is required').notEmpty().withMessage('Name cannot be empty'), 
+  // validamos que el campo exista y no sea vacío.
+  body("last_name").exists().withMessage('Last name is required').notEmpty().withMessage('Last name cannot be empty'), 
+  // validamos que sea una fecha. Ejercicio 4
+  body("date_of_birth").exists().withMessage('Date of birth is required').notEmpty().withMessage('Date of birth cannot be empty').bail().isDate().withMessage('Invalid date format'), 
   async (req, res) => {
   // obtener los resultados de la validación y los devolvemos
   const errors = validationResult(req);

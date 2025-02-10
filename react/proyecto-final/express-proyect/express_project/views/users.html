@@ -1,0 +1,42 @@
+<!-- views/user.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <table border="1" >
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#users}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{email}}</td>
+        <td>{{type}}</td>
+        <td>{{active}}</td>
+      </tr>
+      {{/users}}
+    </tbody>
+    </table>
+    <br>
+    <br>
+    <form method="get" action="{{originalUrl}}">
+      <input type="submit" value="Back" />
+    </form>
+    <br>
+    <form method="post" action="/logout">
+      <input type="submit" value="Logout" />
+    </form>
+  </body>
+</html>

@@ -108,7 +108,9 @@
 </head>
 
 <body>
+
     <div class="container">
+
         <div class="resultados">
             <h1>La previsión meteorológica en <span id="ubicacion" class="ubicacion">su ubicación</span>:</h1>
             <p id="latitud" class="añil">...</p>
@@ -118,8 +120,10 @@
             <p><span class="añil">La temperatura es de </span><span id="temp" class="añil">...</span><span class="añil"> ºC,</span></p>
             <p><span class="añil">con una humedad relativa del </span><span id="humedad" class="añil">...</span><span class="añil"> %.</span></p>
         </div>
+
         <!-- Botón para regresar al menú anterior -->
         <button class="back-button" onclick="volverAlMenu()">Volver al menú</button>
+        
     </div>
 
     <script>
@@ -197,6 +201,7 @@
             document.getElementById("humedad").innerText = `${data.main.humidity}`;
         }
     </script>
+
 </body>
 
 </html>
