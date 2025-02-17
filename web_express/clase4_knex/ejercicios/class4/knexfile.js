@@ -1,25 +1,47 @@
-
-// Update with your config settings. knexfile.js
+// Update with your config settings.
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-
-module.exports = {
+export default = {
 
   development: {
-    client: "pg",
+    client: 'sqlite3',
     connection: {
-      host: '127.0.0.1',   // Asumiendo que estás conectando desde tu host
-      port: 5433,         // Puerto correcto para el contenedor dev-express-db-1
-      database: "express-db",
-      user:     "postgres",
-      password: "changeme"
-    },
-    
-    pool: {
-      min: 0,
-      max: 5
-    },
+      filename: './dev.sqlite3'
+    }
   },
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+
 };

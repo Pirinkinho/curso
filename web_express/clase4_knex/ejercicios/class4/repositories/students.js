@@ -1,7 +1,9 @@
-// repositories/students.js
-const db = require("./db");
 
-module.exports = {
+// repositories/students.js
+
+import db from './db.js';
+
+export default {
   getAll() {
     return db("students");
   },

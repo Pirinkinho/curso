@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My base project",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "node app.js",
     "start-dev": "nodemon app.js",
@@ -17,10 +18,10 @@
   "author": "flopez@veridas.com",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "express-validator": "^6.14.2",
+    "express": "^4.21.2",
+    "express-validator": "^6.15.0",
     "knex": "^2.5.1",
-    "pg": "^8.13.1"
+    "pg": "^8.13.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

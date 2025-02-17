@@ -1,0 +1,31 @@
+version: "3.5"
+networks:
+  express-net:
+    name: express-net
+    driver: bridge
+
+services:
+  express-db:
+    image: postgres:12.8
+    restart: always
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: express-db-knex
+    ports:
+      - 5432:5432
+    networks: 
+      - express-net
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - express-db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@local.host
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 8080
+    ports:
+      - "8081:8080"
+    networks: 
+      - express-net

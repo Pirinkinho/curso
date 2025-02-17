@@ -1,12 +1,17 @@
-const express = require("express");
-const { body, validationResult } = require("express-validator");
-const students = require("./repositories/students");
+
+// app.js
+
+import express from 'express';
+import { body, validationResult } from 'express-validator';
+import students from './repositories/students.js';
+
 const app = express();
 const port = 3000;
 
-// Middlewares de aplicación
+// Middlewares de aplicación.
 // La función se ejecuta cada vez que la aplicación recibe una solicitud.
-// Obtener la fecha y hora actual
+
+// Obtener la fecha y hora actual.
 const now = new Date();
 // Formatear la fecha y hora según la zona horaria de Madrid
 const formatter = new Intl.DateTimeFormat('es-ES', {
@@ -20,7 +25,7 @@ const formatter = new Intl.DateTimeFormat('es-ES', {
     second: '2-digit',
     hour12: false
 });
-// Obtener la fecha y hora formateada
+// Obtener la fecha y hora formateada.
 const madridDateTime = formatter.format(now);
 app.use((req, res, next) => {
   console.log("Fecha y hora en Madrid:", madridDateTime);
@@ -32,7 +37,7 @@ app.use(express.json());
 app.get("/students", (req, res) => {
   students.getAll().then((results) => res.json(results));
 });
-// Ejercicio 3
+// Ejercicio 3.
 // install xpress-validator: npm install --save express-validator
 // importar: const { body, validationResult } = require('express-validator');
 // añadir middleware para comprobar que el campo email es un email válido
