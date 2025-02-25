@@ -13,4 +13,4 @@ Recordemos que para terminar esta entrega hay que entregar:
 4. Foto de la creación del servicio
 ![alt text](./capturas-entrega/captura-05.png)
 5. Foto de la terminal donde se ver que el servicio funciona
-![alt text](./capturas-entrega/captura-terminal-fallida.png)
+![alt text](./capturas-entrega/captura-08.png)

@@ -330,16 +330,24 @@ Para poder dar por buena la práctica tenéis que añadir los **siguientes 3 pan
     ![alt text](./capturas-pantalla/captura-08.png)
     g. Le dais a save rule y volveis a probar a hacer la petición en la terminal. Os debería salir lo siguiente
     ![alt text](./capturas-pantalla/captura-09.png)
+    en mi caso sale:
+    ![alt text](./capturas-entrega/captura-08.png)
 
-## Que entregar
+# Que entregar
 
 Recordemos que para terminar esta entrega hay que entregar:
 
 1. Foto de la creación del cluster
+![alt text](./capturas-entrega/captura-01.png)
 2. Foto de la creación de la task definition
+![alt text](./capturas-entrega/captura-02.png)
 3. Foto de la creación del balanceador de carga
+![alt text](./capturas-entrega/captura-03.png)
+![alt text](./capturas-entrega/captura-04.png)
 4. Foto de la creación del servicio
+![alt text](./capturas-entrega/captura-05.png)
 5. Foto de la terminal donde se ver que el servicio funciona
+![alt text](./capturas-entrega/captura-08.png)
 
 ## Conclusiones
 
